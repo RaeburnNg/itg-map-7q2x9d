@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📖 入局 Show Bible · 节目是什么</title>
+<style>
+:root{--bg:#0D1117;--s1:#161B22;--s2:#21262D;--s3:#2D333B;--border:#30363D;--text:#E6EDF3;--muted:#7D8590;--dim:#484F58;--accent:#46C5B5;--ok:#3FB950;--warn:#E3B341;--bad:#FF7B72;--info:#58A6FF;--sans:-apple-system,BlinkMacSystemFont,'Inter','PingFang SC','Noto Sans SC',sans-serif;--mono:'SF Mono',ui-monospace,'JetBrains Mono',monospace;--r:10px;--r-sm:7px}
+body.mode-light{--bg:#FBFAF6;--s1:#FFFFFF;--s2:#F2F0E9;--s3:#E9E6DC;--border:#D2CCBD;--text:#1E3A42;--muted:#6C6E6F;--dim:#A9A294;--accent:#1E8C7E;--ok:#2E8B6B;--warn:#B5852E;--bad:#CF4F52;--info:#3A6EA5}
+body.mode-warm{--bg:#F5F0E8;--s1:#FBF7EF;--s2:#EFE7D8;--s3:#E6DAC6;--border:#DDCFB8;--text:#4A3D2E;--muted:#8B7355;--dim:#B0A187;--accent:#1E8C7E;--ok:#5E7E4F;--warn:#C2902E;--bad:#B5605A;--info:#8B7355}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:13.5px;line-height:1.55;padding-bottom:50px;transition:background .25s,color .25s}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.modebar{position:fixed;top:10px;right:10px;z-index:200;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;box-shadow:0 2px 12px rgba(0,0,0,.22)}
+.modebar button{font-family:var(--mono);font-size:11px;line-height:1;border:none;background:transparent;color:var(--muted);padding:5px 9px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+.crumbnav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:3px;flex-wrap:wrap;padding:8px 18px;background:color-mix(in srgb,var(--s1) 92%,transparent);border-bottom:2px solid var(--accent);font-family:var(--sans);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.crumbnav .crumb{display:inline-flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:-.1px;padding:3px 9px;border-radius:13px;transition:color .15s,background .15s}
+.crumbnav a.crumb:hover{color:var(--accent);background:var(--s2)}
+.crumbnav .crumb .cr-ico{font-size:13px}.crumbnav .cr-sep{color:var(--dim);font-size:11px}.crumbnav .crumb.current{color:var(--accent);font-weight:700}
+.hero{padding:22px 0 4px}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
+.northstar{font-size:14px;color:var(--text);margin-top:8px;border-left:3px solid var(--accent);padding-left:12px;line-height:1.5}
+.northstar b{color:var(--accent)}
+.purpose{font-size:12px;color:var(--muted);margin-top:8px;max-width:820px;line-height:1.55}
+.metastrip{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:11px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.metastrip .live{color:var(--ok);font-weight:700}.metastrip .live::before{content:'● ';animation:pulse 1.8s infinite}
+.metastrip .sep{color:var(--dim)}.metastrip b{color:var(--text)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+/* seg-head */
+.seg-head{display:flex;align-items:flex-start;gap:11px;padding:10px 14px 9px;border:1px solid var(--border);border-radius:var(--r);background:rgba(125,133,144,.05);margin:24px 0 12px}
+body.mode-light .seg-head,body.mode-warm .seg-head{background:rgba(108,93,76,.04)}
+.seg-icon{font-size:17px;flex-shrink:0;margin-top:1px}.seg-headtext{flex:1;min-width:0}
+.seg-name{font-size:14px;font-weight:700;letter-spacing:-.1px}
+.seg-sub{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px}
+/* TIMELINE strip */
+.tl{display:flex;flex-wrap:wrap;gap:0;align-items:stretch}
+.tl .stg{flex:1 1 0;min-width:150px;background:var(--s1);border:1px solid var(--border);padding:11px 13px;position:relative}
+.tl .stg:first-child{border-radius:var(--r) 0 0 var(--r)}
+.tl .stg:last-child{border-radius:0 var(--r) var(--r) 0}
+.tl .stg+.stg{border-left:none}
+.tl .stg.now{border-top:3px solid var(--warn)}
+.tl .sk{font-family:var(--mono);font-size:9.5px;font-weight:800;letter-spacing:.4px;color:var(--accent)}
+.tl .sn{font-size:13px;font-weight:700;margin-top:3px}
+.tl .sd{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:4px;line-height:1.4}
+.tl .nowtag{position:absolute;top:-9px;right:8px;font-family:var(--mono);font-size:8.5px;font-weight:800;background:var(--warn);color:#0D1117;padding:1px 7px;border-radius:8px;letter-spacing:.3px}
+/* MAP cards */
+.mapgrid{display:flex;flex-wrap:wrap;gap:10px}
+.mapcard{flex:1 1 0;min-width:240px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:13px 15px;border-left:3px solid var(--accent);transition:border-color .15s,transform .15s;display:block}
+.mapcard:hover{transform:translateY(-1px);text-decoration:none}
+.mapcard.use{border-left-color:var(--accent)}.mapcard.ref{border-left-color:var(--info)}.mapcard.up{border-left-color:var(--dim)}
+.mapcard .mt{font-size:14px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px}
+.mapcard .mt .go{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--accent)}
+.mapcard .md{font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.5}
+/* builders */
+.builders{display:flex;flex-wrap:wrap;gap:9px}
+.bcard{flex:1 1 0;min-width:158px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 12px;border-top:3px solid var(--accent);display:block}
+.bcard:hover{transform:translateY(-1px);text-decoration:none}
+.bcard.vac{border-top-color:var(--bad)}.bcard.ov{border-top-color:var(--info)}
+.bcard .bn{font-size:12.5px;font-weight:700;color:var(--text)}
+.bcard .bp{font-family:var(--mono);font-size:9.5px;font-weight:700;color:var(--accent);margin-top:4px}
+.bcard.vac .bp{color:var(--bad)}.bcard.ov .bp{color:var(--info)}
+.note{font-size:12px;color:var(--muted);background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 14px;margin:14px 0;line-height:1.7}
+.note b{color:var(--text)}
+.pagefoot{margin-top:26px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .kmark{font-weight:800;letter-spacing:2px;color:var(--accent)}.pagefoot .upd{margin-left:auto;color:var(--dim)}
+@media(max-width:760px){.wrap{padding:0 13px}.tl .stg,.mapcard,.bcard{flex:none;width:100%;min-width:0}
+  .tl .stg{border-radius:var(--r)!important;border-left:1px solid var(--border)!important;margin-bottom:6px}}
+/* ── Show Bible page-specific (built on house tokens) ── */
+.prose{font-size:13.5px;line-height:1.7;color:var(--text)}
+.prose p{margin:9px 0}
+.prose b{color:var(--text);font-weight:700}
+.prose .acc{color:var(--accent);font-weight:700}
+.lead{font-size:15px;line-height:1.7;color:var(--text);border-left:3px solid var(--accent);padding-left:13px;margin:6px 0 2px}
+.lead b{color:var(--accent)}
+.tobuild{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.4px;color:var(--bad);background:rgba(255,123,114,.1);border:1px dashed var(--bad);border-radius:13px;padding:2px 10px}
+body.mode-light .tobuild,body.mode-warm .tobuild{background:rgba(207,79,82,.08)}
+.gate{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.4px;color:var(--warn);background:rgba(227,179,65,.1);border:1px solid var(--warn);border-radius:13px;padding:2px 10px}
+/* flow beat sheet */
+.beats{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--s1)}
+.beat{display:grid;grid-template-columns:96px 1fr;gap:13px;padding:10px 14px;border-bottom:1px solid var(--border);align-items:baseline}
+.beat:last-child{border-bottom:none}
+.beat.star{background:rgba(70,197,181,.06)}
+body.mode-light .beat.star,body.mode-warm .beat.star{background:rgba(30,140,126,.05)}
+.beat .bt{font-family:var(--mono);font-size:11px;font-weight:800;color:var(--accent)}
+.beat .bx{font-size:12.5px}.beat .bx b{color:var(--text)}
+.beat .bx .lbl{font-weight:700;color:var(--text)}.beat .bx .dsc{color:var(--muted);font-size:11.5px}
+.beat .star-i{color:var(--accent)}
+/* mechanic stat tiles */
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0}
+.stat{flex:1 1 0;min-width:150px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;border-top:3px solid var(--accent)}
+.stat .sv{font-family:var(--mono);font-size:18px;font-weight:800;color:var(--accent);letter-spacing:-.5px}
+.stat .sl{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.45}
+/* why list */
+.whylist{display:flex;flex-direction:column;gap:8px;margin:6px 0}
+.whyrow{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:9px 13px}
+.whyrow .wn{font-family:var(--mono);font-size:13px;font-weight:800;color:var(--accent)}
+.whyrow .wt{font-size:12.5px;line-height:1.5}.whyrow .wt b{color:var(--text)}
+/* boss cards */
+.bossgrid{display:flex;flex-wrap:wrap;gap:10px}
+.boss{flex:1 1 0;min-width:200px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:13px 15px;border-left:3px solid var(--accent)}
+.boss.host{border-left-color:var(--info)}
+.boss .bn2{font-size:14px;font-weight:700;color:var(--text)}
+.boss .br{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--accent);margin-top:4px;letter-spacing:.3px}
+.boss.host .br{color:var(--info)}
+.boss .bd2{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+.kvs{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--s1)}
+.kv{display:grid;grid-template-columns:120px 1fr;gap:13px;padding:8px 14px;border-bottom:1px solid var(--border);font-size:12.5px;align-items:baseline}
+.kv:last-child{border-bottom:none}
+.kv .kk{font-weight:700;color:var(--accent);font-family:var(--mono);font-size:11px}
+.kv .vv{color:var(--text)}.kv .vv .m{color:var(--muted)}
+.tag-lock{font-family:var(--mono);font-size:9px;font-weight:800;color:var(--ok);background:rgba(63,185,80,.12);border-radius:10px;padding:1px 7px;letter-spacing:.3px}
+@media(max-width:600px){.beat{grid-template-columns:1fr;gap:3px}.kv{grid-template-columns:1fr;gap:1px}}
+
+/* ===== System Map design conform · vibrant section headers + per-category palette (2026-06-19) ===== */
+:root{--p1:#58A6FF;--p2:#A371F7;--p3:#F778BA;--p4:#E3A857;--p5:#56D364;--p6:#2DD4BF;--pm:#7C8CF8;--key:#E3B341;--ref:#8B97A8}
+body.mode-light{--p1:#2D7FD8;--p2:#8957D8;--p3:#C7437F;--p4:#B4781F;--p5:#2A9E3C;--p6:#14B8A6;--pm:#5560D8;--key:#B5852E;--ref:#6B7685}
+body.mode-warm{--p1:#3A6EA5;--p2:#8060B0;--p3:#B5607A;--p4:#B07A2E;--p5:#5E8E4F;--p6:#3E9E8E;--pm:#6A66B0;--key:#C2902E;--ref:#8B7355}
+.seg-head{align-items:center;gap:14px;padding:16px 19px;border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 38%,var(--border));border-left:7px solid var(--sc,var(--accent));border-radius:var(--r);background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 26%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 8%,var(--s1)));margin:42px 0 16px;box-shadow:0 3px 16px color-mix(in srgb,var(--sc,var(--accent)) 15%,transparent)}
+body.mode-light .seg-head,body.mode-warm .seg-head{background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 26%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 8%,var(--s1)))}
+.hero + .seg-head{margin-top:26px}
+.seg-icon{font-size:20px;width:42px;height:42px;min-width:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;background:color-mix(in srgb,var(--sc,var(--accent)) 30%,var(--s1));border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 48%,transparent);margin-top:0;flex-shrink:0}
+.seg-name{font-size:18px;font-weight:800;letter-spacing:-.2px}
+.seg-name .secn{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;padding:0 7px;background:var(--sc,var(--accent));color:var(--bg);font-family:var(--mono);font-weight:800;border-radius:8px;margin-right:10px;font-size:14px;flex-shrink:0}
+.seg-sub{font-size:11px;margin-top:5px}
+</style>
+</head>
+<body>
+
+<div class="modebar" id="modebar"><button data-m="dark" class="on">◐</button><button data-m="light">○</button><button data-m="warm">◑</button></div>
+
+<nav class="crumbnav">
+  <a class="crumb" data-link-removed><span class="cr-ico">🗂</span>System Map</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" data-link-removed><span class="cr-ico">📁</span>Project Monitor</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" href="入局_System_Map.html"><span class="cr-ico">🎬</span>入局</a>
+  <span class="cr-sep">›</span>
+  <span class="crumb current"><span class="cr-ico">📖</span>Show Bible</span>
+</nav>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">入局 · In The Game · Show Bible — 节目是什么</div>
+    <h1>📖 Show Bible — 整档节目，从头到尾</h1>
+    <div class="northstar"><b>北极星:</b>让对的老板,遇见对的局。 表面是节目,本质是「以<b>人脉</b>(不是钱)为奖励货币」的中文企业真人秀。</div>
+    <div class="purpose">这页 = <b>基石(keystone)</b>:Jeff 一直在问的那份「<b>节目到底是什么</b>」单一 doc。一页讲清三件事 — ① <b>节目是什么</b>(从报名到 after-show 全链路)· ② <b>老板为什么参加</b>(他 GET 到的是人脉/资源,不是钱)· ③ <b>观众为什么看</b>(Rae 在 6/16 会上点名缺的那块)。 主持人 = <b>Jeff</b> · S1 = <b>6 集</b> lock。</div>
+    <div class="metastrip">
+      <span class="live" id="clk">live</span>
+      <span class="sep">·</span><span>↻ <b>2026-06-17</b></span>
+      <span class="sep">·</span><span>6 episodes · 13min/集 · 3 大佬 · 3 票 2 过 · RM500k–1M</span>
+    </div>
+  </div>
+
+  <div class="note">📍 <b>读法:</b>这是 keystone,内容从这里发散到 5 pillar(不在这重复)。节目流程细节 → <a href="入局_P1_Creative.html">🎬 P1 Creative</a> · 制作排期 → <a href="入局_P2_Production.html">🎥 P2 Production</a> · 招募漏斗 → <a href="入局_P4_Recruitment.html">📨 P4 Recruitment</a>。 <b>商业/分账条款(Rae×Jeff)= 项目外,从不在此。</b></div>
+
+  <!-- ① 节目是什么 -->
+  <div class="seg-head"><span class="seg-icon">🎬</span><div class="seg-headtext"><div class="seg-name">① 节目是什么 — 一句话 + 全链路</div><div class="seg-sub">报名 → 筛选 → interview+预检 → 6 强 → 拍正片 → 投票 → 兑现 · 来源 Master_Proposal §1/§2 · Meeting part 2(Wai Kit 全程走读)</div></div></div>
+  <div class="lead">《入局》是一档<b>国际企业水准</b>的中文线上真人秀:营收 RM500k–1M 的企业家上台 pitch,3 位<b>行业大佬</b>当场盘他的生意、投票,2 票以上即「<b>入局</b>」,赢到的不是钱 — 是一段 pre-arranged 的<b>高端人脉</b>(一个饭局 / 一场会议,直接对接他想见的大佬或上市公司董事)。</div>
+  <div class="prose">
+    <p><b>全链路(Wai Kit 6/16 会上从头到尾走了一遍):</b></p>
+  </div>
+  <div class="beats">
+    <div class="beat"><span class="bt">① 宣传</span><span class="bx"><span class="lbl">Promo + Recruitment video</span> — <span class="dsc">先讲清「节目是什么 / 报名要求 / 你要做什么」。Jeff 出镜讲「我为什么做这个节目」+ 呼吁报名;3 位大佬讲「人脉的重要性、老板现在缺什么」。配 poster + social 物料(7/1 拍的就是这批信用道具)。</span></span></div>
+    <div class="beat"><span class="bt">② 报名</span><span class="bx"><span class="lbl">企业家报名</span> — <span class="dsc">不叫「参赛者」,叫<b>企业家</b>。报名时强制录下「<b>你赢了想要什么 / 想连接哪位大佬</b>」。多渠道 social 导流到报名页。</span></span></div>
+    <div class="beat"><span class="bt">③ 初筛</span><span class="bx"><span class="lbl">筛 ~20 强</span> — <span class="dsc">尽量选能跟 3 位大佬「赛道绑得上」的企业(管理 / 销售 / 零售 / 人脉)。3 位大佬各自覆盖很大的行业面。</span></span></div>
+    <div class="beat star"><span class="bt">④ Interview <span class="star-i">★</span></span><span class="bx"><span class="lbl">Online interview + 预检 gate</span> — <span class="dsc">线上聊,看能不能讲话、presentation 行不行。<b>关键问:你赢了想要什么?</b> → 拿到答案后<b>复评:这个诉求我们兑现得了吗?</b> 问回大佬「这个人你约得到吗」。<b>兑现不了 = 不让进</b>(after-show 穿帮防线)。</span></span></div>
+    <div class="beat"><span class="bt">⑤ 6 强</span><span class="bx"><span class="lbl">选 6 + preface 简报</span> — <span class="dsc">最后选 <b>6 位</b>进节目(每集一位)。开拍前给 3 位大佬一份 preface:这 6 个 case 大概做什么、做过什么,让大佬有概念、能准备问题。</span></span></div>
+    <div class="beat star"><span class="bt">⑥ 正片 <span class="star-i">★</span></span><span class="bx"><span class="lbl">拍节目(单集 13min flow)</span> — <span class="dsc">开场 → 介绍大佬 + 企业家 → 企业家 2min 自介+pitch(讲他<b>想突破什么</b>)→ 3 大佬 Q&A → 大佬讨论要不要给金卡 → 出卡。详 13min 流程见下 §④。</span></span></div>
+    <div class="beat"><span class="bt">⑦ 收尾</span><span class="bx"><span class="lbl">单集结尾 segment</span> — <span class="dsc">每集结尾留一个 section(可能是钢轨 / 给企业家的建议)。这一趴还在调。同时每集多拍 <b>5 条 1min 短视频</b>喂社媒。</span></span></div>
+    <div class="beat"><span class="bt">⑧ 投放</span><span class="bx"><span class="lbl">上线节奏</span> — <span class="dsc">每集播之前先出 promo + highlight + teaser poster;<b>每周一集</b>。短视频持续炸,出长片是最累的阶段。</span></span></div>
+    <div class="beat star"><span class="bt">⑨ 兑现 <span class="star-i">★</span></span><span class="bx"><span class="lbl">After-show / Fulfillment</span> — <span class="dsc">6 集播完后 2-3 周,拍<b>赢家真实兑现的过程</b>(例:跟某大佬 3 小时会面 / 大佬来工厂巡一轮)剪成 highlight 播出。<b>这是给市场看「我们真有兑现」的信用证明</b> — 也是节目最强的招募与传播弹药。</span></span></div>
+  </div>
+  <div class="note">⭐ <b>after-show fulfillment = 节目的信用心脏。</b> Wai Kit 原话:「人家看到哇真的可以跟这个老板吃饭、玩、聊天,托尼真的来我工厂巡一轮给我意见 — 这就是我们要做的信用图。」 对标 Shark Tank 成功要素之一 = 它有成长 review section。<b>没拍到兑现 = 整个奖励承诺悬空</b>(所以 ④ 的预检要做<b>硬 gate</b>)。</div>
+
+  <!-- ② WHY 老板参加 -->
+  <div class="seg-head"><span class="seg-icon">🤝</span><div class="seg-headtext"><div class="seg-name">② 老板为什么参加 — GET 到的是人脉/资源,不是钱</div><div class="seg-sub">护城河 · 来源 Master_Proposal §2 差异点 + Meeting part 2(Wai Kit 拆「为什么不给钱」)</div></div></div>
+  <div class="prose">
+    <p><b class="acc">关键差异:</b>国外那类「合伙人 / 投资」节目是大佬<b>投钱投资公司</b>。但 Wai Kit 说透了 — 在大马<b>钱很难给、给也不多</b>,「你要给多少钱才算数?model 不 work」。所以《入局》把奖励货币从<b>钱</b>换成<b>人脉</b>。</p>
+    <p>老板赢了,GET 到的是一段<b>买不到、用钱算不出的高端人脉</b> — pre-arranged 的一个饭局或一场会议,直接对接他平时根本约不到的大佬 / 上市公司董事。</p>
+  </div>
+  <div class="whylist">
+    <div class="whyrow"><span class="wn">A</span><span class="wt"><b>约得到平时约不到的人。</b> 老板自己去参加散会、想认识谁,有些大卡要排很久才约得上;节目直接给他一个机会，「我们这些人帮你安排这个饭局」。</span></div>
+    <div class="whyrow"><span class="wn">B</span><span class="wt"><b>一个真实的商业机会。</b> 你 present，万一大卡真觉得你的 business 可投 / 可长期合作 — 这就是机会。节目营造的，是一个用钱难买的<b>机会 + 人脉</b>。</span></div>
+    <div class="whyrow"><span class="wn">C</span><span class="wt"><b>大佬能给的是「钱买不到」的那种帮助。</b> 例:做人才管理的大佬愿意给你一天，帮你理顺整间公司的管理。越做越大后，大家越觉得「原来真有这种资源」。</span></div>
+    <div class="whyrow"><span class="wn">D</span><span class="wt"><b>定位 = 想突破，不是有问题。</b> 节目明说:<b>不是要遇到问题的老板进来，是要想突破的老板</b>。你现在做得很好也可以参赛 — 这让「上节目」变成体面的、向上的事，不是求救。</span></div>
+  </div>
+  <div class="note"><b>奖励兑现得了 = 这套才成立。</b> Master_Proposal §8 原则:「一定会给到他才请他来」。人脉资源真实存在(3 大佬 + Jeff 的对外营收能力)→ 配 ① 的预检硬 gate → 老板拿到的不是空头支票。这是别人抄不走的护城河。</div>
+
+  <!-- ③ WHY 观众看 -->
+  <div class="seg-head"><span class="seg-icon">👀</span><div class="seg-headtext"><div class="seg-name">③ 观众为什么看 — Rae 在 6/16 会上点名缺的那块</div><div class="seg-sub">来源 360_Ecosystem §2(看 + support 双层)· Meeting part 2(Rae 收尾:「要让观众核心什么」)</div></div></div>
+  <div class="prose">
+    <p>Rae 在 6/16 会末亲口点出来:「<b>要有那种『为什么他们要参加这个东西、他们得到什么』，然后我们要让观众核心(在乎)什么</b> — 你要理清更清楚这个 part。」 这就是观众视角，下面是答案(facts + 逻辑)。</p>
+  </div>
+  <div class="whylist">
+    <div class="whyrow"><span class="wn">1</span><span class="wt"><b>业务娱乐化是结构性刚需，不过期。</b> Shark Tank 从 &lt;5M 看到 9M+/集、播 15 季 — 老板内容是常青赛道，不靠 hit 衰退。</span></div>
+    <div class="whyrow"><span class="wn">2</span><span class="wt"><b>教育伪装娱乐，且零供给。</b> 大马华人 SME 老板极度饥渴学习，市场上的自媒体全在吃喝玩乐 / lifestyle，没人认真做企业内容 — 这是空地。</span></div>
+    <div class="whyrow"><span class="wn">3</span><span class="wt"><b>本地 + 高代入 + 真高潮。</b> 真老板、真痛点，观众看着会想「<b>那可能是我</b>」。</span></div>
+    <div class="whyrow"><span class="wn">4</span><span class="wt"><b>人脉奖励比现金更好看。</b> 看大佬当场接通上市公司董事 = 可视化的权力与向往 — 比「给一笔钱」镜头感强得多。</span></div>
+    <div class="whyrow"><span class="wn">5</span><span class="wt"><b>身份与归属(情感内核)。</b> 屏幕上看见自己的族群 / 自己的处境 — 这是「不再一个人闷头撑」的归属感。</span></div>
+    <div class="whyrow"><span class="wn">6</span><span class="wt"><b>FOMO + 可参与。</b> 谁都能报名，观众本身就是人才池 — 看节目顺便看「我要不要也入局」。</span></div>
+    <div class="whyrow"><span class="wn">7</span><span class="wt"><b>See-to-believe。</b> after-show 兑现 + 校友追踪证明人脉真的兑现 — 信了，才从观众变信徒。</span></div>
+  </div>
+  <div class="note"><b>从「看」到「support」:</b> 入局是<b>代表大马华人商业群体的身份运动</b>，不是 lifestyle fluff。人会 support 那个代表自己身份、又给实用价值(人脉 / 学习 / 地位)的东西。 <b>护栏(360 §5):</b>不能做成「有钱人秀」— 观众必须觉得<b>自己也能入局</b>，这是运动 vs 精英秀的分水岭。</div>
+
+  <!-- ④ Locked Content: 13min flow -->
+  <div class="seg-head"><span class="seg-icon">⏱</span><div class="seg-headtext"><div class="seg-name">④ 单集 13min 流程 — 锁定 beat sheet</div><div class="seg-sub">Playbook_Deck s6(Jeff 优化版,LOCKED)· 前快中狠后重 · 细化执行 → P1 Creative(跟 Wai Kit 重做)</div></div></div>
+  <div class="beats">
+    <div class="beat"><span class="bt">0:00–0:30</span><span class="bx"><span class="lbl">炸裂开场</span> — <span class="dsc">Jeff Hook 点痛点 → 企业家走入聚光灯</span></span></div>
+    <div class="beat"><span class="bt">0:30–2:30</span><span class="bx"><span class="lbl">终极陈述 Pitch (2min)</span> — <span class="dsc">路演融入自介 + 企业空镜 / 产品 montage;讲他<b>想突破什么</b></span></span></div>
+    <div class="beat star"><span class="bt">2:30–8:00 <span class="star-i">★</span></span><span class="bx"><span class="lbl">大老交锋 (5.5min) · 核心高潮</span> — <span class="dsc">Norman 撕营销 · Shane 盘系统 · Tony 盘实业·开商脉</span></span></div>
+    <div class="beat"><span class="bt">8:00–9:30</span><span class="bx"><span class="lbl">大佬博弈 (1.5min)</span> — <span class="dsc">当面讨论值不值得动用人脉，拉满窒息感</span></span></div>
+    <div class="beat"><span class="bt">9:30–10:00</span><span class="bx"><span class="lbl">终极宣判 (30s)</span> — <span class="dsc">举牌 YES/NO，<b>2+ 票 → 金色「成功入局」</b>特效</span></span></div>
+    <div class="beat star"><span class="bt">10:00–12:00 <span class="star-i">★</span></span><span class="bx"><span class="lbl">人脉解密 (2min)</span> — <span class="dsc">签发 <b>Connection Card</b>:「我帮你约见某上市集团董事吃饭」</span></span></div>
+    <div class="beat"><span class="bt">12:00–13:00</span><span class="bx"><span class="lbl">金句收尾 (1min)</span> — <span class="dsc">Jeff 复盘 + 商业金句，方便切片传播</span></span></div>
+  </div>
+  <div class="note"><b>机制护栏:</b>报名时<b>前置人脉诉求</b>(强制填想连接什么资源 / 为什么)→ 大佬提前评估，避免现场「你要的人脉我给不到」。<b>Connection Card</b> = 实体道具，Shark 亲笔签名，仪式感。 <b>Reality 质感:</b>drama 可 plan 进去 / 重排(re-shoot)制造高潮 = planned authenticity(NG / 补拍界线 → P1 Bible 细化)。</div>
+
+  <!-- ⑤ Locked Content: mechanic -->
+  <div class="seg-head"><span class="seg-icon">⚙️</span><div class="seg-headtext"><div class="seg-name">⑤ 核心机制 — 锁定</div><div class="seg-sub">Master_Proposal §2 + SOT Locked decisions(2026-06-02)</div></div></div>
+  <div class="stats">
+    <div class="stat"><div class="sv">RM 500k–1M</div><div class="sl">参赛资格 — 公司年营收门槛</div></div>
+    <div class="stat"><div class="sv">3 票 · 2 过</div><div class="sl">3 位大佬各一票，2 票以上 = 「入局」</div></div>
+    <div class="stat"><div class="sv">Gold Card</div><div class="sl">金卡 — 每人一张，亲笔签 Connection Card</div></div>
+    <div class="stat"><div class="sv">人脉 ≠ 钱</div><div class="sl">奖励 = pre-arranged 高端人脉(饭局 / 会议)</div></div>
+  </div>
+  <div class="prose">
+    <p><b>机制全链:</b> 报名(强制前置人脉诉求)→ 3 大佬听 pitch + Q&A → 各自决定要不要给<b>金卡</b> → 出卡 → 收到 ≥2 张 = 入局，赢到他报名时写的那段人脉。 收不到 2 张 = 这集就没有入局。</p>
+  </div>
+
+  <!-- ⑥ Locked Content: Boss Profile -->
+  <div class="seg-head"><span class="seg-icon">🗣</span><div class="seg-headtext"><div class="seg-name">⑥ Boss Profile — 3 大佬 + 主持(名字 lock)</div><div class="seg-sub">Playbook_Deck s10 · 黄金三角(销售×商脉×系统)· 细化人物 profile → P1 Creative</div></div></div>
+  <div class="bossgrid">
+    <div class="boss"><div class="bn2">Norman Pang</div><div class="br">销售 / 领导力</div><div class="bd2">扩建销售铁军、突破营收天花板。镜头里「撕营销」的那位。</div></div>
+    <div class="boss"><div class="bn2">Dato' Tony Looi</div><div class="br">实业 / 商脉</div><div class="bd2">Ban Lee Hin Group 主席兼 CEO(1974 钢构起家→多元集团)· PUMM 进步企业家协会会长 · 实业韧性 + 商会人脉。镜头里「盘实业·开商脉」的那位。</div></div>
+    <div class="boss"><div class="bn2">Shane Mun</div><div class="br">系统 / 企业算盘</div><div class="bd2">理清股权 / 系统 / 机制，可规模化。镜头里「盘系统」的那位。</div></div>
+    <div class="boss host"><div class="bn2">Jeff (host)</div><div class="br">主持 / 监制 / 发起人</div><div class="bd2">台前主持 + 发起人。18 年电台 DJ + media-personality IP。开场 Hook、金句收尾、串场。</div></div>
+  </div>
+  <div class="note"><b>黄金三角逻辑:</b> 销售 × 品牌 × 系统 = 大马 SME 从 50万 跨到 5000万 缺的三块。每位大佬代表一类高端人脉资源，决定参赛者能连接到谁。 <b>轮值原型:</b>结构不变 / 脸每季换(反过期武器)。 <span class="tobuild">🔴 待建</span> 每位大佬的详细 on-camera profile + Q&A 分工脚本 → 在 P1 Creative · Boss Profile 段细化。</div>
+
+  <!-- ⑦ Positioning + locked params -->
+  <div class="seg-head"><span class="seg-icon">📐</span><div class="seg-headtext"><div class="seg-name">⑦ 定位 + 锁定参数一览</div><div class="seg-sub">想突破不是有问题 · 一页参数表 · 来源 SOT Locked decisions</div></div></div>
+  <div class="lead">定位金句:<b>「我们要的不是遇到问题的老板，是想突破的老板。」</b> 上《入局》= 一件体面、向上的事，不是求救信号。</div>
+  <div class="kvs">
+    <div class="kv"><span class="kk">节目名</span><span class="vv">《入局》<span class="m">· EN working「In The Game」</span> <span class="tag-lock">LOCK</span></span></div>
+    <div class="kv"><span class="kk">性质</span><span class="vv">Jeff &amp; Kaloz 共有 IP program <span class="m">· 全制作一个屋檐下不分 scope</span> <span class="tag-lock">LOCK</span></span></div>
+    <div class="kv"><span class="kk">主持人</span><span class="vv">Jeff <span class="m">(2026-06-17 lock;取代「未定/嘉伟」)</span> <span class="tag-lock">LOCK</span></span></div>
+    <div class="kv"><span class="kk">集数 (S1)</span><span class="vv">6 集 <span class="m">· 每集一位企业家完整 arc · 6-vs-12 已 CLOSED</span> <span class="tag-lock">LOCK</span></span></div>
+    <div class="kv"><span class="kk">每集时长</span><span class="vv">~13 min <span class="m">· 前快中狠后重(Jeff 锁)</span> <span class="tag-lock">LOCK</span></span></div>
+    <div class="kv"><span class="kk">资格</span><span class="vv">公司年营收 RM 500k – 1M <span class="tag-lock">LOCK</span></span></div>
+    <div class="kv"><span class="kk">机制</span><span class="vv">3 大佬 · 3 票 · 2+ 过 · 金卡 / Connection Card <span class="tag-lock">LOCK</span></span></div>
+    <div class="kv"><span class="kk">奖励</span><span class="vv">pre-arranged 高端人脉(饭局 / 会议)，<b>非现金</b> <span class="tag-lock">LOCK</span></span></div>
+    <div class="kv"><span class="kk">制作标准</span><span class="vv">国际企业水准 · 高大上(灯光 / 剪辑 / 文案 / VFX)<span class="tag-lock">LOCK</span></span></div>
+    <div class="kv"><span class="kk">真人秀质感</span><span class="vv">drama 可 plan / 重排制造高潮 = planned authenticity <span class="tag-lock">LOCK</span></span></div>
+    <div class="kv"><span class="kk">三季弧线</span><span class="vv">S1 立信 → S2 起飞轮 → S3 制度化 <span class="tag-lock">LOCK</span></span></div>
+    <div class="kv"><span class="kk">商业 / 分账条款</span><span class="vv"><span class="gate">🔒 项目外</span> <span class="m">Rae×Jeff 私下另议，从不在此 / 任何 pillar 页</span></span></div>
+  </div>
+
+  <!-- ⑧ pillar handoff -->
+  <div class="seg-head"><span class="seg-icon">🧭</span><div class="seg-headtext"><div class="seg-name">⑧ 从 Show Bible 发散到 5 Pillar(细化在哪)</div><div class="seg-sub">keystone 只锁「是什么」,执行细化在各 pillar · 不重复</div></div></div>
+  <div class="mapgrid">
+    <a class="mapcard use" href="入局_P1_Creative.html"><div class="mt">🎬 P1 Creative<span class="go">open ↗</span></div><div class="md">Wai Kit · 13min flow 细化 · scripts · 每位大佬 on-camera profile + Q&amp;A 分工 · NG/补拍界线。</div></a>
+    <a class="mapcard use" href="入局_P2_Production.html"><div class="mt">🎥 P2 Production<span class="go">open ↗</span></div><div class="md">Celine · 7/1 promo / photoshoot 6/29 / 正片 8 月 · venue / set / 灯光 · Budgeting 🔒GATED。</div></a>
+    <a class="mapcard use" href="入局_P4_Recruitment.html"><div class="mt">📨 P4 Recruitment<span class="go">open ↗</span></div><div class="md">Wai Kit · 报名页 / form / online interview SOP · <b>预检硬 gate + 可兑现人脉池</b>(after-show 信用防线)。</div></a>
+  </div>
+  <div class="mapgrid" style="margin-top:10px">
+    <a class="mapcard use" href="入局_P5_Design.html"><div class="mt">🎨 P5 Design<span class="go">open ↗</span></div><div class="md">Yong Cheng · Brand CI(logo/color/font)· poster system · 视觉 / 剪辑 style。</div></a>
+    <a class="mapcard use" href="入局_P3_BrandMarketing.html"><div class="mt">📣 P3 Brand &amp; Marketing<span class="go">open ↗</span></div><div class="md"><b style="color:var(--bad)">🔴 VACANT</b> · social 内容矩阵 / posting / 切片 / 渠道 · brand voice。</div></a>
+    <a class="mapcard up" href="入局_System_Map.html"><div class="mt">⬆ 🎬 入局 System Map<span class="go">up ↗</span></div><div class="md">回项目地图 — timeline + 5 pillar + Tracker 全导航。</div></a>
+  </div>
+
+  <footer class="pagefoot">
+    <span class="kmark">KALOZ</span>
+    <span>入局 Show Bible · 节目是什么 + WHY 老板参加 + WHY 观众看 · keystone</span>
+    <span class="upd">Last updated 2026-06-17</span>
+  </footer>
+</div>
+
+<script>
+(function(){var bar=document.getElementById('modebar');function setMode(m){document.body.classList.remove('mode-light','mode-warm');if(m==='light')document.body.classList.add('mode-light');if(m==='warm')document.body.classList.add('mode-warm');bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});try{localStorage.setItem('raeMode',m);}catch(e){}}
+bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});var saved='dark';try{saved=localStorage.getItem('raeMode')||'dark';}catch(e){}setMode(saved);
+var clk=document.getElementById('clk');function tick(){clk.textContent=new Date().toLocaleTimeString('en-GB');}tick();setInterval(tick,1000);})();
+</script>
+</body>
+</html>

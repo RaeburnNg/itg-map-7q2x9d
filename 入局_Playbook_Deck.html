@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎬 入局 In The Game · Playbook Deck</title>
+<!-- Playbook Deck · 16:9 PPT-size · book-read · 《入局》2026 · Built 2026-06-06 -->
+<style>
+:root{
+--bg:#0A0A0B;--ink:#0A0A0B;--paper:#15151A;--paper2:#1D1D24;--line:#2C2C36;
+--text:#F2EDE4;--muted:#9A958B;--dim:#5A564E;
+--gold:#D4A24E;--gold-t:#E8C277;--gold-d:#9A7430;
+--fm:'SF Mono',ui-monospace,'JetBrains Mono',monospace;
+--serif:'Songti SC','Noto Serif SC',Georgia,serif;
+}
+/* Light = "Editorial Ink" — navy ink on cream paper, terracotta accent (breakthrough format) */
+body.mode-light{--bg:#E7DECD;--paper:#F3ECDF;--paper2:#EADFCC;--line:#D6C8AF;--text:#1A1F2B;--muted:#5F6573;--dim:#A2997F;--gold:#B25A2C;--gold-t:#8F4621;}
+body.mode-light .closing{background:radial-gradient(120% 100% at 50% 104%,#FBF5EA 0%,var(--paper) 50%,#E0D4BD 100%)}
+body.mode-light .slide{box-shadow:0 14px 44px rgba(60,48,30,.14)}
+/* Warm = SYS-04 "Warm Paper" (design-system canon): cream paper · warm-brown ink · bronze accent */
+body.mode-warm{--bg:#E3D7C0;--paper:#F3ECDF;--paper2:#EFE6D5;--line:#DDCFB8;--text:#2E2B26;--muted:#6E6557;--dim:#AE9F86;--gold:#A8804E;--gold-t:#8A6638;}
+body.mode-warm .closing{background:radial-gradient(120% 100% at 50% 104%,#FBF6EC 0%,var(--paper) 50%,#DDCFB8 100%)}
+body.mode-warm .slide{box-shadow:0 14px 44px rgba(60,48,30,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Inter','PingFang SC','Noto Sans SC',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s}
+/* mode bar */
+.modebar{position:fixed;top:12px;right:14px;z-index:300;display:flex;gap:2px;background:rgba(20,20,24,.85);border:1px solid var(--line);border-radius:20px;padding:3px;backdrop-filter:blur(8px)}
+.modebar button{font-family:var(--fm);font-size:12px;border:none;background:transparent;color:var(--muted);padding:5px 8px;border-radius:16px;cursor:pointer}
+.modebar button.on{background:var(--gold);color:#0A0A0B}
+/* slide-number rail */
+.rail{position:fixed;left:14px;top:50%;transform:translateY(-50%);z-index:250;display:flex;flex-direction:column;gap:7px}
+.rail a{width:7px;height:7px;border-radius:50%;background:var(--line);transition:background .2s,transform .2s}
+.rail a:hover,.rail a.on{background:var(--gold);transform:scale(1.4)}
+@media(max-width:820px){.rail{display:none}}
+/* deck */
+.deck{display:flex;flex-direction:column;align-items:center;gap:28px;padding:30px 16px 60px}
+.slide{position:relative;width:min(96vw,1180px);aspect-ratio:16/9;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,.45);display:flex;flex-direction:column;scroll-margin-top:20px}
+.slide-inner{flex:1;padding:clamp(22px,3.4vw,52px);display:flex;flex-direction:column;min-height:0}
+/* slide chrome */
+.s-tag{font-family:var(--fm);font-size:clamp(8px,.95vw,11px);letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700}
+.s-no{position:absolute;bottom:clamp(14px,2vw,26px);right:clamp(18px,2.6vw,34px);font-family:var(--fm);font-size:clamp(9px,1vw,12px);color:var(--dim);letter-spacing:1px}
+.s-foot{position:absolute;bottom:clamp(14px,2vw,26px);left:clamp(22px,3.4vw,52px);font-family:var(--fm);font-size:clamp(8px,.9vw,10px);color:var(--dim);letter-spacing:2px}
+h1.big{font-size:clamp(40px,8vw,108px);font-weight:800;letter-spacing:-2px;line-height:.96;font-family:var(--serif)}
+.s-h{font-size:clamp(20px,3vw,40px);font-weight:800;letter-spacing:-.5px;margin-top:10px;line-height:1.1}
+.s-sub{font-size:clamp(12px,1.5vw,19px);color:var(--muted);margin-top:14px;max-width:80%;line-height:1.65}
+.s-lead{font-size:clamp(15px,1.9vw,26px);line-height:1.55;font-family:var(--serif)}
+.gold{color:var(--gold-t)}
+.divider{width:54px;height:3px;background:var(--gold);border-radius:2px;margin:16px 0}
+/* cover */
+.cover{background:var(--paper)}
+.cover .slide-inner{align-items:center;justify-content:center;text-align:center}
+.cover .kk{font-family:var(--fm);font-size:clamp(9px,1.1vw,13px);letter-spacing:6px;color:var(--gold);font-weight:700}
+.cover .en{font-family:var(--fm);letter-spacing:6px;font-size:clamp(11px,1.5vw,18px);color:var(--muted);text-transform:uppercase;margin-top:6px}
+.cover .tag{font-size:clamp(14px,1.9vw,24px);color:var(--gold-t);font-weight:700;margin-top:22px}
+.cover .meta{font-family:var(--fm);font-size:clamp(8px,.95vw,11px);color:var(--dim);margin-top:26px;line-height:1.9;letter-spacing:1px}
+/* generic content */
+.cols{display:grid;gap:clamp(10px,1.6vw,22px);margin-top:auto;margin-bottom:auto}
+.c2{grid-template-columns:1fr 1fr}.c3{grid-template-columns:repeat(3,1fr)}.c4{grid-template-columns:repeat(4,1fr)}
+.tile{background:var(--paper2);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:clamp(11px,1.5vw,20px)}
+.tile .tt{font-weight:700;font-size:clamp(12px,1.4vw,18px);display:flex;align-items:center;gap:8px}
+.tile .td{font-size:clamp(10px,1.15vw,14px);color:var(--muted);margin-top:7px;line-height:1.55}
+.tile .tn{font-family:var(--fm);font-size:clamp(13px,1.7vw,22px);color:var(--gold-t);font-weight:800}
+ul.bul{list-style:none;display:flex;flex-direction:column;gap:clamp(8px,1.3vw,16px);margin-top:auto;margin-bottom:auto}
+ul.bul li{font-size:clamp(12px,1.45vw,19px);padding-left:26px;position:relative;line-height:1.5}
+ul.bul li::before{content:'';position:absolute;left:0;top:.55em;width:9px;height:9px;background:var(--gold);border-radius:2px;transform:rotate(45deg)}
+ul.bul li b{color:var(--gold-t)}
+/* flow steps */
+.flow{display:flex;align-items:stretch;gap:8px;margin:auto 0;flex-wrap:wrap}
+.step{flex:1;min-width:120px;background:var(--paper2);border:1px solid var(--line);border-radius:10px;padding:clamp(10px,1.3vw,16px);position:relative}
+.step .sn2{font-family:var(--fm);font-size:clamp(9px,1vw,12px);color:var(--gold);font-weight:700}
+.step .sx{font-size:clamp(11px,1.25vw,15.5px);font-weight:700;margin-top:5px}
+.step .sd{font-size:clamp(9px,1.05vw,12.5px);color:var(--muted);margin-top:4px;line-height:1.45}
+/* table-ish rows */
+.rows{display:flex;flex-direction:column;margin:auto 0}
+.row{display:grid;grid-template-columns:130px 1fr 90px;gap:clamp(8px,1.4vw,18px);padding:clamp(7px,1vw,12px) 4px;border-bottom:1px solid var(--line);font-size:clamp(11px,1.25vw,16px);align-items:baseline}
+.row:last-child{border-bottom:none}
+.row .rk{font-weight:700;color:var(--gold-t)}
+.row .rm{color:var(--muted);font-size:clamp(10px,1.1vw,14px)}
+.pill{font-family:var(--fm);font-size:clamp(8px,.9vw,10.5px);font-weight:700;padding:2px 9px;border-radius:20px;justify-self:start;white-space:nowrap}
+.p-lock{background:rgba(212,162,78,.16);color:var(--gold-t)} .p-tbd{background:rgba(154,149,139,.18);color:var(--muted)} .p-hi{background:rgba(220,90,80,.18);color:#E89088}
+.quote{font-family:var(--serif);font-size:clamp(16px,2.3vw,32px);line-height:1.5;font-style:italic;margin:auto 0;color:var(--text)}
+.quote .by{display:block;font-family:var(--fm);font-style:normal;font-size:clamp(10px,1.1vw,13px);color:var(--gold);margin-top:18px;letter-spacing:2px}
+.closing{background:radial-gradient(120% 100% at 50% 100%,#1A150C 0%,var(--paper) 50%,var(--ink) 100%)}
+.closing .slide-inner{align-items:center;justify-content:center;text-align:center}
+@media(max-width:600px){.c2,.c3,.c4{grid-template-columns:1fr 1fr}.row{grid-template-columns:1fr;gap:2px}.row .pill{margin-top:3px}}
+</style>
+</head>
+<body>
+<div class="modebar" id="modebar"><button data-m="dark" class="on">◐</button><button data-m="light">○</button><button data-m="warm">◑</button></div>
+<nav class="rail" id="rail"></nav>
+
+<div class="deck" id="deck">
+
+  <!-- 01 COVER -->
+  <section class="slide cover" id="s1">
+    <div class="slide-inner">
+      <div class="kk">KALOZ × JEFF · IP PROGRAM</div>
+      <h1 class="big">《入局》</h1>
+      <div class="en">IN THE GAME</div>
+      <div class="tag">全马最强中文线上企业真人秀</div>
+      <div class="meta">PRODUCTION PLAYBOOK · v0.1 · 2026-06-06<br>Owner: Rae 制作总监 · 监制: Jeff · Source: Kickoff 2026-06-02</div>
+    </div>
+    <div class="s-foot">KALOZ PRODUCTION</div>
+    <div class="s-no">01</div>
+  </section>
+
+  <!-- 02 FOREWORD -->
+  <section class="slide" id="s2">
+    <div class="slide-inner">
+      <div class="s-tag">序 · Foreword</div>
+      <div class="divider"></div>
+      <div class="quote">「在商业世界，钱很重要 —<br>但比钱更重要的，是<span class="gold">人</span>。」
+        <span class="by">— 《入局》的起点</span></div>
+      <div class="s-sub">这本 playbook 不是节目企划书，是一套<span class="gold">系统</span>：让《入局》第一季从概念到上线、再到第二第三季，都跑在同一套标准上 — 不靠谁的临场，靠这本书。</div>
+    </div>
+    <div class="s-foot">入局 · PLAYBOOK</div><div class="s-no">02</div>
+  </section>
+
+  <!-- 03 VISION -->
+  <section class="slide" id="s3">
+    <div class="slide-inner">
+      <div class="s-tag">§1 · The Vision 节目愿景</div>
+      <h2 class="s-h" style="font-size:clamp(19px,2.6vw,34px)">北极星 ——「<span class="gold">让对的老板，遇见对的局</span>」</h2>
+      <div class="s-sub" style="max-width:100%;margin-top:8px">表面是节目，本质是一个 <b>双边局 + 线下变现平台</b>。节目负责<b>被看见 + 建信用</b>，线下负责<b>真正成局 + 变现</b> — 马来西亚第一个企业自媒体平台。</div>
+      <div class="cols c2" style="margin-top:13px">
+        <div class="tile"><div class="tt">⚖ 双边局 · 谁入局</div><div class="td"><b>中小企业老板</b> — 主力观众 + 参赛者，要「入对的局」<br><b>大佬 / 投资人</b> — 高端观众 + 资源方，要「对的 dealflow」<br><span style="opacity:.65">一般商业观众 = 顺带覆盖，不主攻</span></div></div>
+        <div class="tile"><div class="tt">🤝 线下变现 · 真正的产品</div><div class="td"><b>Roundtable</b> — 圆桌高端对谈<br><b>私董会</b> — 入局老板 + 精选老板付费圈<br><b>招商局</b> — 大佬/投资人 ↔ 精选企业撮合现场</div></div>
+      </div>
+      <div class="phases" style="grid-template-columns:repeat(3,1fr);margin-top:14px">
+        <div class="ph done"><div class="pp">S1 · 立信</div><div class="ph-nm">Proof</div><div class="ph-d">证格式 work + 人脉真兑现；记录首批成功案例 · 试跑第一场 roundtable</div></div>
+        <div class="ph"><div class="pp">S2 · 起飞轮</div><div class="ph-nm">Scale</div><div class="ph-d">信用变常设引擎：扩大佬池 · 开私董会 · 首场招商局 · 变现咬合</div></div>
+        <div class="ph"><div class="pp">S3 · 制度化</div><div class="ph-nm">Platform</div><div class="ph-d">入局成制度品牌：常设私董会/招商局 + 企业名册 · 可跨城 · 平台成真收入</div></div>
+      </div>
+    </div>
+    <div class="s-foot">入局 · PLAYBOOK</div><div class="s-no">03</div>
+  </section>
+
+  <!-- 04 THE GAP -->
+  <section class="slide" id="s4">
+    <div class="slide-inner">
+      <div class="s-tag">§1 · The Gap 市场空间</div>
+      <h2 class="s-h">大马的自媒体，全在 <span class="gold">吃喝玩乐</span>。<br>企业内容，是一片空地。</h2>
+      <ul class="bul">
+        <li>福利、第一期、c.com 那类 — 都是<b>吃喝玩乐 + lifestyle</b>自媒体，充其量做新闻。</li>
+        <li>没有人认真做<b>企业内容</b> — 这就是《入局》看到的空间。</li>
+        <li>企业节目要 <b>professional 但不 boring</b>：related to business，却不会让人想走。</li>
+        <li>先发 + 把它做到这个深度 = <span class="gold">护城河</span>。</li>
+      </ul>
+    </div>
+    <div class="s-foot">入局 · PLAYBOOK</div><div class="s-no">04</div>
+  </section>
+
+  <!-- 05 MECHANIC -->
+  <section class="slide" id="s5">
+    <div class="slide-inner">
+      <div class="s-tag">§2 · The Mechanic 核心机制</div>
+      <h2 class="s-h">报名 → 3 大佬 → 3 票 → <span class="gold">入局</span></h2>
+      <div class="cols c3">
+        <div class="tile"><div class="tn">RM 500k–1M</div><div class="td">参赛资格 — 公司年营收门槛</div></div>
+        <div class="tile"><div class="tn">3 票制</div><div class="td">3 位大佬各一票，<b>2 票以上 = 入局</b></div></div>
+        <div class="tile"><div class="tn">人脉 ≠ 钱</div><div class="td">奖励 = pre-arranged 高端商业人脉</div></div>
+      </div>
+      <div class="s-sub">报名时录下「你想连接哪一位大佬 / 哪类人脉」→ 大佬听 pitch、提问 interview → 投票 → 入局者获得一个<b>饭局或会议</b>，直接对接他想要的大佬 / 上市公司董事。</div>
+    </div>
+    <div class="s-foot">入局 · PLAYBOOK</div><div class="s-no">05</div>
+  </section>
+
+  <!-- 06 SHOW FLOW -->
+  <section class="slide" id="s6">
+    <div class="slide-inner">
+      <div class="s-tag">§2 · Show Flow 单集流程</div>
+      <h2 class="s-h" style="margin-bottom:6px">一集 13 分钟 · <span class="gold">前快中狠后重</span></h2>
+      <div class="flow">
+        <div class="step"><div class="sn2">0:00–0:30</div><div class="sx">炸裂开场</div><div class="sd">Hook 点痛点 → 企业家入场</div></div>
+        <div class="step"><div class="sn2">0:30–2:30</div><div class="sx">终极陈述</div><div class="sd">2min 路演 + montage</div></div>
+        <div class="step"><div class="sn2">2:30–8:00</div><div class="sx">大老交锋 ★</div><div class="sd">5.5min 核心 — Norman撕营销·Shane盘系统·Tony盘实业·开商脉</div></div>
+        <div class="step"><div class="sn2">8:00–10:00</div><div class="sx">博弈+宣判</div><div class="sd">讨论 → 举牌 → 金色「成功入局」</div></div>
+        <div class="step"><div class="sn2">10:00–13:00</div><div class="sx">人脉解密 ★</div><div class="sd">Connection Card「约见上市集团董事」+ 金句收尾</div></div>
+      </div>
+      <div class="s-sub" style="max-width:100%">对标 Shark Tank / Apprentice。机制护栏：报名<b class="gold">前置人脉诉求</b> + Connection Card 实体签名道具。drama 可 plan/重排制造高潮。</div>
+    </div>
+    <div class="s-foot">入局 · PLAYBOOK</div><div class="s-no">06</div>
+  </section>
+
+  <!-- 07 REWARD DIFF -->
+  <section class="slide" id="s7">
+    <div class="slide-inner">
+      <div class="s-tag">§2 · The Differentiator 护城河</div>
+      <div class="quote">国外节目，大佬投钱投资公司。<br>在大马，<span class="gold">钱很难给、给也不多</span> — model 不 work。<br><br>《入局》用 <span class="gold">人脉</span> 当奖励货币。</div>
+      <div class="s-sub">这是为大马量身定的机制 — 也是没人抄得走的差异点。人脉资源真实存在（Norman 等大佬 + Jeff 的营收能力），奖励兑现得了：「一定会给到他才请他来。」</div>
+    </div>
+    <div class="s-foot">入局 · PLAYBOOK</div><div class="s-no">07</div>
+  </section>
+
+  <!-- 08 PRODUCTION STANDARD -->
+  <section class="slide" id="s8">
+    <div class="slide-inner">
+      <div class="s-tag">§3 · Production Standard 制作标准</div>
+      <h2 class="s-h">国际企业水准 · <span class="gold">高大上</span></h2>
+      <div class="cols c4" style="margin-top:18px">
+        <div class="tile"><div class="tt">💡 灯光画面</div><div class="td">高大上，企业级质感，非娱乐节目轻松拍法</div></div>
+        <div class="tile"><div class="tt">✂️ 专业剪辑</div><div class="td">引人入胜</div></div>
+        <div class="tile"><div class="tt">✍️ 文案</div><div class="td">很花功夫 · 企业语境 · 不 boring</div></div>
+        <div class="tile"><div class="tt">✨ 后期 VFX</div><div class="td">特效增专业色彩</div></div>
+      </div>
+      <div class="s-sub" style="max-width:100%">命门 = <b class="gold">灯光 + 画面一致性</b>。建议棚拍为主，把「高大上」做成可复制视觉标准，S2/S3 直接套。台前专业，幕后也要 pro — 参赛企业家会感受到「我们很 pro」。</div>
+    </div>
+    <div class="s-foot">入局 · PLAYBOOK</div><div class="s-no">08</div>
+  </section>
+
+  <!-- 09 TEAM -->
+  <section class="slide" id="s9">
+    <div class="slide-inner">
+      <div class="s-tag">§4 · Team & Roles 团队</div>
+      <div class="rows">
+        <div class="row"><span class="rk">监制 Jeff</span><span class="rm">整体把关 · 嘉宾营收 · 对外窗口</span><span class="pill p-lock">锁</span></div>
+        <div class="row"><span class="rk">制作总监 Rae</span><span class="rm">制作端把关 · final 画面监控 · creative 方向</span><span class="pill p-lock">锁</span></div>
+        <div class="row"><span class="rk">副总监 YK</span><span class="rm">coordination · production↔Jeff sync · 协调嘉宾</span><span class="pill p-lock">锁</span></div>
+        <div class="row"><span class="rk">制片 Celine</span><span class="rm">整合 Base · operation · 后期统筹</span><span class="pill p-lock">锁</span></div>
+        <div class="row"><span class="rk">评委 兰兰</span><span class="rm">参赛者评委 + 节目意见</span><span class="pill p-tbd">待加入</span></div>
+        <div class="row"><span class="rk">主持人</span><span class="rm">台前主持</span><span class="pill p-tbd">待定</span></div>
+        <div class="row"><span class="rk">文案 Manager</span><span class="rm">upload · 文案把关</span><span class="pill p-tbd">待招</span></div>
+      </div>
+    </div>
+    <div class="s-foot">入局 · PLAYBOOK</div><div class="s-no">09</div>
+  </section>
+
+  <!-- 10 JUDGES -->
+  <section class="slide" id="s10">
+    <div class="slide-inner">
+      <div class="s-tag">§4 · The 3 大佬 评委</div>
+      <h2 class="s-h"><span class="gold">黄金三角</span>，三票定入局</h2>
+      <div class="cols c3" style="margin-top:18px">
+        <div class="tile"><div class="tt">🗣 Norman Pang</div><div class="td"><b>销售 / 领导力</b> — 扩建销售铁军、突破营收天花板</div></div>
+        <div class="tile"><div class="tt">✨ Dato' Tony Looi</div><div class="td"><b>实业 / 商脉</b> — Ban Lee Hin 多元集团主席 · PUMM 会长</div></div>
+        <div class="tile"><div class="tt">⚙ Shane Mun</div><div class="td"><b>系统 / 企业算盘</b> — 理清股权系统机制、可规模化</div></div>
+      </div>
+      <div class="s-sub" style="max-width:100%">销售 × 品牌 × 系统 = 大马 SME 从 50万 跨到 5000万 缺的三块。每位大佬代表一类高端人脉资源，决定参赛者能连接到谁。</div>
+    </div>
+    <div class="s-foot">入局 · PLAYBOOK</div><div class="s-no">10</div>
+  </section>
+
+  <!-- 11 COMMERCIAL -->
+  <section class="slide" id="s11">
+    <div class="slide-inner">
+      <div class="s-tag">§5 · Commercial Model 商业模式</div>
+      <h2 class="s-h">三条收入线 <span style="font-size:.5em;color:var(--muted)">· 节目收入方向</span></h2>
+      <div class="cols c3" style="margin-top:16px">
+        <div class="tile"><div class="tt">1 · Sponsor</div><div class="td">节目冠名 / 植入 / segment 赞助。Jeff 在谈，不等照走。</div></div>
+        <div class="tile"><div class="tt">2 · Deal Flow</div><div class="td">核心引擎 — 大佬↔参赛者撮合背后的成交 / 引荐 / 股权机会。</div></div>
+        <div class="tile"><div class="tt">3 · 平台</div><div class="td">长线 — 企业自媒体平台成型后的广告 / 内容 / 咨询延伸。</div></div>
+      </div>
+      <div class="s-sub" style="max-width:100%">性质 = <b class="gold">Jeff & Kaloz 共有 IP</b>。本 deck 只框节目收入方向；<b>商业条款 = Rae×Jeff 项目外另议</b>。</div>
+    </div>
+    <div class="s-foot">入局 · PLAYBOOK</div><div class="s-no">11</div>
+  </section>
+
+  <!-- 12 SPEC -->
+  <section class="slide" id="s12">
+    <div class="slide-inner">
+      <div class="s-tag">§6 · Production Spec 制作规格 <span style="color:var(--muted)">· 建议 baseline</span></div>
+      <div class="rows">
+        <div class="row"><span class="rk">集数 / 季</span><span class="rm">每集一位参赛者完整 arc · 质量 &gt; 数量</span><span class="pill p-lock">6 集</span></div>
+        <div class="row"><span class="rk">每集时长</span><span class="rm">足够 pitch + 评审 + 揭晓 depth</span><span class="pill p-lock">25–35min</span></div>
+        <div class="row"><span class="rk">平台</span><span class="rm">长片在 YT · 短 reels 投社媒引流回长片/报名</span><span class="pill p-lock">YouTube+</span></div>
+        <div class="row"><span class="rk">场地</span><span class="rm">可控高大上灯光（命门）+ 入局实景补拍</span><span class="pill p-lock">棚拍为主</span></div>
+        <div class="row"><span class="rk">每集模块</span><span class="rm">Pre-show + pitch + interview + 西江 + 揭晓</span><span class="pill p-lock">结构化</span></div>
+      </div>
+      <div class="s-sub" style="max-width:100%">⚠ 全 <b>待定</b> — 以上是 Rae 制作总监角度的建议 baseline，给团队 react，不是锁。</div>
+    </div>
+    <div class="s-foot">入局 · PLAYBOOK</div><div class="s-no">12</div>
+  </section>
+
+  <!-- 13 TIMELINE -->
+  <section class="slide" id="s13">
+    <div class="slide-inner">
+      <div class="s-tag">§7 · Timeline & Phases 时间表 <span style="color:var(--muted)">· readiness-driven</span></div>
+      <div class="flow">
+        <div class="step"><div class="sn2">P0 现在</div><div class="sx">Setup</div><div class="sd">Base · 分工表 · roles · ~2 周</div></div>
+        <div class="step"><div class="sn2">P1</div><div class="sx">Pre-Pro</div><div class="sd">bible · branding · recruitment · ~4–6 周</div></div>
+        <div class="step"><div class="sn2">P2</div><div class="sx">Casting</div><div class="sd">报名+short-list · 3 大佬 · 赞助</div></div>
+        <div class="step"><div class="sn2">P3</div><div class="sx">拍摄</div><div class="sd">棚拍 block + B-roll + 补拍</div></div>
+        <div class="step"><div class="sn2">P4</div><div class="sx">Post+Launch</div><div class="sd">剪辑 · VFX · 文案 · 上线</div></div>
+        <div class="step"><div class="sn2">P5</div><div class="sx">复盘</div><div class="sd">learnings · 模板化喂 S2/3</div></div>
+      </div>
+      <div class="s-sub" style="max-width:100%">时间表挂在<b class="gold">准备度</b>上，不硬锁日历。建议 stretch：S1 <b>Q4 2026 上线</b> — 锁在准备度而非日历，避免赶工伤「高大上」。</div>
+    </div>
+    <div class="s-foot">入局 · PLAYBOOK</div><div class="s-no">13</div>
+  </section>
+
+  <!-- 14 WHY KALOZ -->
+  <section class="slide" id="s14">
+    <div class="slide-inner">
+      <div class="s-tag">§8 · Why Kaloz Wins</div>
+      <ul class="bul">
+        <li><b>没人在大马把企业节目做到这个深度</b> — 先发 + 高质感 = 护城河。</li>
+        <li><b>Kaloz 全制作一个屋檐下</b> — 概念到上线不分包，质量与节奏可控。</li>
+        <li><b>人脉资源真实存在</b> — Norman 等大佬 + Jeff 营收能力，奖励兑现得了。</li>
+        <li><b>平台格局</b> — 不止一档节目，是企业自媒体生态的入口。</li>
+      </ul>
+    </div>
+    <div class="s-foot">入局 · PLAYBOOK</div><div class="s-no">14</div>
+  </section>
+
+  <!-- 15 OPEN DECISIONS -->
+  <section class="slide" id="s15">
+    <div class="slide-inner">
+      <div class="s-tag">§9 · Open Decisions 待定清单</div>
+      <div class="rows">
+        <div class="row"><span class="rk">D-ep 集数</span><span class="rm">6 集 vs 12 集 — 建议 S1 走 6 集（解锁财务收敛）</span><span class="pill p-hi">🔴 高</span></div>
+        <div class="row"><span class="rk">D2 主持人</span><span class="rm">人选未定</span><span class="pill p-hi">🔴 高</span></div>
+        <div class="row"><span class="rk">D3 3 大佬</span><span class="rm">final 名单</span><span class="pill p-hi">🔴 高</span></div>
+        <div class="row"><span class="rk">D4 Norman 上镜</span><span class="rm">形象处理</span><span class="pill p-tbd">🟡 中</span></div>
+        <div class="row"><span class="rk">D5–D8 规格/时间/招聘/预算</span><span class="rm">react §6/§7 · 文案招聘 · 预算 / costing</span><span class="pill p-tbd">🟡 中</span></div>
+      </div>
+      <div class="s-sub" style="max-width:100%">这份清单是 playbook 的<b class="gold">行动引擎</b> — 每条都是一个待答决策，活在 Lark Base「节目策划」表里。</div>
+    </div>
+    <div class="s-foot">入局 · PLAYBOOK</div><div class="s-no">15</div>
+  </section>
+
+  <!-- 16 CLOSING -->
+  <section class="slide closing" id="s16">
+    <div class="slide-inner">
+      <div class="s-tag">§10 · Next</div>
+      <h1 class="big" style="font-size:clamp(34px,6vw,80px)">入局，<span class="gold">正式启动</span>。</h1>
+      <div class="s-sub" style="text-align:center;max-width:90%;margin-left:auto;margin-right:auto">P0 即刻：Celine 整合 Base · Rae+Celine 出 operation 分工表 → Jeff · 预算 / costing 推进 · 周五 sync 前 confirm roles。</div>
+      <div class="meta" style="font-family:var(--fm);font-size:11px;color:var(--dim);margin-top:24px;letter-spacing:2px">KALOZ × JEFF · 全马首创最强企业真人秀</div>
+    </div>
+    <div class="s-foot">KALOZ PRODUCTION</div><div class="s-no">16</div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  var b=document.getElementById('modebar');
+  function s(m){document.body.classList.remove('mode-light','mode-warm');if(m==='light')document.body.classList.add('mode-light');if(m==='warm')document.body.classList.add('mode-warm');b.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x.dataset.m===m)});try{localStorage.setItem('raeMode',m)}catch(e){}}
+  b.addEventListener('click',function(e){var t=e.target.closest('button');if(t)s(t.dataset.m)});
+  var v='dark';try{v=localStorage.getItem('raeMode')||'dark'}catch(e){}s(v);
+  // build rail + scroll-spy
+  var slides=document.querySelectorAll('.slide'),rail=document.getElementById('rail');
+  slides.forEach(function(sl,i){var a=document.createElement('a');a.href='#'+sl.id;a.title='Slide '+(i+1);rail.appendChild(a);});
+  var dots=rail.querySelectorAll('a');
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var idx=[].indexOf.call(slides,en.target);dots.forEach(function(d,i){d.classList.toggle('on',i===idx)});}})},{threshold:.55});
+  slides.forEach(function(sl){io.observe(sl)});
+})();
+</script>
+</body>
+</html>

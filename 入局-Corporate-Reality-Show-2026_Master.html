@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎬 入局 In The Game · Project Master</title>
+<!--
+  ★ PROJECT MASTER · 入局 Corporate Reality Show 2026 (Production Project · Pillar Creative)
+  ★ Re-rendered 2026-06-17 — 5-pillar model. Replaces the stale 9-card 物料 grid.
+  ★ Inner Circle / team / jobscope + nav grid (Show Bible · Playbook Deck · 5 pillars · Tracker · Resource Index · Master Framework) + STRAT shelf.
+  ★ House style copied verbatim from 入局_System_Map.html. Self-contained · 3-mode · no CDN.
+-->
+<style>
+:root{--bg:#0D1117;--s1:#161B22;--s2:#21262D;--s3:#2D333B;--border:#30363D;--text:#E6EDF3;--muted:#7D8590;--dim:#484F58;--accent:#46C5B5;--ok:#3FB950;--warn:#E3B341;--bad:#FF7B72;--info:#58A6FF;--sans:-apple-system,BlinkMacSystemFont,'Inter','PingFang SC','Noto Sans SC',sans-serif;--mono:'SF Mono',ui-monospace,'JetBrains Mono',monospace;--r:10px;--r-sm:7px}
+body.mode-light{--bg:#FBFAF6;--s1:#FFFFFF;--s2:#F2F0E9;--s3:#E9E6DC;--border:#D2CCBD;--text:#1E3A42;--muted:#6C6E6F;--dim:#A9A294;--accent:#1E8C7E;--ok:#2E8B6B;--warn:#B5852E;--bad:#CF4F52;--info:#3A6EA5}
+body.mode-warm{--bg:#F5F0E8;--s1:#FBF7EF;--s2:#EFE7D8;--s3:#E6DAC6;--border:#DDCFB8;--text:#4A3D2E;--muted:#8B7355;--dim:#B0A187;--accent:#1E8C7E;--ok:#5E7E4F;--warn:#C2902E;--bad:#B5605A;--info:#8B7355}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:13.5px;line-height:1.55;padding-bottom:50px;transition:background .25s,color .25s}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.modebar{position:fixed;top:10px;right:10px;z-index:200;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;box-shadow:0 2px 12px rgba(0,0,0,.22)}
+.modebar button{font-family:var(--mono);font-size:11px;line-height:1;border:none;background:transparent;color:var(--muted);padding:5px 9px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+.crumbnav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:3px;flex-wrap:wrap;padding:8px 18px;background:color-mix(in srgb,var(--s1) 92%,transparent);border-bottom:2px solid var(--accent);font-family:var(--sans);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.crumbnav .crumb{display:inline-flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:-.1px;padding:3px 9px;border-radius:13px;transition:color .15s,background .15s}
+.crumbnav a.crumb:hover{color:var(--accent);background:var(--s2)}
+.crumbnav .crumb .cr-ico{font-size:13px}.crumbnav .cr-sep{color:var(--dim);font-size:11px}.crumbnav .crumb.current{color:var(--accent);font-weight:700}
+.hero{padding:22px 0 4px}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
+.northstar{font-size:14px;color:var(--text);margin-top:8px;border-left:3px solid var(--accent);padding-left:12px;line-height:1.5}
+.northstar b{color:var(--accent)}
+.purpose{font-size:12px;color:var(--muted);margin-top:8px;max-width:820px;line-height:1.55}
+.metastrip{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:11px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.metastrip .live{color:var(--ok);font-weight:700}.metastrip .live::before{content:'● ';animation:pulse 1.8s infinite}
+.metastrip .sep{color:var(--dim)}.metastrip b{color:var(--text)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+/* seg-head */
+.seg-head{display:flex;align-items:flex-start;gap:11px;padding:10px 14px 9px;border:1px solid var(--border);border-radius:var(--r);background:rgba(125,133,144,.05);margin:24px 0 12px}
+body.mode-light .seg-head,body.mode-warm .seg-head{background:rgba(108,93,76,.04)}
+.seg-icon{font-size:17px;flex-shrink:0;margin-top:1px}.seg-headtext{flex:1;min-width:0}
+.seg-name{font-size:14px;font-weight:700;letter-spacing:-.1px}
+.seg-sub{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px}
+/* TIMELINE strip */
+.tl{display:flex;flex-wrap:wrap;gap:0;align-items:stretch}
+.tl .stg{flex:1 1 0;min-width:150px;background:var(--s1);border:1px solid var(--border);padding:11px 13px;position:relative}
+.tl .stg:first-child{border-radius:var(--r) 0 0 var(--r)}
+.tl .stg:last-child{border-radius:0 var(--r) var(--r) 0}
+.tl .stg+.stg{border-left:none}
+.tl .stg.now{border-top:3px solid var(--warn)}
+.tl .sk{font-family:var(--mono);font-size:9.5px;font-weight:800;letter-spacing:.4px;color:var(--accent)}
+.tl .sn{font-size:13px;font-weight:700;margin-top:3px}
+.tl .sd{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:4px;line-height:1.4}
+.tl .nowtag{position:absolute;top:-9px;right:8px;font-family:var(--mono);font-size:8.5px;font-weight:800;background:var(--warn);color:#0D1117;padding:1px 7px;border-radius:8px;letter-spacing:.3px}
+/* MAP cards */
+.mapgrid{display:flex;flex-wrap:wrap;gap:10px}
+.mapcard{flex:1 1 0;min-width:240px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:13px 15px;border-left:3px solid var(--accent);transition:border-color .15s,transform .15s;display:block}
+.mapcard:hover{transform:translateY(-1px);text-decoration:none}
+.mapcard.use{border-left-color:var(--accent)}.mapcard.ref{border-left-color:var(--info)}.mapcard.up{border-left-color:var(--dim)}
+.mapcard .mt{font-size:14px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px}
+.mapcard .mt .go{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--accent)}
+.mapcard .md{font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.5}
+/* builders */
+.builders{display:flex;flex-wrap:wrap;gap:9px}
+.bcard{flex:1 1 0;min-width:158px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 12px;border-top:3px solid var(--accent)}
+.bcard.vac{border-top-color:var(--bad)}.bcard.ov{border-top-color:var(--info)}
+.bcard .bn{font-size:12.5px;font-weight:700}
+.bcard .bp{font-family:var(--mono);font-size:9.5px;font-weight:700;color:var(--accent);margin-top:4px}
+.bcard.vac .bp{color:var(--bad)}.bcard.ov .bp{color:var(--info)}
+.note{font-size:12px;color:var(--muted);background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 14px;margin:14px 0;line-height:1.7}
+.note b{color:var(--text)}
+.pagefoot{margin-top:26px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .kmark{font-weight:800;letter-spacing:2px;color:var(--accent)}.pagefoot .upd{margin-left:auto;color:var(--dim)}
+@media(max-width:760px){.wrap{padding:0 13px}.tl .stg,.mapcard,.bcard{flex:none;width:100%;min-width:0}
+  .tl .stg{border-radius:var(--r)!important;border-left:1px solid var(--border)!important;margin-bottom:6px}}
+
+/* ── Master-hub additions (built on the same token set) ── */
+.pills{margin-top:12px;display:flex;gap:7px;flex-wrap:wrap}
+.spill{font-family:var(--mono);font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.3px;border:1px solid var(--border)}
+.spill.ok{background:rgba(63,185,80,.12);color:var(--ok);border-color:var(--ok)}
+.spill.info{background:rgba(88,166,255,.12);color:var(--info);border-color:var(--info)}
+.spill.warn{background:rgba(227,179,65,.12);color:var(--warn);border-color:var(--warn)}
+/* About block */
+.about{background:var(--s1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:6px 16px;margin-top:2px}
+.about .row{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid var(--border);font-size:12.5px}
+.about .row:last-child{border-bottom:none}
+.about .k{color:var(--muted);font-weight:700;min-width:96px;flex-shrink:0;font-size:10px;text-transform:uppercase;letter-spacing:.5px;padding-top:2px;font-family:var(--mono)}
+.about .v{color:var(--text);line-height:1.6}.about .v b{color:var(--accent)}
+/* team roster */
+.team{display:flex;flex-wrap:wrap;gap:9px;margin-top:2px}
+.tcard{flex:1 1 0;min-width:172px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 12px;border-left:3px solid var(--accent)}
+.tcard.vac{border-left-color:var(--bad)}.tcard.ov{border-left-color:var(--info)}
+.tcard .tn{font-size:13px;font-weight:700}
+.tcard .tr{font-family:var(--mono);font-size:9.5px;font-weight:700;color:var(--accent);margin-top:3px;letter-spacing:.2px}
+.tcard.vac .tr{color:var(--bad)}.tcard.ov .tr{color:var(--info)}
+.tcard .tj{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5}
+/* pillar nav grid */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+.pcard{display:block;background:var(--s1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:12px 14px;transition:border-color .15s,transform .15s}
+.pcard:hover{transform:translateY(-1px);text-decoration:none;border-color:var(--accent)}
+.pcard.key{border-left-color:var(--warn)}.pcard.vac{border-left-color:var(--bad)}
+.pcard .pk{font-family:var(--mono);font-size:9px;font-weight:800;letter-spacing:.5px;color:var(--muted);text-transform:uppercase}
+.pcard .ptt{font-size:14px;font-weight:700;color:var(--text);margin-top:3px;display:flex;align-items:center;gap:7px}
+.pcard .ptt .go{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--accent);font-weight:600}
+.pcard .pdd{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.55}
+.pcard .pf{margin-top:8px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-family:var(--mono);font-size:9.5px}
+.pcard .own{color:var(--accent);font-weight:700}.pcard.vac .own{color:var(--bad)}
+.tag{font-family:var(--mono);font-size:8.5px;font-weight:800;letter-spacing:.3px;padding:1px 7px;border-radius:9px;text-transform:uppercase}
+.tag.build{background:rgba(63,185,80,.14);color:var(--ok)} .tag.todo{background:rgba(255,123,114,.16);color:var(--bad)} .tag.key{background:rgba(227,179,65,.16);color:var(--warn)}
+/* strat shelf */
+.shelf{display:flex;flex-wrap:wrap;gap:8px}
+.scard{flex:1 1 0;min-width:200px;background:var(--s1);border:1px dashed var(--border);border-radius:var(--r-sm);padding:10px 13px}
+.scard .st{font-size:12px;font-weight:700;color:var(--text)}
+.scard .sd{font-size:10.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+.scard a{color:var(--accent)}
+
+/* ===== System Map design conform · vibrant section headers + per-category palette (2026-06-19) ===== */
+:root{--p1:#58A6FF;--p2:#A371F7;--p3:#F778BA;--p4:#E3A857;--p5:#56D364;--p6:#2DD4BF;--pm:#7C8CF8;--key:#E3B341;--ref:#8B97A8}
+body.mode-light{--p1:#2D7FD8;--p2:#8957D8;--p3:#C7437F;--p4:#B4781F;--p5:#2A9E3C;--p6:#14B8A6;--pm:#5560D8;--key:#B5852E;--ref:#6B7685}
+body.mode-warm{--p1:#3A6EA5;--p2:#8060B0;--p3:#B5607A;--p4:#B07A2E;--p5:#5E8E4F;--p6:#3E9E8E;--pm:#6A66B0;--key:#C2902E;--ref:#8B7355}
+.seg-head{align-items:center;gap:14px;padding:16px 19px;border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 38%,var(--border));border-left:7px solid var(--sc,var(--accent));border-radius:var(--r);background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 26%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 8%,var(--s1)));margin:42px 0 16px;box-shadow:0 3px 16px color-mix(in srgb,var(--sc,var(--accent)) 15%,transparent)}
+body.mode-light .seg-head,body.mode-warm .seg-head{background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 26%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 8%,var(--s1)))}
+.hero + .seg-head{margin-top:26px}
+.seg-icon{font-size:20px;width:42px;height:42px;min-width:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;background:color-mix(in srgb,var(--sc,var(--accent)) 30%,var(--s1));border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 48%,transparent);margin-top:0;flex-shrink:0}
+.seg-name{font-size:18px;font-weight:800;letter-spacing:-.2px}
+.seg-name .secn{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;padding:0 7px;background:var(--sc,var(--accent));color:var(--bg);font-family:var(--mono);font-weight:800;border-radius:8px;margin-right:10px;font-size:14px;flex-shrink:0}
+.seg-sub{font-size:11px;margin-top:5px}
+</style>
+</head>
+<body>
+
+<div class="modebar" id="modebar"><button data-m="dark" class="on">◐</button><button data-m="light">○</button><button data-m="warm">◑</button></div>
+
+<nav class="crumbnav">
+  <a class="crumb" data-link-removed><span class="cr-ico">🗂</span>System Map</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" data-link-removed><span class="cr-ico">📁</span>Project Monitor</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" href="入局_System_Map.html"><span class="cr-ico">🎬</span>入局</a>
+  <span class="cr-sep">›</span>
+  <span class="crumb current"><span class="cr-ico">📋</span>Project Master</span>
+</nav>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">入局 · In The Game · Project Master · Inner Circle</div>
+    <h1>📋 入局主页</h1>
+    <div class="northstar"><b>北极星:</b>让对的老板,遇见对的局。 一档国际水准中文企业真人秀 S1,以「人脉」为奖励核心。</div>
+    <div class="purpose">这页 = <b>项目总台</b>,5 段:① <b>About</b>(节目是什么 + 核心文件)· ② <b>Inner Circle</b>(谁在局里 + jobscope)· ③ <b>Five Pillars</b>(五大支柱各是什么)· ④ <b>Index</b>(Tracker / 资料 / Lark)· ⑤ <b>Appendix</b>(persona / 风险 / 战略)。团队从这里进。</div>
+    <div class="pills">
+      <span class="spill ok">🟢 ACTIVE</span>
+      <span class="spill info">🔵 P0 Setup &amp; Align</span>
+      <span class="spill warn">⚠ 5 支柱建设中 · Marketing 空缺</span>
+    </div>
+    <div class="metastrip">
+      <span class="live" id="clk">live</span>
+      <span class="sep">·</span><span>↻ <b>2026-06-17</b></span>
+      <span class="sep">·</span><span>S1 = <b>6 集</b> lock · <b>32</b> deliverables · host = <b>Jeff</b></span>
+    </div>
+  </div>
+
+  <!-- ① ABOUT -->
+  <div class="seg-head" style="--sc:var(--key)"><span class="seg-icon">📖</span><div class="seg-headtext"><div class="seg-name"><span class="secn">①</span>About — 节目是什么</div><div class="seg-sub">本质 · 机制 · 性质 · 时间线 · owner · 核心文件(Show Bible / Deck / Budget)</div></div></div>
+  <div class="about">
+    <div class="row"><div class="k">What</div><div class="v"><b>《入局》In The Game</b> 中文线上企业真人秀 S1。机制:营收 RM500k–1M 的公司 pitch 给 3 位大佬 → 3 票 · 2+ 票即「入局」→ 奖励 = pre-arranged 高端商业人脉(饭局/会议),非现金。制作 = 国际企业水准(高大上灯光 · 专业剪辑 · 文案 · 后期 VFX)。</div></div>
+    <div class="row"><div class="k">Nature</div><div class="v">Jeff &amp; Kaloz 共有 IP program(非 client/服务单)· Kaloz scope = 全制作,一个屋檐下不分 scope。志在 min. 3 季。</div></div>
+    <div class="row"><div class="k">Timeline</div><div class="v"><b>7/1</b> = promo + 招募拍摄日(非正片,photoshoot 6/29)· 招募 <b>4 周</b> · <b>8 月</b>正片(8/16)· 后期 rolling 上线。format 参考《CEO 上车》。</div></div>
+    <div class="row"><div class="k">Owner</div><div class="v"><b>Rae</b>(制作总监 · lead/oversee 整个制作)。Kaloz 制作端 accountable;Jeff = 监制/Approver/对外。下个 sync = 周五。</div></div>
+  </div>
+  <div class="pgrid" style="margin-top:11px">
+    <a class="pcard key" href="入局_Show_Bible.html"><div class="pk">⭐ Keystone</div><div class="ptt">📖 Show Bible <span class="go">open ↗</span></div><div class="pdd">节目是什么 · WHY 老板参加 · WHY 观众看。一切对齐的源头。</div><div class="pf"><span class="own">Rae 收口 / Wai Kit 起草</span><span class="tag todo">待建</span></div></a>
+    <a class="pcard" href="入局_Playbook_Deck.html"><div class="pk">Deck</div><div class="ptt">🎬 Playbook Deck <span class="go">open ↗</span></div><div class="pdd">16:9 book-read playbook(16 slides,cover-first,深色 editorial)· 可印 PDF。</div><div class="pf"><span class="own">Rae</span><span class="tag build">已建</span></div></a>
+    <a class="pcard" href="入局_Budget_Costing.html" style="border-left-color:var(--p5)"><div class="pk">💰 Costing</div><div class="ptt">💰 Budget &amp; Costing <span class="go">open ↗</span></div><div class="pdd">S1 制作预算框架 — 按 phase/category 的成本线 + owner + 状态。实际 RM 🔒GATED(_finance.md)。</div><div class="pf"><span class="own">Celine / Rae</span><span class="tag build">已建</span></div></a>
+  </div>
+
+  <!-- ② ABOUT INNER CIRCLE -->
+  <div class="seg-head" style="--sc:var(--pm)"><span class="seg-icon">👥</span><div class="seg-headtext"><div class="seg-name"><span class="secn">②</span>About Inner Circle — 谁在局里 + jobscope</div><div class="seg-sub">Jeff(监制/host)+ Rae(制作总监)领头 · 下面 4 位 PIC 各扛一块</div></div></div>
+  <div class="team">
+    <div class="tcard ov"><div class="tn">Jeff</div><div class="tr">监制 · S1 Host · Approver</div><div class="tj">整体「高大上」效果把关 · S1 台前主持 · 对外窗口 · 嘉宾 / 大佬 booking + 营收 · 终选 approver · 大方向定调。</div></div>
+    <div class="tcard ov"><div class="tn">Rae</div><div class="tr">制作总监 · Owner</div><div class="tj">lead / oversee 整个制作 · 收口 / 把关 · final 画面监控 · creative + 视觉方向 · 决策 · Kaloz 制作端 accountable。</div></div>
+  </div>
+  <div class="team" style="margin-top:9px">
+    <div class="tcard"><div class="tn">Wai Kit (YK)</div><div class="tr">P1 Creative + P4 Recruitment</div><div class="tj">节目内核 + script:show outline(13min flow)· promo / 招募 / 正片 episode 脚本 · Boss Profile。招募漏斗:报名页/Form → DB → online interview → 预检 gate / 黑名单 → 选 6。<b>扛 2 柱 = 集中风险</b>。</div></div>
+    <div class="tcard"><div class="tn">Celine</div><div class="tr">P2 Production</div><div class="tj">制片 / 现场统筹 · preprod / prod / post 排期 · venue / crew / 器材 · production 预算 costing · 文档归档 · post 协调。</div></div>
+    <div class="tcard"><div class="tn">Yong Cheng</div><div class="tr">P5 Design</div><div class="tj">视觉 / Brand CI(color tone / logo / 字体)· 《视觉对齐 ID》· 海报系统(招募 / 单 / group / host / episode)· 剪辑 / 视觉 style(金色「成功入局」VFX)。</div></div>
+    <div class="tcard vac"><div class="tn">Marketing</div><div class="tr">P3 Brand &amp; Marketing · 🔴 VACANT</div><div class="tj">marketing plan · 招募 posting 日历 · 切片 SOP + 分发 · channels(IG/TikTok/FB)/ ads / brand voice。招募引擎,<b>没人 = 待补关键岗</b>。</div></div>
+  </div>
+
+  <!-- ③ FIVE PILLARS -->
+  <div class="seg-head" style="--sc:var(--accent)"><span class="seg-icon">🧱</span><div class="seg-headtext"><div class="seg-name"><span class="secn">③</span>Five Pillars — 五大支柱(各是什么)</div><div class="seg-sub">项目拆成 5 块并行执行 · 每块一个 owner + 颜色 · 点进 builder 页填内容</div></div></div>
+  <div class="pgrid">
+    <a class="pcard" href="入局_P1_Creative.html" style="border-left-color:var(--p1)"><div class="pk">P1 · Creative</div><div class="ptt">🎬 Creative <span class="go">open ↗</span></div><div class="pdd"><b>节目内容怎么排 + 拍什么</b> — Show Outline(13min flow)· Show Content(scripts)· Boss Profile。</div><div class="pf"><span class="own">Wai Kit</span><span class="tag todo">待建</span></div></a>
+    <a class="pcard" href="入局_P2_Production.html" style="border-left-color:var(--p2)"><div class="pk">P2 · Production</div><div class="ptt">🎥 Production <span class="go">open ↗</span></div><div class="pdd"><b>怎么做出来</b> — Timeline · Preprod / Prod / Post · venue / crew / 器材 · Budgeting 🔒GATED · Lark。</div><div class="pf"><span class="own">Celine</span><span class="tag todo">待建</span></div></a>
+    <a class="pcard" href="入局_P3_BrandMarketing.html" style="border-left-color:var(--p3)"><div class="pk">P3 · Brand &amp; Marketing</div><div class="ptt">📣 Brand &amp; Marketing <span class="go">open ↗</span></div><div class="pdd"><b>怎么被看见 + 长大</b> — Social(Material/Posting/Schedule/Ads)· channels / cadence · brand voice。</div><div class="pf"><span class="own" style="color:var(--bad)">🔴 Vacant</span><span class="tag todo">待建</span></div></a>
+  </div>
+  <div class="pgrid" style="margin-top:10px">
+    <a class="pcard" href="入局_P4_Recruitment.html" style="border-left-color:var(--p4)"><div class="pk">P4 · Recruitment</div><div class="ptt">📨 Recruitment <span class="go">open ↗</span></div><div class="pdd"><b>招募 + 筛 6 个企业家</b> — CRM→Database(Lark)· Form · Online Interview SOP · 预检 gate / 黑名单 / 可兑现人脉池。</div><div class="pf"><span class="own">Wai Kit</span><span class="tag todo">待建</span></div></a>
+    <a class="pcard" href="入局_P5_Design.html" style="border-left-color:var(--p5)"><div class="pk">P5 · Design</div><div class="ptt">🎨 Design <span class="go">open ↗</span></div><div class="pdd"><b>视觉 / CI</b> — Brand CI(logo/color/font)· 视觉对齐 ID one-pager · poster system(单/group/episode)· 剪辑 / 视觉 style。</div><div class="pf"><span class="own">Yong Cheng</span><span class="tag todo">待建</span></div></a>
+  </div>
+
+  <!-- ④ INDEX -->
+  <div class="seg-head" style="--sc:var(--ref)"><span class="seg-icon">🗂</span><div class="seg-headtext"><div class="seg-name"><span class="secn">④</span>Index — 东西在哪 / 做到哪</div><div class="seg-sub">Tracker(进度)· Resource Index(资料总台)· Lark Base(团队执行 live)</div></div></div>
+  <div class="mapgrid">
+    <a class="mapcard use" href="入局_Tracker.html"><div class="mt">📊 Tracker(by stage)<span class="go">open ↗</span></div><div class="md">by-stage 执行看板,<b>32</b> deliverables 状态。做到哪 / 卡哪 看这页。</div></a>
+    <a class="mapcard ref" data-link-removed><div class="mt">🗂 Resource Index<span class="go">open ↗</span></div><div class="md">资料总台 — 全部资产在哪 / 状态 / owner + WS↔Lark 互链。</div></a>
+    <a class="mapcard ref" href="https://kalozproduction.sg.larksuite.com/base/P5X7bZQV3axKEhsXOsale9s4goc" target="_blank"><div class="mt">🟦 Lark Base<span class="go">open ↗</span></div><div class="md">团队执行层(live · SOT)— Execution Tracker / Content+General Asset / Meeting Minutes / 参赛者 / timelines。</div></a>
+  </div>
+
+  <!-- ⑤ APPENDIX -->
+  <div class="seg-head" style="--sc:var(--p2)"><span class="seg-icon">📎</span><div class="seg-headtext"><div class="seg-name"><span class="secn">⑤</span>Appendix — 参考 / 战略层</div><div class="seg-sub">persona · 风险 · 骨架 · 战略 · 部分 🔒 internal(Rae/lead)</div></div></div>
+  <div class="shelf">
+    <div class="scard"><div class="st">🧩 <a data-link-removed>Jeff Chin Persona</a></div><div class="sd">介绍 Jeff 是谁 — 《入局》监制 / S1 主持人 · 18 年媒体人 + Socialmex 创办人 · 节目 vision-driver + 对外窗口。</div></div>
+    <div class="scard"><div class="st">📇 <a data-link-removed>Rae Persona</a></div><div class="sd">介绍 Rae 是谁 — Kaloz 创办人 & MD · 制作总监 · 《入局》制作端 owner。系统化 + 创意 + 高制作标准。</div></div>
+    <div class="scard"><div class="st">⚠️ <a data-link-removed>PreMortem · Risk</a> <span style="color:var(--bad);font-family:var(--mono);font-size:9px">🔒 INTERNAL</span></div><div class="sd">风险层 — pre-mortem + pressure-test + de-risk + kill-criteria。Rae/lead only,不对外。</div></div>
+    <div class="scard"><div class="st">📐 <a data-link-removed>Master Framework</a></div><div class="sd">项目骨架 — 5 层模块 + build order + timeline。一切归位看这份。</div></div>
+    <div class="scard"><div class="st">🌐 <a data-link-removed>360 Ecosystem Playbook</a> <span style="color:var(--bad);font-family:var(--mono);font-size:9px">🔒 INTERNAL</span></div><div class="sd">战略主文件 — thesis · 轮值大佬 · 飞轮 · 资本/IPO 路。Rae/lead only。<i>(放 Appendix 待 Rae 拍)</i></div></div>
+  </div>
+
+  <footer class="pagefoot">
+    <span class="kmark">KALOZ</span>
+    <span>入局 In The Game · 企业真人秀 2026 · Project Master · 团队从这里进</span>
+    <span class="upd">Last updated 2026-06-17</span>
+  </footer>
+</div>
+
+<script>
+(function(){var bar=document.getElementById('modebar');function setMode(m){document.body.classList.remove('mode-light','mode-warm');if(m==='light')document.body.classList.add('mode-light');if(m==='warm')document.body.classList.add('mode-warm');bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});try{localStorage.setItem('raeMode',m);}catch(e){}}
+bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});var saved='dark';try{saved=localStorage.getItem('raeMode')||'dark';}catch(e){}setMode(saved);
+var clk=document.getElementById('clk');function tick(){clk.textContent=new Date().toLocaleTimeString('en-GB');}tick();setInterval(tick,1000);})();
+</script>
+</body>
+</html>

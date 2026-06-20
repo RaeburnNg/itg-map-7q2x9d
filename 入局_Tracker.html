@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📊 入局 Tracker · 结构 + 进度</title>
+<style>
+:root{--bg:#0D1117;--s1:#161B22;--s2:#21262D;--s3:#2D333B;--border:#30363D;--text:#E6EDF3;--muted:#7D8590;--dim:#484F58;--accent:#46C5B5;--ok:#3FB950;--warn:#E3B341;--bad:#FF7B72;--info:#58A6FF;--sans:-apple-system,BlinkMacSystemFont,'Inter','PingFang SC','Noto Sans SC',sans-serif;--mono:'SF Mono',ui-monospace,'JetBrains Mono',monospace;--r:10px;--r-sm:7px;
+  --p1:#58A6FF;--p2:#A371F7;--p3:#F778BA;--p4:#E3A857;--p5:#56D364;--pm:#7C8CF8;--key:#E3B341;--ref:#8B97A8}
+body.mode-light{--bg:#FBFAF6;--s1:#FFFFFF;--s2:#F2F0E9;--s3:#E9E6DC;--border:#D2CCBD;--text:#1E3A42;--muted:#6C6E6F;--dim:#A9A294;--accent:#1E8C7E;--ok:#2E8B6B;--warn:#B5852E;--bad:#CF4F52;--info:#3A6EA5;
+  --p1:#2D7FD8;--p2:#8957D8;--p3:#C7437F;--p4:#B4781F;--p5:#2A9E3C;--pm:#5560D8;--key:#B5852E;--ref:#6B7685}
+body.mode-warm{--bg:#F5F0E8;--s1:#FBF7EF;--s2:#EFE7D8;--s3:#E6DAC6;--border:#DDCFB8;--text:#4A3D2E;--muted:#8B7355;--dim:#B0A187;--accent:#1E8C7E;--ok:#5E7E4F;--warn:#C2902E;--bad:#B5605A;--info:#8B7355;
+  --p1:#3A6EA5;--p2:#8060B0;--p3:#B5607A;--p4:#B07A2E;--p5:#5E8E4F;--pm:#6A66B0;--key:#C2902E;--ref:#8B7355}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:13.5px;line-height:1.55;padding-bottom:50px;transition:background .25s,color .25s}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.modebar{position:fixed;top:10px;right:10px;z-index:200;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;box-shadow:0 2px 12px rgba(0,0,0,.22)}
+.modebar button{font-family:var(--mono);font-size:11px;line-height:1;border:none;background:transparent;color:var(--muted);padding:5px 9px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+.crumbnav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:3px;flex-wrap:wrap;padding:8px 18px;background:color-mix(in srgb,var(--s1) 92%,transparent);border-bottom:2px solid var(--accent);font-family:var(--sans);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.crumbnav .crumb{display:inline-flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:-.1px;padding:3px 9px;border-radius:13px;transition:color .15s,background .15s}
+.crumbnav a.crumb:hover{color:var(--accent);background:var(--s2)}
+.crumbnav .crumb .cr-ico{font-size:13px}.crumbnav .cr-sep{color:var(--dim);font-size:11px}.crumbnav .crumb.current{color:var(--accent);font-weight:700}
+.hero{padding:22px 0 4px}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+h1{font-size:24px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
+.purpose{font-size:12.5px;color:var(--muted);margin-top:7px;max-width:840px;line-height:1.6}
+.metastrip{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:11px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.metastrip .live{color:var(--ok);font-weight:700}.metastrip .live::before{content:'● ';animation:pulse 1.8s infinite}
+.metastrip .sep{color:var(--dim)}.metastrip b{color:var(--text);font-weight:600}.metastrip a{color:var(--accent);font-weight:600}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+/* timeline strip */
+.tl{display:flex;flex-wrap:wrap;margin-top:16px}
+.tl .stg{flex:1 1 0;min-width:120px;background:var(--s1);border:1px solid var(--border);padding:9px 11px}
+.tl .stg:first-child{border-radius:var(--r) 0 0 var(--r)}.tl .stg:last-child{border-radius:0 var(--r) var(--r) 0}
+.tl .stg+.stg{border-left:none}.tl .stg.now{border-top:3px solid var(--warn)}
+.tl .sk{font-family:var(--mono);font-size:9px;font-weight:800;color:var(--accent)}
+.tl .sn{font-size:12px;font-weight:700;margin-top:2px}
+.tl .sc{font-family:var(--mono);font-size:9.5px;color:var(--muted);margin-top:3px}
+.plegend{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.pchip{font-family:var(--mono);font-size:10px;color:var(--muted);background:var(--s1);border:1px solid var(--border);border-radius:13px;padding:3px 10px;display:inline-flex;align-items:center;gap:6px}
+.pchip b{color:var(--cc,var(--accent));font-weight:700}.pchip .vac{color:var(--bad);font-weight:700}
+.pchip[class*="pc-"]{border-left:4px solid var(--cc)}
+/* per-pillar category colors (pc-*) — drives --cc on legend/section/tag/owner */
+.pc-PM{--cc:var(--pm)}.pc-P1{--cc:var(--p1)}.pc-P2{--cc:var(--p2)}.pc-P3{--cc:var(--p3)}.pc-P4{--cc:var(--p4)}.pc-P5{--cc:var(--p5)}.pc-STRAT{--cc:var(--pm)}.pc-KEY{--cc:var(--key)}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:12px}
+.stat{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:12px;text-align:center}
+.stat .n{font-family:var(--mono);font-size:24px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.stat .l{font-size:9.5px;color:var(--muted);margin-top:6px;text-transform:uppercase;letter-spacing:.5px}
+.stat.todo .n{color:var(--bad)}.stat.prog .n{color:var(--warn)}.stat.done .n{color:var(--ok)}
+.obar{margin-top:10px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:13px 15px}
+.obar .top{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.obar .pct{font-size:18px;font-weight:800;color:var(--accent)}
+.track{height:9px;background:var(--s3);border-radius:6px;overflow:hidden;margin-top:8px;display:flex}
+.track .seg-done{background:var(--ok)}.track .seg-prog{background:var(--warn)}
+/* roster */
+.roster{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}
+.person{flex:1 1 0;min-width:172px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 12px;border-top:3px solid var(--accent)}
+.person.lead{border-top-color:var(--pm)}.person.vac{border-top-color:var(--bad)}
+.person[class*="pc-"]{border-top-color:var(--cc)}
+.person .nm{font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.person .rl{font-family:var(--mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--accent)}
+.person.lead .rl{color:var(--pm)}.person.vac .rl{color:var(--bad)}.person[class*="pc-"] .rl{color:var(--cc)}
+.person .sc{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5}
+/* seg-head */
+.seg-head{display:flex;align-items:center;gap:11px;padding:10px 14px 9px;border:1px solid var(--border);border-bottom:none;border-radius:var(--r) var(--r) 0 0;background:rgba(125,133,144,.05);margin-top:18px}
+body.mode-light .seg-head,body.mode-warm .seg-head{background:rgba(108,93,76,.04)}
+.seg-head.now{border-top:2px solid var(--warn)}.seg-head.plain{border-radius:var(--r);border-bottom:1px solid var(--border)}
+.seg-head[class*="pc-"]{border-left:4px solid var(--cc)}
+.seg-icon{font-family:var(--mono);font-size:13px;font-weight:800;color:var(--accent);flex-shrink:0}
+.seg-head[class*="pc-"] .seg-icon{color:var(--cc)}
+.seg-name{font-size:14px;font-weight:700;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.seg-headtext{flex:1;min-width:0}
+.nowtag{font-family:var(--mono);font-size:8.5px;font-weight:800;background:var(--warn);color:#0D1117;padding:1px 7px;border-radius:8px}
+.seg-sub{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:3px}
+.mini{margin-left:auto;display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;color:var(--muted)}
+.mtrack{width:64px;height:6px;background:var(--s3);border-radius:4px;overflow:hidden;display:flex}.mtrack .d{background:var(--ok)}.mtrack .p{background:var(--warn)}
+.pic{font-family:var(--mono);font-size:10px;font-weight:800;padding:2px 8px;border-radius:10px;letter-spacing:.2px;border:1px solid var(--accent);color:var(--accent)}
+.seg-head[class*="pc-"] .pic{border-color:var(--cc);color:var(--cc)}
+.pic.vac{border-color:var(--bad);color:var(--bad)}.seg-head[class*="pc-"] .pic.vac{border-color:var(--bad);color:var(--bad)}
+.ftag{font-family:var(--mono);font-size:9px;font-weight:700;padding:2px 7px;border-radius:9px;text-transform:uppercase;letter-spacing:.3px;border:1px solid var(--border);color:var(--muted)}
+/* blk + segment list */
+.blk{border:1px solid var(--border);border-top:none;border-radius:0 0 var(--r) var(--r);background:var(--s1);padding:8px 15px 11px}
+.blk[class*="pc-"]{border-left:4px solid var(--cc)}
+.segs{list-style:none}
+.segs li{font-size:12px;color:var(--text);padding:5px 0 5px 24px;position:relative;line-height:1.5;border-bottom:1px dashed var(--border)}
+.segs li:last-child{border-bottom:none}
+.segs li .stt{position:absolute;left:0;top:.2em;font-size:12px}
+.segs li b{color:var(--text);font-weight:700}
+.segs li.flag .stt{left:-1px}
+.gate{font-family:var(--mono);font-size:9px;font-weight:800;color:var(--bad);border:1px solid var(--bad);border-radius:8px;padding:0 5px;margin-left:5px}
+.dlv{margin-top:9px;border-top:1px dashed var(--border);padding-top:8px}
+.dlv .dh{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.4px;color:var(--dim);margin-bottom:5px}
+.dlv .drow{display:flex;align-items:center;gap:9px;font-size:11.5px;padding:3px 0}
+.dlv .drow .di{flex:1;min-width:0}
+.detail-link{margin-top:9px;border-top:1px dashed var(--border);padding-top:8px;font-family:var(--mono);font-size:10px}
+.detail-link a{color:var(--accent);font-weight:700}
+/* deliverable table (by-stage) */
+table{width:100%;border-collapse:collapse;background:var(--s1);border:1px solid var(--border);border-radius:0 0 var(--r) var(--r);overflow:hidden}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--border);font-size:12.5px;vertical-align:middle}
+thead th{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);font-weight:700;background:var(--s2)}
+tbody tr:last-child td{border-bottom:none}
+.st{font-family:var(--mono);font-size:10px;font-weight:700;padding:2px 8px;border-radius:11px;white-space:nowrap;border:1px solid}
+.st.todo{color:var(--bad);border-color:var(--bad)}.st.prog{color:var(--warn);border-color:var(--warn)}.st.done{color:var(--ok);border-color:var(--ok)}
+.bk{font-family:var(--mono);font-size:9.5px;color:var(--cc,var(--accent));border:1px solid var(--cc,var(--accent));border-radius:9px;padding:1px 7px;white-space:nowrap;font-weight:700}
+.m{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.pri-h{color:var(--bad);font-weight:700}.pri-m{color:var(--warn)}.pri-l{color:var(--dim)}
+.when{color:var(--warn);font-weight:600}
+/* view toggle */
+.vtoggle{display:flex;gap:3px;margin:18px 0 2px;background:var(--s2);border:1px solid var(--border);border-radius:18px;padding:3px;width:fit-content}
+.vtoggle button{font-family:var(--mono);font-size:11px;font-weight:700;border:none;background:transparent;color:var(--muted);padding:6px 14px;border-radius:15px;cursor:pointer;transition:all .15s}
+.vtoggle button.on{background:var(--accent);color:#fff}
+/* owner load */
+.load{display:flex;flex-wrap:wrap;gap:9px;margin-top:6px}
+.lcard{flex:1 1 0;min-width:150px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:11px 13px}
+.lcard .ln{font-size:13px;font-weight:700}.lcard .ln .open{font-family:var(--mono);font-size:11px;color:var(--bad);font-weight:800;margin-left:6px}
+.lcard .lb{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:5px}
+.note{font-size:12px;color:var(--muted);background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 14px;margin:16px 0;line-height:1.7}
+.note b{color:var(--text)}.note.warn{border-left:3px solid var(--warn)}
+.pagefoot{margin-top:26px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .kmark{font-weight:800;letter-spacing:2px;color:var(--accent)}.pagefoot .upd{margin-left:auto;color:var(--dim)}
+@media(max-width:760px){.wrap{padding:0 13px}.stats{grid-template-columns:repeat(2,1fr)}.tl .stg{flex:none;width:100%;border-radius:var(--r)!important;border-left:1px solid var(--border)!important;margin-bottom:5px}.person,.lcard{flex:none;width:100%}
+  table,thead,tbody,tr,th,td{display:block}thead{display:none}tbody tr{border:1px solid var(--border);border-radius:9px;margin-bottom:9px;padding:6px 4px}td{border:none;padding:4px 13px;font-size:13.5px}}
+</style>
+</head>
+<body>
+
+<div class="modebar" id="modebar"><button data-m="dark" class="on">◐</button><button data-m="light">○</button><button data-m="warm">◑</button></div>
+
+<nav class="crumbnav">
+  <a class="crumb" data-link-removed><span class="cr-ico">🗂</span>System Map</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" data-link-removed><span class="cr-ico">📁</span>Project Monitor</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" href="入局_System_Map.html"><span class="cr-ico">🎬</span>入局</a>
+  <span class="cr-sep">›</span>
+  <span class="crumb current"><span class="cr-ico">📊</span>Tracker</span>
+</nav>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">入局 · In The Game · Tracker</div>
+    <h1>📊 Tracker — 结构 + 进度(合一)</h1>
+    <div class="purpose">一页看全:<b>谁 own 哪柱 + 柱里有哪些段</b>(结构)× <b>32 deliverables 做到哪</b>(进度)× <b>timeline 怎么铺</b>。切 <b>按柱 / 按 Stage</b> 两个视角看同一份数据。Live 真相源 = <a href="https://kalozproduction.sg.larksuite.com/base/P5X7bZQV3axKEhsXOsale9s4goc?table=tblNoX00KTZJ46si" target="_blank">Lark Tracker ↗</a>(说「update 入局 tracker」刷新)。</div>
+    <div class="metastrip">
+      <span class="live" id="clk">live</span>
+      <span class="sep">·</span><span>↻ Snapshot <b>2026-06-17</b></span>
+      <span class="sep">·</span><span>5 pillars · Host <b>Jeff</b> · S1 <b>6 集</b></span>
+      <span class="sep">·</span><a href="入局_System_Map.html">🗂 System Map</a> · <a href="入局_Show_Bible.html">📖 Show Bible</a>
+    </div>
+  </div>
+
+  <!-- TIMELINE (top) -->
+  <div class="tl" id="tl"></div>
+  <div class="plegend" id="plegend"></div>
+  <div class="stats" id="stats"></div>
+  <div class="obar" id="obar"></div>
+
+  <!-- ROSTER (merged from Master Pillar) -->
+  <div class="seg-head plain"><span class="seg-icon" style="font-size:15px">👥</span><div class="seg-headtext"><div class="seg-name">Inner Circle — 谁 own 什么</div><div class="seg-sub">核心 3 + oversee 2 · Design ≠ Marketing · Marketing 待补</div></div></div>
+  <div class="roster">
+    <div class="person pc-P1"><div class="nm">Wai Kit <span class="rl">YK · P1+P4</span></div><div class="sc">节目内核 + 剧本 + 招募漏斗 + schedules。扛 2 柱 + 共撑 Show Bible。</div></div>
+    <div class="person pc-P2"><div class="nm">Celine <span class="rl">P2 · Producer</span></div><div class="sc">现场统筹 + production 预算/costing + 文档归档 + post 协调。</div></div>
+    <div class="person pc-P5"><div class="nm">Yong Cheng <span class="rl">P5 · Design</span></div><div class="sc">Brand CI · logo · color · 海报 · 视觉/剪辑。视觉 ≠ marketing。</div></div>
+    <div class="person vac"><div class="nm">Marketing <span class="rl">🔴 P3 Vacant</span></div><div class="sc">marketing plan · social · 招募 posting · 切片。待 hire / 暂代。</div></div>
+    <div class="person lead"><div class="nm">Jeff <span class="rl">Host · 监制</span></div><div class="sc">主持(lock) · 大佬 booking · 终选 · 对外 · 方向。不挂柱。</div></div>
+    <div class="person lead"><div class="nm">Rae <span class="rl">Lead · Oversee</span></div><div class="sc">把关 · Show Bible 收口 · 人脉池 · 视觉方向 · 决策。不挂柱。</div></div>
+  </div>
+
+  <!-- SHOW BIBLE keystone -->
+  <div class="seg-head pc-KEY"><span class="seg-icon" style="font-size:15px">📖</span><div class="seg-headtext"><div class="seg-name">Show Bible — 节目是什么(keystone) <span class="pic">Rae 收口</span> <span class="ftag">present</span></div><div class="seg-sub">5 柱之上的拱心石 · 节目是什么 + WHY participate + WHY watches</div></div></div>
+  <div class="blk pc-KEY"><ul class="segs">
+    <li><span class="stt">🟡</span><b>节目是什么</b> — 北极星 + 机制在战略文件已锁,未收成单一 Bible</li>
+    <li><span class="stt">🔴</span><b>WHY participate</b> — 老板为何报名(被看见+信用+可兑现人脉),招募说服核心</li>
+    <li><span class="stt">🔴</span><b>WHY audience watches</b> — 观众为何看(Shark Tank 张力 + 金句 + Connection Card)</li>
+  </ul><div class="detail-link">📖 <a href="入局_Show_Bible.html">入局_Show_Bible.html ↗</a> · keystone 优先级最高</div></div>
+
+  <!-- VIEW TOGGLE -->
+  <div class="vtoggle" id="vtoggle"><button data-v="pillar" class="on">🧱 按柱 By Pillar</button><button data-v="stage">🛤 按 Stage</button></div>
+  <div id="byPillar"></div>
+  <div id="byStage" style="display:none"></div>
+
+  <!-- OWNER LOAD -->
+  <div class="seg-head plain"><span class="seg-icon" style="font-size:15px">⚖</span><div class="seg-headtext"><div class="seg-name">Owner Load — 谁手上几件 open</div><div class="seg-sub">open = 未完成(To build + In progress)</div></div></div>
+  <div class="load" id="load"></div>
+
+  <div class="note warn"><b>读法:</b>🔴 To build · 🟡 In progress · 🟢 Done · <b>S0 现在最重</b>(7/1 前 ready)。<b>按柱</b>=结构(段+deliverables)· <b>按 Stage</b>=timeline 进度。P2 Budgeting = <span class="gate">🔒 GATED</span> 指针。Master Pillar 已并进此页(2026-06-17)。商业/分账 = 项目外。</div>
+
+  <footer class="pagefoot">
+    <span class="kmark">KALOZ</span>
+    <span>入局 Tracker · 结构+进度合一(并入 Master Pillar)· mirror Lark Tracker · 配 <a href="入局_System_Map.html">System Map</a></span>
+    <span class="upd">Last synced 2026-06-17</span>
+  </footer>
+</div>
+
+<script>
+/* ===== SNAPSHOT — mirror of Lark Tracker (tblNoX00KTZJ46si). Refresh = regenerate DATA. ===== */
+const STAGES=[
+  {key:'S0',name:'Pre-7/1 Setup',sub:'现在–6/30 · 7/1 之前要 ready 的全部',now:true},
+  {key:'S1',name:'7/1 Promo Shoot',sub:'7/1 拍摄日 artifact'},
+  {key:'S2',name:'Recruiting',sub:'7 月 4 周 · 报名→interview→预检→选 6'},
+  {key:'S3',name:'正片 Shoot',sub:'8 月 · S1·6 集 lock'},
+  {key:'S4',name:'Post + Launch',sub:'8 月后 · 剪/切片/上线'},
+  {key:'X',name:'跨 Stage / Decision',sub:'决策 · hire · 归档 · 大佬时间'}
+];
+const DATA=[
+  {sg:'S0',b:'P1',item:'Show Bible(节目是什么 + WHY 参 + WHY 看 · 单一 concept)keystone',own:'Wai Kit',st:'todo',when:'China 前',pri:'H'},
+  {sg:'S0',b:'PM',item:'节目流程 13min flow → ID doc',own:'Wai Kit',st:'prog',when:'',pri:'H'},
+  {sg:'S0',b:'P1',item:'production timeline v1',own:'Wai Kit',st:'prog',when:'6/16',pri:'H'},
+  {sg:'S0',b:'P1',item:'promo video 1–4 script 文字稿',own:'Wai Kit',st:'prog',when:'6/16-17',pri:'H'},
+  {sg:'S0',b:'P1',item:'recruitment video script',own:'Wai Kit',st:'prog',when:'',pri:'M'},
+  {sg:'S0',b:'P1',item:"Boss Profile(Norman Pang · Dato' Tony Looi · Shane Mun · Jeff/host)",own:'Wai Kit',st:'todo',when:'周三 6/17',pri:'H'},
+  {sg:'S0',b:'P2',item:'venue 定(2 concept 图 + 周末拍板)',own:'Celine',st:'todo',when:'本周',pri:'H'},
+  {sg:'S0',b:'P2',item:'production 预算 / costing',own:'Celine',st:'todo',when:'',pri:'H',gate:1},
+  {sg:'S0',b:'P2',item:'crew list + 器材清单',own:'Celine',st:'todo',when:'',pri:'M'},
+  {sg:'S0',b:'P5',item:'color tone 调色板 HEX(第一张多米诺)',own:'Yong Cheng',st:'todo',when:'China 前',pri:'H'},
+  {sg:'S0',b:'P5',item:'logo 多版 + 英文副标',own:'Yong Cheng',st:'todo',when:'',pri:'H'},
+  {sg:'S0',b:'P5',item:'字体规范 + 海报三模板',own:'Yong Cheng',st:'todo',when:'',pri:'M'},
+  {sg:'S0',b:'P5',item:'《视觉对齐 ID》one-pager',own:'Yong Cheng',st:'todo',when:'',pri:'M'},
+  {sg:'S0',b:'P3',item:'marketing plan(media + #videos)',own:'Vacant',st:'todo',when:'',pri:'H'},
+  {sg:'S0',b:'P4',item:'报名页 + Google Form(人脉诉求栏)',own:'Wai Kit',st:'todo',when:'7/1 前',pri:'H'},
+  {sg:'S0',b:'P4',item:'可兑现人脉池 checklist',own:'Rae',st:'todo',when:'',pri:'H'},
+  {sg:'S0',b:'PM',item:'节目 Master 收口',own:'Rae',st:'todo',when:'China 前',pri:'H'},
+  {sg:'S1',b:'P2',item:'shot list · call sheet(7/1)',own:'Celine',st:'todo',when:'7/1 前',pri:'M'},
+  {sg:'S1',b:'P2',item:'7/1「为切片而拍」owner(9:16+空镜+reaction)',own:'Wai Kit',st:'todo',when:'7/1',pri:'M'},
+  {sg:'S2',b:'P3',item:'4 周招募 posting 日历 + 渠道清单',own:'Vacant',st:'todo',when:'7 月',pri:'H'},
+  {sg:'S2',b:'P3',item:'切片 SOP + 分发',own:'Vacant',st:'todo',when:'7 月',pri:'M'},
+  {sg:'S2',b:'P4',item:'participants database(Lark)',own:'Wai Kit',st:'prog',when:'',pri:'M'},
+  {sg:'S2',b:'P4',item:'online interview SOP(A诉求/B预检)',own:'Wai Kit',st:'todo',when:'',pri:'M'},
+  {sg:'S2',b:'P4',item:'预检 gate + 黑名单 机制',own:'Wai Kit',st:'todo',when:'',pri:'M'},
+  {sg:'S3',b:'P2',item:'8 月正片排期框架(2集/天反推 · 6 集)',own:'Wai Kit/Celine',st:'todo',when:'8 月',pri:'M'},
+  {sg:'S4',b:'P2',item:'post 协调(谁剪 + deadline)',own:'Celine',st:'todo',when:'',pri:'M'},
+  {sg:'X',b:'STRAT',item:'决策 6 vs 12 集 → 6 集 lock(S1)',own:'Rae+Jeff',st:'done',when:'RESOLVED',pri:'H'},
+  {sg:'X',b:'STRAT',item:'决策 7/1 hard / soft',own:'Rae+Jeff',st:'todo',when:'',pri:'H'},
+  {sg:'X',b:'STRAT',item:'大佬时间 confirm 7/1 vs 7/2',own:'Jeff',st:'prog',when:'2 周内',pri:'H'},
+  {sg:'X',b:'STRAT',item:'Marketing(P3)hire / 暂代',own:'Rae',st:'todo',when:'',pri:'H'},
+  {sg:'X',b:'P5',item:'接手 Lark Design & Edit timeline',own:'Yong Cheng',st:'todo',when:'本周',pri:'L'},
+  {sg:'X',b:'P2',item:'文档归档 setup',own:'Celine',st:'todo',when:'',pri:'L'}
+];
+/* PILLAR structure (merged from Master Pillar) — segments + status per pillar */
+const PILLARS=[
+  {k:'P1',icon:'🎬',name:'P1 · Creative',pic:'Wai Kit',vac:0,form:'document',detail:'入局_P1_Creative.html',sub:'内容内核 — Show Outline · Show Content · Boss Profile',
+   segs:[['🟡','Show Outline (13min flow)','beat sheet 有方向,跟 Wai Kit 重做成 ID doc'],['🔴','Show Content (scripts)','promo 1–4 + recruitment 文字稿,YK 周三 deck'],['🟡','Boss Profile','名字锁 Norman/Tony/Shane/Jeff;域/Q&A framing → Wai Kit 定']]},
+  {k:'P2',icon:'🎥',name:'P2 · Production',pic:'Celine',vac:0,form:'document',detail:'入局_P2_Production.html',sub:'怎么做出来 — Timeline/Preprod/Prod/Post · Budgeting(GATED)· Lark',
+   segs:[['🟡','Timeline','working + posting schedule(7/1 promo · 8 月正片)'],['🔴','Pre-production','shot list · call sheet · 参考照片 · description'],['🟡','Production(拍摄)','venue 未定(黑棚/白景/LED)· set/灯光/crew/器材'],['🟡','Post-production','剪/VFX/文案/切片/after-show · owner 待 Rae 拍 · cadence 已定'],['🟡','Budgeting 🔒GATED','production costing → Finance Cost Plan;此页不列数字'],['✅','Lark 执行层','团队中央 dump(Working/Design Timeline/参赛者)']]},
+  {k:'P3',icon:'📣',name:'P3 · Brand & Marketing',pic:'🔴 Vacant',vac:1,form:'document',detail:'入局_P3_BrandMarketing.html',sub:'怎么被看见&长大 — Social/channels/brand voice · 独立于 Design',
+   segs:[['⚠️','owner 待定','第一优先 hire / 暂代(空着 = 招募期没人推流量)'],['🟡','Posting Schedule','每集 1 长+5 短 · teaser+poster→5 切片(Breakthrough cadence)· 日历待落格'],['🟡','Ads','招募 ad 漏斗(导报名+5 intake)· 团队仍在谈'],['🔴','Material / Content','切片素材库 + 内容矩阵(Hero/Hub/Help)'],['🔴','channels / brand voice','渠道清单(IG/TikTok/FB)+ 对外文案口吻']]},
+  {k:'P4',icon:'🧲',name:'P4 · Recruitment',pic:'Wai Kit',vac:0,form:'doc + form',detail:'入局_P4_Recruitment.html',sub:'报名→筛→online interview→预检 gate→选 6',
+   segs:[['🔴','CRM → Database (Lark)','participants database(Lark 参赛者)'],['🔴','Form','报名页 + Google Form(强制人脉诉求栏)· 7/1 前'],['🟡','Online Interview SOP','A 诉求 / B 预检 Y/N 双栏 · 有 draft'],['🟡','预检 gate / 黑名单 / 人脉池','硬 gate + 黑名单 + 可兑现人脉池(Rae 盘)']]},
+  {k:'P5',icon:'🎨',name:'P5 · Design',pic:'Yong Cheng',vac:0,form:'present',detail:'入局_P5_Design.html',sub:'视觉/CI — Brand CI · 视觉对齐 ID · poster system · 剪辑 style',
+   segs:[['🔴','Brand CI (logo/color/font)','color tone HEX + logo 多版 + 字体。THE 卡点 · China 前定方向'],['🔴','视觉对齐 ID one-pager','《入局 视觉对齐 ID》交 Celine 维护'],['🟡','poster system','key-art 母题选定(3 椅+咖啡桌+1 空座)+ Celine 全清单(Logo/招募/主/Group/Host)'],['🔴','剪辑/视觉 style','金色 VFX + 字幕 + Connection Card 视觉']]}
+];
+const PNAME={PM:'Project Master',P1:'Creative',P2:'Production',P3:'Brand&Marketing',P4:'Recruitment',P5:'Design',STRAT:'Oversee/Decision'};
+const STL={todo:'To build',prog:'In progress',done:'Done'};
+const PRL={H:['High','pri-h'],M:['Med','pri-m'],L:['Low','pri-l']};
+function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+const tot=DATA.length,done=DATA.filter(d=>d.st==='done').length,prog=DATA.filter(d=>d.st==='prog').length,todo=DATA.filter(d=>d.st==='todo').length;
+const pct=Math.round((done+prog*0.5)/tot*100);
+document.getElementById('plegend').innerHTML=['PM','P1','P2','P3','P4','P5','STRAT'].map(k=>{const n=DATA.filter(d=>d.b===k).length;const vac=k==='P3';return `<span class="pchip pc-${k}"><b>${k}</b> ${esc(PNAME[k])} · ${n}${vac?' 🔴':''}</span>`;}).join('');
+document.getElementById('tl').innerHTML=STAGES.map(s=>{const r=DATA.filter(d=>d.sg===s.key);const open=r.filter(d=>d.st!=='done').length;return `<div class="stg${s.now?' now':''}"><div class="sk">${s.key}</div><div class="sn">${s.name}</div><div class="sc">${r.length} 件 · ${open} open</div></div>`;}).join('');
+document.getElementById('stats').innerHTML=`<div class="stat"><div class="n">${tot}</div><div class="l">Deliverables</div></div><div class="stat done"><div class="n">${done}</div><div class="l">Done</div></div><div class="stat prog"><div class="n">${prog}</div><div class="l">In progress</div></div><div class="stat todo"><div class="n">${todo}</div><div class="l">To build</div></div>`;
+document.getElementById('obar').innerHTML=`<div class="top"><span>Overall progress</span><span class="pct">${pct}%</span></div><div class="track"><div class="seg-done" style="width:${done/tot*100}%"></div><div class="seg-prog" style="width:${prog/tot*100}%"></div></div>`;
+/* ---- BY PILLAR (structure + deliverables) ---- */
+function dlvRows(code){const r=DATA.filter(d=>d.b===code);if(!r.length)return '';return '<div class="dlv"><div class="dh">Deliverables ('+r.length+')</div>'+r.map(d=>{const pr=PRL[d.pri];return `<div class="drow"><span class="st ${d.st}">${STL[d.st]}</span><span class="di">${esc(d.item)}${d.gate?'<span class="gate">🔒</span>':''}</span><span class="m when">${esc(d.when)||'—'}</span><span class="m ${pr[1]}">${pr[0]}</span></div>`;}).join('')+'</div>';}
+let ph='';
+PILLARS.forEach(p=>{
+  const r=DATA.filter(d=>d.b===p.k);const bd=r.filter(x=>x.st==='done').length,bp=r.filter(x=>x.st==='prog').length;
+  ph+=`<div class="seg-head pc-${p.k}"><span class="seg-icon" style="font-size:15px">${p.icon}</span><div class="seg-headtext"><div class="seg-name">${esc(p.name)} <span class="pic${p.vac?' vac':''}">${esc(p.pic)}</span> <span class="ftag">${esc(p.form)}</span></div><div class="seg-sub">${esc(p.sub)}</div></div>${r.length?`<div class="mini"><span>${bd}/${r.length}</span><div class="mtrack"><div class="d" style="width:${r.length?bd/r.length*100:0}%"></div><div class="p" style="width:${r.length?bp/r.length*100:0}%"></div></div></div>`:''}</div>`;
+  ph+=`<div class="blk pc-${p.k}"><ul class="segs">`+p.segs.map(s=>`<li class="${s[0]=='⚠️'?'flag':''}"><span class="stt">${s[0]}</span><b>${esc(s[1])}</b> — ${esc(s[2])}</li>`).join('')+`</ul>${dlvRows(p.k)}<div class="detail-link">${p.icon} <a data-link-removed>${p.detail} ↗</a></div></div>`;
+});
+/* STRAT (oversee/decisions) as a compact section */
+const strat=DATA.filter(d=>d.b==='STRAT');
+if(strat.length){ph+=`<div class="seg-head pc-STRAT"><span class="seg-icon" style="font-size:15px">🎯</span><div class="seg-headtext"><div class="seg-name">Oversee / Decisions <span class="pic">Jeff + Rae</span></div><div class="seg-sub">跨柱决策 · hire · 大佬时间</div></div></div><div class="blk pc-STRAT">`+dlvRows('STRAT').replace('<div class="dlv">','<div class="dlv" style="border-top:none;margin-top:0;padding-top:0">')+`</div>`;}
+document.getElementById('byPillar').innerHTML=ph;
+/* ---- BY STAGE (timeline tracking) ---- */
+let sh='';
+STAGES.forEach(s=>{const rows=DATA.filter(d=>d.sg===s.key);if(!rows.length)return;const bd=rows.filter(r=>r.st==='done').length,bp=rows.filter(r=>r.st==='prog').length;
+  sh+=`<div class="seg-head${s.now?' now':''}"><span class="seg-icon">${s.key}</span><div class="seg-headtext"><div class="seg-name">${esc(s.name)} ${s.now?'<span class="nowtag">NOW</span>':''}</div><div class="seg-sub">${esc(s.sub)}</div></div><div class="mini"><span>${bd}/${rows.length}</span><div class="mtrack"><div class="d" style="width:${bd/rows.length*100}%"></div><div class="p" style="width:${bp/rows.length*100}%"></div></div></div></div>`;
+  sh+=`<table><thead><tr><th>Deliverable</th><th>Pillar</th><th>Owner</th><th>Status</th><th>When</th><th>Pri</th></tr></thead><tbody>`;
+  rows.forEach(r=>{const pr=PRL[r.pri];const bcls='bk pc-'+r.b;const gate=r.gate?'<span class="gate">🔒 GATED</span>':'';sh+=`<tr><td>${esc(r.item)}${gate}</td><td><span class="${bcls}">${esc(r.b)}</span></td><td class="m">${esc(r.own)}</td><td><span class="st ${r.st}">${STL[r.st]}</span></td><td class="m when">${esc(r.when)||'—'}</td><td class="m ${pr[1]}">${pr[0]}</td></tr>`;});
+  sh+=`</tbody></table>`;});
+document.getElementById('byStage').innerHTML=sh;
+/* toggle */
+(function(){var vb=document.getElementById('vtoggle');vb.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var v=b.dataset.v;vb.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('byPillar').style.display=v==='pillar'?'':'none';document.getElementById('byStage').style.display=v==='stage'?'':'none';});})();
+/* owner load */
+const owners={};DATA.forEach(d=>{if(d.st!=='done')d.own.split(/[\/+]/).forEach(o=>{o=o.trim();owners[o]=(owners[o]||0)+1;});});
+document.getElementById('load').innerHTML=Object.keys(owners).sort((a,b)=>owners[b]-owners[a]).map(o=>`<div class="lcard"><div class="ln">${esc(o)}<span class="open">${owners[o]} open</span></div><div class="lb">${'▮'.repeat(Math.min(owners[o],12))}</div></div>`).join('');
+/* mode + clock */
+(function(){var bar=document.getElementById('modebar');function setMode(m){document.body.classList.remove('mode-light','mode-warm');if(m==='light')document.body.classList.add('mode-light');if(m==='warm')document.body.classList.add('mode-warm');bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});try{localStorage.setItem('raeMode',m);}catch(e){}}
+bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});var saved='dark';try{saved=localStorage.getItem('raeMode')||'dark';}catch(e){}setMode(saved);
+var clk=document.getElementById('clk');function tick(){clk.textContent=new Date().toLocaleTimeString('en-GB');}tick();setInterval(tick,1000);})();
+</script>
+</body>
+</html>

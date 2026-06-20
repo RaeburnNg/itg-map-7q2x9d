@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧱 入局 P2 Production · Pillar Detail</title>
+<style>
+:root{--bg:#0D1117;--s1:#161B22;--s2:#21262D;--s3:#2D333B;--border:#30363D;--text:#E6EDF3;--muted:#7D8590;--dim:#484F58;--accent:#A371F7;--ok:#3FB950;--warn:#E3B341;--bad:#FF7B72;--info:#58A6FF;--sans:-apple-system,BlinkMacSystemFont,'Inter','PingFang SC','Noto Sans SC',sans-serif;--mono:'SF Mono',ui-monospace,'JetBrains Mono',monospace;--r:10px;--r-sm:7px}
+body.mode-light{--bg:#FBFAF6;--s1:#FFFFFF;--s2:#F2F0E9;--s3:#E9E6DC;--border:#D2CCBD;--text:#1E3A42;--muted:#6C6E6F;--dim:#A9A294;--accent:#8957D8;--ok:#2E8B6B;--warn:#B5852E;--bad:#CF4F52;--info:#3A6EA5}
+body.mode-warm{--bg:#F5F0E8;--s1:#FBF7EF;--s2:#EFE7D8;--s3:#E6DAC6;--border:#DDCFB8;--text:#4A3D2E;--muted:#8B7355;--dim:#B0A187;--accent:#8060B0;--ok:#5E7E4F;--warn:#C2902E;--bad:#B5605A;--info:#8B7355}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:13.5px;line-height:1.55;padding-bottom:50px;transition:background .25s,color .25s}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.modebar{position:fixed;top:10px;right:10px;z-index:200;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;box-shadow:0 2px 12px rgba(0,0,0,.22)}
+.modebar button{font-family:var(--mono);font-size:11px;line-height:1;border:none;background:transparent;color:var(--muted);padding:5px 9px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+.crumbnav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:3px;flex-wrap:wrap;padding:8px 18px;background:color-mix(in srgb,var(--s1) 92%,transparent);border-bottom:2px solid var(--accent);font-family:var(--sans);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.crumbnav .crumb{display:inline-flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:-.1px;padding:3px 9px;border-radius:13px;transition:color .15s,background .15s}
+.crumbnav a.crumb:hover{color:var(--accent);background:var(--s2)}
+.crumbnav .crumb .cr-ico{font-size:13px}.crumbnav .cr-sep{color:var(--dim);font-size:11px}.crumbnav .crumb.current{color:var(--accent);font-weight:700}
+.hero{padding:22px 0 4px}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
+.northstar{font-size:14px;color:var(--text);margin-top:8px;border-left:3px solid var(--accent);padding-left:12px;line-height:1.5}
+.northstar b{color:var(--accent)}
+.purpose{font-size:12px;color:var(--muted);margin-top:8px;max-width:820px;line-height:1.55}
+.metastrip{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:11px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.metastrip .live{color:var(--ok);font-weight:700}.metastrip .live::before{content:'● ';animation:pulse 1.8s infinite}
+.metastrip .sep{color:var(--dim)}.metastrip b{color:var(--text)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+/* seg-head */
+.seg-head{display:flex;align-items:flex-start;gap:11px;padding:10px 14px 9px;border:1px solid var(--border);border-radius:var(--r);background:rgba(125,133,144,.05);margin:24px 0 12px}
+body.mode-light .seg-head,body.mode-warm .seg-head{background:rgba(108,93,76,.04)}
+.seg-icon{font-size:17px;flex-shrink:0;margin-top:1px}.seg-headtext{flex:1;min-width:0}
+.seg-name{font-size:14px;font-weight:700;letter-spacing:-.1px}
+.seg-sub{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px}
+/* TIMELINE strip */
+.tl{display:flex;flex-wrap:wrap;gap:0;align-items:stretch}
+.tl .stg{flex:1 1 0;min-width:150px;background:var(--s1);border:1px solid var(--border);padding:11px 13px;position:relative}
+.tl .stg:first-child{border-radius:var(--r) 0 0 var(--r)}
+.tl .stg:last-child{border-radius:0 var(--r) var(--r) 0}
+.tl .stg+.stg{border-left:none}
+.tl .stg.now{border-top:3px solid var(--warn)}
+.tl .sk{font-family:var(--mono);font-size:9.5px;font-weight:800;letter-spacing:.4px;color:var(--accent)}
+.tl .sn{font-size:13px;font-weight:700;margin-top:3px}
+.tl .sd{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:4px;line-height:1.4}
+.tl .nowtag{position:absolute;top:-9px;right:8px;font-family:var(--mono);font-size:8.5px;font-weight:800;background:var(--warn);color:#0D1117;padding:1px 7px;border-radius:8px;letter-spacing:.3px}
+/* MAP cards */
+.mapgrid{display:flex;flex-wrap:wrap;gap:10px}
+.mapcard{flex:1 1 0;min-width:240px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:13px 15px;border-left:3px solid var(--accent);transition:border-color .15s,transform .15s;display:block}
+.mapcard:hover{transform:translateY(-1px);text-decoration:none}
+.mapcard.use{border-left-color:var(--accent)}.mapcard.ref{border-left-color:var(--info)}.mapcard.up{border-left-color:var(--dim)}
+.mapcard .mt{font-size:14px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px}
+.mapcard .mt .go{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--accent)}
+.mapcard .md{font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.5}
+/* builders */
+.builders{display:flex;flex-wrap:wrap;gap:9px}
+.bcard{flex:1 1 0;min-width:158px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 12px;border-top:3px solid var(--accent);display:block}
+.bcard:hover{transform:translateY(-1px);text-decoration:none}
+.bcard.vac{border-top-color:var(--bad)}.bcard.ov{border-top-color:var(--info)}
+.bcard .bn{font-size:12.5px;font-weight:700;color:var(--text)}
+.bcard .bp{font-family:var(--mono);font-size:9.5px;font-weight:700;color:var(--accent);margin-top:4px}
+.bcard.vac .bp{color:var(--bad)}.bcard.ov .bp{color:var(--info)}
+.note{font-size:12px;color:var(--muted);background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 14px;margin:14px 0;line-height:1.7}
+.note b{color:var(--text)}
+.pagefoot{margin-top:26px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .kmark{font-weight:800;letter-spacing:2px;color:var(--accent)}.pagefoot .upd{margin-left:auto;color:var(--dim)}
+@media(max-width:760px){.wrap{padding:0 13px}.tl .stg,.mapcard,.bcard{flex:none;width:100%;min-width:0}
+  .tl .stg{border-radius:var(--r)!important;border-left:1px solid var(--border)!important;margin-bottom:6px}}
+/* ---- P2 detail-page additions (token-faithful) ---- */
+.segwrap{margin:14px 0 0}
+.segbody{border:1px solid var(--border);border-top:none;border-radius:0 0 var(--r) var(--r);background:var(--s1);padding:12px 16px 14px}
+.seg-head.attach{border-radius:var(--r) var(--r) 0 0;margin:24px 0 0}
+.pic{font-family:var(--mono);font-size:10px;font-weight:800;padding:2px 8px;border-radius:10px;letter-spacing:.2px;border:1px solid var(--accent);color:var(--accent);margin-left:8px}
+.pic.gate{border-color:var(--bad);color:var(--bad)}
+.ftag{font-family:var(--mono);font-size:9px;font-weight:700;padding:2px 7px;border-radius:9px;text-transform:uppercase;letter-spacing:.3px;border:1px solid var(--border);color:var(--muted);margin-left:6px}
+.segs{list-style:none}
+.segs li{font-size:12.5px;color:var(--text);padding:6px 0 6px 26px;position:relative;line-height:1.55;border-bottom:1px dashed var(--border)}
+.segs li:last-child{border-bottom:none}
+.segs li .st{position:absolute;left:0;top:.32em;font-size:13px;line-height:1}
+.segs li.todo{color:var(--muted)}
+.segs li b{color:var(--text);font-weight:700}
+.segs li .gate{font-family:var(--mono);font-size:9px;font-weight:800;color:var(--bad);border:1px solid var(--bad);border-radius:8px;padding:1px 6px;margin-left:6px;letter-spacing:.3px;text-transform:uppercase}
+.todobox{border:1px dashed var(--bad);border-radius:var(--r-sm);background:rgba(255,123,114,.05);padding:10px 13px;margin-top:6px}
+body.mode-light .todobox,body.mode-warm .todobox{background:rgba(207,79,82,.05)}
+.todobox .tb-h{font-family:var(--mono);font-size:10px;font-weight:800;color:var(--bad);letter-spacing:.4px}
+.todobox .tb-b{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.55}
+.blklk{font-family:var(--mono);font-size:10px;color:var(--dim);margin-top:9px;border-top:1px dashed var(--border);padding-top:8px}
+.blklk a{color:var(--accent)}
+table{width:100%;border-collapse:collapse;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-top:8px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--border);font-size:12px;vertical-align:top}
+thead th{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);font-weight:700;background:var(--s2)}
+tbody tr:last-child td{border-bottom:none}
+td.m{font-family:var(--mono);font-size:11px;color:var(--muted)}
+td b{color:var(--text)}
+.legend{font-family:var(--mono);font-size:9.5px;color:var(--dim);margin-top:10px;letter-spacing:.2px}
+@media(max-width:760px){table,thead,tbody,tr,th,td{display:block}thead{display:none}
+  tbody tr{border:1px solid var(--border);border-radius:9px;margin-bottom:9px;padding:4px 0}td{border:none;padding:5px 13px;font-size:14px}}
+
+/* ===== System Map design conform · vibrant section headers + per-category palette (2026-06-19) ===== */
+:root{--p1:#58A6FF;--p2:#A371F7;--p3:#F778BA;--p4:#E3A857;--p5:#56D364;--p6:#2DD4BF;--pm:#7C8CF8;--key:#E3B341;--ref:#8B97A8}
+body.mode-light{--p1:#2D7FD8;--p2:#8957D8;--p3:#C7437F;--p4:#B4781F;--p5:#2A9E3C;--p6:#14B8A6;--pm:#5560D8;--key:#B5852E;--ref:#6B7685}
+body.mode-warm{--p1:#3A6EA5;--p2:#8060B0;--p3:#B5607A;--p4:#B07A2E;--p5:#5E8E4F;--p6:#3E9E8E;--pm:#6A66B0;--key:#C2902E;--ref:#8B7355}
+.seg-head{align-items:center;gap:14px;padding:16px 19px;border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 38%,var(--border));border-left:7px solid var(--sc,var(--accent));border-radius:var(--r);background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 26%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 8%,var(--s1)));margin:42px 0 16px;box-shadow:0 3px 16px color-mix(in srgb,var(--sc,var(--accent)) 15%,transparent)}
+body.mode-light .seg-head,body.mode-warm .seg-head{background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 26%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 8%,var(--s1)))}
+.hero + .seg-head{margin-top:26px}
+.seg-icon{font-size:20px;width:42px;height:42px;min-width:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;background:color-mix(in srgb,var(--sc,var(--accent)) 30%,var(--s1));border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 48%,transparent);margin-top:0;flex-shrink:0}
+.seg-name{font-size:18px;font-weight:800;letter-spacing:-.2px}
+.seg-name .secn{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;padding:0 7px;background:var(--sc,var(--accent));color:var(--bg);font-family:var(--mono);font-weight:800;border-radius:8px;margin-right:10px;font-size:14px;flex-shrink:0}
+.seg-sub{font-size:11px;margin-top:5px}
+</style>
+</head>
+<body>
+
+<div class="modebar" id="modebar"><button data-m="dark" class="on">◐</button><button data-m="light">○</button><button data-m="warm">◑</button></div>
+
+<nav class="crumbnav">
+  <a class="crumb" data-link-removed><span class="cr-ico">🗂</span>System Map</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" data-link-removed><span class="cr-ico">📁</span>Project Monitor</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" href="入局_System_Map.html"><span class="cr-ico">🎬</span>入局</a>
+  <span class="cr-sep">›</span>
+  <span class="crumb current"><span class="cr-ico">🧱</span>P2 Production</span>
+</nav>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">入局 · In The Game · Pillar 2 — Production Arrangement</div>
+    <h1>🧱 P2 — Production(怎么做出来)</h1>
+    <div class="northstar"><b>这根柱:</b>把节目从「构想」做成「拍得出、剪得出、归得了档」的实物 — Owner <b>Celine</b> · 含 production + 预算 + 文档。</div>
+    <div class="purpose">这页 = P2 Production 的<b>表单(form)</b>:每个 segment 一个 seg-head,有内容就铺,空就留 🔴「待建」让缺口可见。 段 = <b>Production(Timeline / Pre-production / Production / Post)· Budgeting 🔒GATED · Lark 执行层 · 文档归档</b>。 制作时间线锚:7/1 promo 拍摄 · photoshoot 6/29 · 正片 8 月。 进度状态看 <a href="入局_Tracker.html">Tracker ↗</a>。</div>
+    <div class="metastrip">
+      <span class="live" id="clk">live</span>
+      <span class="sep">·</span><span>↻ <b>2026-06-17</b></span>
+      <span class="sep">·</span><span>Owner Celine · 4 production phases + Budgeting(GATED) + Lark + 归档 · S1 6 集 lock</span>
+    </div>
+  </div>
+
+  <div class="note">⬩ <b>读这页:</b>① 时间线看整个铺 → ② 四个 production phase 逐段(Timeline / Pre-prod / Prod / Post)→ ③ Budgeting 是 🔒<b>gated 指针</b>(只指向 Finance 文件,本页 0 数字)→ ④ Lark 执行层 + 文档归档。 <b>空段 = 留 🔴「待建」不省略</b>(Rae 要看见 form 的空白)。 商业/分账条款(Rae×Jeff)= 项目外,从不在此页。</div>
+
+  <!-- TIMELINE STRIP (production-specific) -->
+  <div class="seg-head"><span class="seg-icon">🛤</span><div class="seg-headtext"><div class="seg-name">制作时间线 — 整条 production 怎么铺</div><div class="seg-sub">src: _state production-timeline + TeamSync ③④⑤ · S1 = 6 集 lock(≈3 天拍 · 2 集/天)</div></div></div>
+  <div class="tl">
+    <div class="stg now"><span class="nowtag">NOW</span><div class="sk">S0</div><div class="sn">Pre-7/1 执行包</div><div class="sd">现在–6/30 · schedule v1 · shot list · call sheet · venue 定 · 反推 drop-dead 日历</div></div>
+    <div class="stg"><div class="sk">S1·A</div><div class="sn">Photoshoot</div><div class="sd">6/29 · 嘉宾平面拍摄(海报/物料素材)</div></div>
+    <div class="stg"><div class="sk">S1·B</div><div class="sn">7/1 Promo 拍摄</div><div class="sd">7/1 · 3 嘉宾+Jeff · 4 人 5h(分上下半场+overlap 2h)· promo + recruitment video</div></div>
+    <div class="stg"><div class="sk">S3</div><div class="sn">正片 Shoot</div><div class="sd">8 月(团队 timeline 8/16)· 6 集(2 集/天≈3 天)· venue 复用 · 单一场景</div></div>
+    <div class="stg"><div class="sk">S4</div><div class="sn">Post + Launch</div><div class="sd">8 月后 · 剪辑 / VFX / 切片 / 字幕 · after-show · S1 rolling 上线</div></div>
+  </div>
+  <div class="note">⛔ <b>卡 production 的依赖:</b>venue 未定 → shot list / 灯光 /「入局」亮字位 / back-light / present 屏 / set dressing / 机位 全动不了。 color tone(P5,Yong Cheng)未锁 → call sheet 衣着 + set look&feel downstream。 3 大佬时间(Jeff 敲)未定 → 7/1 vs 7/2 + call sheet 时段。</div>
+
+  <!-- ============ SEGMENT 1: PRODUCTION (4 phases) ============ -->
+  <div class="seg-head"><span class="seg-icon">🎥</span><div class="seg-headtext"><div class="seg-name">① Production <span class="ftag">document</span></div><div class="seg-sub">四个 phase 逐段:Timeline · Pre-production · Production(拍摄)· Post-production · src TeamSync ③④⑤</div></div></div>
+
+  <!-- 1.1 Timeline phase -->
+  <div class="segwrap">
+    <div class="seg-head attach"><span class="seg-icon">📆</span><div class="seg-headtext"><div class="seg-name">1.1 Timeline(working + posting + 反推日历)</div><div class="seg-sub">🟡 部分 · YK v1 → Celine 维护 · src TeamSync ③ + ⑤</div></div></div>
+    <div class="segbody">
+      <ul class="segs">
+        <li><span class="st">🟡</span><b>Working schedule v1</b> — 7/1 当天 run-of-day:call → 化妆 → 上半场 / overlap 2h / 下半场 → wrap。验证 4 人(3 嘉宾+Jeff)每人 ~5h。<b>YK 6/16 出 v1</b></li>
+        <li><span class="st">🟡</span><b>Posting schedule v1</b> — 4 周招募期「哪天发什么」格子(并入 social 分发栏)。<b>YK v1 → P3 接</b></li>
+        <li><span class="st">🔴</span><b>反推 drop-dead 日历</b> — 从 7/1 倒推各前置(color/poster/venue/4 人时间)哪天没达成就触发切 7/2。并进 working schedule 顶部标红。<b>没人 own(gap)</b></li>
+        <li><span class="st">🔴</span><b>8 月正片排期框架</b> — 6 集 lock 后按 2 集/天反推拍摄天 + lock 6 强时间(团队 timeline 锚 8/16)。<b>待 YK 反推</b></li>
+      </ul>
+      <div class="blklk">📌 落地:YK 两张 schedule(working+posting)+ 反推日历 → Celine 维护。 src → <a data-link-removed>TeamSync ③/⑤/收尾</a></div>
+    </div>
+  </div>
+
+  <!-- 1.2 Pre-production phase -->
+  <div class="segwrap">
+    <div class="seg-head attach"><span class="seg-icon">📋</span><div class="seg-headtext"><div class="seg-name">1.2 Pre-production(7/1 执行包)</div><div class="seg-sub">🔴 待建 · 核心 = YK 给 Jeff 的「一条条能 imagine」deck · src TeamSync ③</div></div></div>
+    <div class="segbody">
+      <ul class="segs">
+        <li><span class="st">🟡</span><b>Video 清单</b> — 已拆:形式解释片 · recruitment ×3–4 · 3 嘉宾单人 · 4 人 interview。<b>清单有,script 未写</b></li>
+        <li><span class="st">🔴</span><b>Script 文字稿</b> — 每条 video 的纯文字 script(4 人 interview 内容要写出来)。<b>YK 6/16–17 丢 Jeff</b></li>
+        <li><span class="st">🔴</span><b>Shot list</b> — 每 location 拍什么镜头(含为切片而拍:9:16 直屏 + 金句空镜 + reaction 特写)。<b>待建</b></li>
+        <li><span class="st">🔴</span><b>Description / reference deck</b> — combine 成 Google Doc deck,每条 = 参考照片 + script + description / shot list,一条一 block 让 Jeff imagine。<b>YK 周三 6/17</b></li>
+        <li><span class="st">🔴</span><b>Call sheet 正式版</b> — 几点到 / 化妆 / 上下半场 / 带什么衣服+颜色。call sheet 本身要高大上(Jeff 隐性 KPI)。<b>4 人时间定后,7/1 前</b></li>
+        <li><span class="st">🔴</span><b>参考照片素材</b> — Celine 配,嵌进 deck 对应 block。<b>待建</b></li>
+      </ul>
+      <div class="todobox"><div class="tb-h">🔴 TO-BUILD — 这个 phase 整层还没产出实物</div><div class="tb-b">Owner <b>YK 主</b>(deck/script/shot list/call sheet/schedule)· Celine 配(参考照片/poster/color/化妆)· Jeff 逐条 review + brief 大佬 · Rae flow plan 把关。 timing:script 6/16–17 · 完整 deck 6/17 · venue 本周 · 4 人时间 2 周内 · call sheet 在以上齐后 final。</div></div>
+      <div class="blklk">src → <a data-link-removed>TeamSync ③ + 关键路径 4–9</a></div>
+    </div>
+  </div>
+
+  <!-- 1.3 Production phase -->
+  <div class="segwrap">
+    <div class="seg-head attach"><span class="seg-icon">🎬</span><div class="seg-headtext"><div class="seg-name">1.3 Production(拍摄 — 场地/set/灯光/crew/器材)</div><div class="seg-sub">🟡 部分 · 7/1 拍的是「信用道具」· KPI = 凝聚力+intensity+国际水准 · src TeamSync ④</div></div></div>
+    <div class="segbody">
+      <ul class="segs">
+        <li><span class="st">🟡</span><b>Venue 最终决定</b> — 两 option 已勘景:黑棚 vs Kaloz 白景(+ Rae 对策 LED 屏)。建议不当场定 → 定评分维度(凝聚力/成本/搭建时间/back-light 可行/能否出亮字)+ Celine 出 2 概念图 + 几号交 + 周末拍板。<b>本周出图 → 周末定</b></li>
+        <li><span class="st">🔴</span><b>Present 屏(电视 vs LED)</b> — 绑 venue 决定;store room 有大电视/LED。<b>待定</b></li>
+        <li><span class="st">🔴</span><b>灯光方案 + back-light</b> — 黑 / intensity / Netflix 感 + reaction back-light。<b>待建</b></li>
+        <li><span class="st">🔴</span><b>「入局」亮字</b> — 现场亮字怎么实现(绑 venue)。<b>待建</b></li>
+        <li><span class="st">🔴</span><b>老板帅椅子 prop + set dressing / 背景板</b> — 保气场。<b>Celine 列 · 待建</b></li>
+        <li><span class="st">🔴</span><b>Crew list + call time · 器材清单</b> — YK 拉。<b>待建</b></li>
+        <li><span class="st">✅</span><b>拍摄布局已锁</b> — 4 人 / 5h(分上下半场+overlap 2h)· 可 NG · 不设观众 · 场景方向:发起人 office / 嘉宾 board meeting 概念(都在 Kaloz)</li>
+        <li><span class="st">🟡</span><b>8 月正片 venue 复用</b> — 建议复用 7/1 venue(单一场景收敛成本)。<b>待拍</b></li>
+      </ul>
+      <div class="blklk">📌 落地:Celine 本周出 2 venue 概念图 + 查黑棚 base「小问题」· YK 拉 crew+器材 · 全体本周看图拍 venue。 src → <a data-link-removed>TeamSync ④</a></div>
+    </div>
+  </div>
+
+  <!-- 1.4 Post-production phase -->
+  <div class="segwrap">
+    <div class="seg-head attach"><span class="seg-icon">✂️</span><div class="seg-headtext"><div class="seg-name">1.4 Post-production(剪辑/VFX/文案/切片/after-show)</div><div class="seg-sub">🟡 cadence 已具体 / owner 仍 gap · 每周 1 长(10–12min)+5 短(1min)· fulfillment highlight 在 6 集播完后 2–3 周 · 中间补拍炒热度 · src TeamSync ⑤</div></div></div>
+    <div class="segbody">
+      <ul class="segs">
+        <li><span class="st">🟡</span><b>后期 beat 已锁</b> — 金色「成功入局」VFX · Connection Card 大字幕 · 金句切。13min flow 的 post beat 有方向</li>
+        <li><span class="st">🔴</span><b>Post owner</b> — 整个 Post 模块没人 own(建议 Celine own 后期产线 + 指派剪手)。<b>待 Rae 拍</b></li>
+        <li><span class="st">🔴</span><b>切片矩阵</b> — 4 周切什么 / 从哪段切 / 几条(建议 2–3 条/周)· 第一条 drop-dead。<b>待建</b></li>
+        <li><span class="st">🔴</span><b>金色 VFX / 字幕规范</b> — 做法 / 参考 / owner(建议先灰度模板,等 P5 color tone 锁再上金)。<b>待建</b></li>
+        <li><span class="st">🔴</span><b>交付规格表</b> — 长片 16:9 / 切片 9:16 / after-show · 分辨率 / 字幕 / codec,一次定死贴 Lark Base。<b>建议 Celine 定 · 待建</b></li>
+        <li><span class="st">🔴</span><b>after-show 开天窗后期预案</b> — S1 招募期没正片素材,B-plan。<b>待建</b></li>
+        <li><span class="st">🔴</span><b>Post 时间线进 schedule</b> — 「7/1 素材 → 第 X 天第一条切片」反推进 working schedule。<b>待 YK</b></li>
+      </ul>
+      <div class="todobox"><div class="tb-h">🔴 TO-BUILD — Post 整层无 owner(最危险 gap 之一)</div><div class="tb-b">建议 owner <b>Celine</b>(后期统筹 + 切片/VFX/字幕产线)· YK 把后期三时间线反推进 schedule + 指派剪手 · Rae 出后期视觉规范一页(不亲剪,等 P5 color tone)。 timing:7/1 拍完 → 立刻切片喂招募 4 周;8 月正片 → 剪辑/VFX/字幕/金句切片 + after-show → S1 rolling 上线。</div></div>
+      <div class="blklk">src → <a data-link-removed>TeamSync ⑤</a></div>
+    </div>
+  </div>
+
+  <!-- ============ SEGMENT 2: BUDGETING (GATED POINTER) ============ -->
+  <div class="seg-head"><span class="seg-icon">💰</span><div class="seg-headtext"><div class="seg-name">② Budgeting &amp; Costing <span class="pic gate">🔒 GATED</span> <span class="ftag">pointer only</span></div><div class="seg-sub">production 成本/costing(租 · crew · 器材 · 后期)· 数字不在此页 — 只指向 Finance 文件</div></div></div>
+  <div class="segbody" style="border-top:1px solid var(--border);border-radius:var(--r)">
+    <div class="todobox" style="border-color:var(--accent);background:rgba(70,197,181,.05)">
+      <div class="tb-h" style="color:var(--accent)">🔒 GATED — 本页不列任何金额</div>
+      <div class="tb-b">P2 的预算 / costing 是<b>真实层</b>,数字只活在内部 Finance 文件里(Jeff × Rae only)。 这个节点是一个 <b>gated 指针</b>:点链接去看,本页永不内联数字。 范围 = 场地租 · crew · 器材 · 化妆 · 后期 · 切片 单位成本 → production 总成本 → 喂 3 季 cost model。</div>
+    </div>
+    <div class="mapgrid" style="margin-top:10px">
+      <a class="mapcard ref" data-link-removed><div class="mt">🔒 Finance &amp; Cost Plan(可视化)<span class="go">open ↗</span></div><div class="md">GATED · 3 季成本模型(S1 = 6 集 lock)· production 单位成本 + OPEX。<b>Jeff × Rae only</b>。</div></a>
+      <a class="mapcard ref" data-link-removed><div class="mt">🔒 _finance.md(MD source)<span class="go">open ↗</span></div><div class="md">GATED · 成本模型假设 + 5 driver(单集制作/冠名/私董会/加速器/通告费)。<b>数字 SOT</b>。</div></a>
+    </div>
+    <div class="legend">🔒 GATED = 内部 Jeff × Rae 财务文件。 Rae×Jeff 商业/分账/占股 = 项目外另议,不在 Finance 文件内,更不在本页。</div>
+  </div>
+
+  <!-- ============ SEGMENT 3: LARK 执行层 ============ -->
+  <div class="seg-head"><span class="seg-icon">🟦</span><div class="seg-headtext"><div class="seg-name">③ Lark 执行层 <span class="pic">Celine 维护</span> <span class="ftag">live</span></div><div class="seg-sub">团队中央 dump — production 的 live 执行台 · ✅ 有</div></div></div>
+  <div class="segbody" style="border-top:1px solid var(--border);border-radius:var(--r)">
+    <ul class="segs">
+      <li><span class="st">✅</span><b>Working Timeline</b> — 团队已建(YK/Celine),比 Rae seed 的更全</li>
+      <li><span class="st">✅</span><b>Design &amp; Video Editing Timeline</b> — 原 Celine,交 Yong Cheng(P5)接</li>
+      <li><span class="st">✅</span><b>参赛者表 / 物料表 / General Asset</b> — 中央 dump,team 丢料</li>
+    </ul>
+    <div class="mapgrid" style="margin-top:8px">
+      <a class="mapcard ref" href="https://kalozproduction.sg.larksuite.com/base/P5X7bZQV3axKEhsXOsale9s4goc" target="_blank"><div class="mt">🟦 Lark Base — 团队执行层<span class="go">open ↗</span></div><div class="md">live · Working / Design Timeline / 参赛者 / 物料 / scripts。Celine 维护 + 全队丢料。</div></a>
+      <a class="mapcard use" data-link-removed><div class="mt">🗂 Resource Index(桥)<span class="go">open ↗</span></div><div class="md">Workspace↔Lark 互链总台 — 全部资产在哪/状态/owner。</div></a>
+    </div>
+    <div class="legend">架构锁:Workspace = 战略/参考 · Lark Base = 团队 production 执行层 · Resource Index = 桥。</div>
+  </div>
+
+  <!-- ============ SEGMENT 4: DOCUMENTATION / 归档 ============ -->
+  <div class="seg-head"><span class="seg-icon">🗄</span><div class="seg-headtext"><div class="seg-name">④ Documentation / 归档 <span class="pic">Celine</span> <span class="ftag">document</span></div><div class="seg-sub">production 文档归档 — schedule / call sheet / shot list / 交付规格 / 概念图 落档 · 🔴 待建</div></div></div>
+  <div class="segbody" style="border-top:1px solid var(--border);border-radius:var(--r)">
+    <ul class="segs">
+      <li><span class="st">🔴</span><b>Production 文档归档 SOP</b> — schedule v1 / call sheet / shot list / venue 概念图 / 交付规格表 落 Lark Base + 命名规范。<b>待建</b></li>
+      <li><span class="st">🔴</span><b>交付规格表落档</b> — 长片 16:9 / 切片 9:16 / after-show 规格,定死后贴 Lark Base(也是 Post 段的 deliverable)。<b>待建</b></li>
+      <li><span class="st">🔴</span><b>Operation 分工人头表</b> — 谁 own pre-pro / 现场 / post / 物料 / 招募,一行一人一职 → send 回 Jeff。<b>Rae + Celine · 待出</b></li>
+    </ul>
+    <div class="todobox"><div class="tb-h">🔴 TO-BUILD — 归档 SOP 未立</div><div class="tb-b">Owner <b>Celine</b>(production 文档统筹 + 归档)。 落地:产出的每份 production 文档进 Lark Base 对应表 + 命名规范;交付规格表一次定死贴 Base;Operation 分工人头表 Rae+Celine 出 → 周五 sync send 回 Jeff。</div></div>
+    <div class="blklk">src → <a data-link-removed>TeamSync 收尾(排期+角色+分工)</a> · 配 <a data-link-removed>入局_P2_Production.md(state)</a></div>
+  </div>
+
+  <!-- OWNER / TEAM FOOTER STRIP -->
+  <div class="seg-head"><span class="seg-icon">👤</span><div class="seg-headtext"><div class="seg-name">Owner + 协作</div><div class="seg-sub">P2 主 owner = Celine · 跨柱协作谁配什么</div></div></div>
+  <div class="builders">
+    <a class="bcard ov" href="入局_Tracker.html"><div class="bn">Celine</div><div class="bp">P2 OWNER · Producer</div></a>
+    <a class="bcard" href="入局_P1_Creative.html"><div class="bn">Wai Kit (YK)</div><div class="bp">配 · schedule/script/deck</div></a>
+    <a class="bcard" href="入局_P5_Design.html"><div class="bn">Yong Cheng</div><div class="bp">配 · color tone/set look(P5)</div></a>
+    <a class="bcard ov" href="入局-Corporate-Reality-Show-2026_Master.html"><div class="bn">Jeff(host)+ Rae</div><div class="bp">oversee · 大佬时间/把关</div></a>
+  </div>
+  <div class="note"><b>P2 的球:</b>① schedule v1 + 反推日历(YK→Celine 维护)· ② venue 周末拍板(Celine 出 2 概念图)· ③ <b>Post owner 待 Rae 拍</b>(建议 Celine)· ④ Budgeting 永远在 🔒 Finance 文件,本页 0 数字。 <b>color tone(P5,Yong Cheng)是上游第一张多米诺</b> —— 锁了 call sheet 衣着 + set look 才能 final。</div>
+
+  <footer class="pagefoot">
+    <span class="kmark">KALOZ</span>
+    <span>入局 · P2 Production Pillar Detail · Owner Celine · 配 Tracker + 入局_P2_Production.md</span>
+    <span class="upd">Last updated 2026-06-17</span>
+  </footer>
+</div>
+
+<script>
+(function(){var bar=document.getElementById('modebar');function setMode(m){document.body.classList.remove('mode-light','mode-warm');if(m==='light')document.body.classList.add('mode-light');if(m==='warm')document.body.classList.add('mode-warm');bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});try{localStorage.setItem('raeMode',m);}catch(e){}}
+bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});var saved='dark';try{saved=localStorage.getItem('raeMode')||'dark';}catch(e){}setMode(saved);
+var clk=document.getElementById('clk');function tick(){clk.textContent=new Date().toLocaleTimeString('en-GB');}tick();setInterval(tick,1000);})();
+</script>
+</body>
+</html>

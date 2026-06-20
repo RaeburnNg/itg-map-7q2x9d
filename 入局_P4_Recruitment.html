@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧱 入局 · P4 Recruitment</title>
+<style>
+:root{--bg:#0D1117;--s1:#161B22;--s2:#21262D;--s3:#2D333B;--border:#30363D;--text:#E6EDF3;--muted:#7D8590;--dim:#484F58;--accent:#E3A857;--ok:#3FB950;--warn:#E3B341;--bad:#FF7B72;--info:#58A6FF;--sans:-apple-system,BlinkMacSystemFont,'Inter','PingFang SC','Noto Sans SC',sans-serif;--mono:'SF Mono',ui-monospace,'JetBrains Mono',monospace;--r:10px;--r-sm:7px}
+body.mode-light{--bg:#FBFAF6;--s1:#FFFFFF;--s2:#F2F0E9;--s3:#E9E6DC;--border:#D2CCBD;--text:#1E3A42;--muted:#6C6E6F;--dim:#A9A294;--accent:#B4781F;--ok:#2E8B6B;--warn:#B5852E;--bad:#CF4F52;--info:#3A6EA5}
+body.mode-warm{--bg:#F5F0E8;--s1:#FBF7EF;--s2:#EFE7D8;--s3:#E6DAC6;--border:#DDCFB8;--text:#4A3D2E;--muted:#8B7355;--dim:#B0A187;--accent:#B07A2E;--ok:#5E7E4F;--warn:#C2902E;--bad:#B5605A;--info:#8B7355}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:13.5px;line-height:1.55;padding-bottom:50px;transition:background .25s,color .25s}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.modebar{position:fixed;top:10px;right:10px;z-index:200;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;box-shadow:0 2px 12px rgba(0,0,0,.22)}
+.modebar button{font-family:var(--mono);font-size:11px;line-height:1;border:none;background:transparent;color:var(--muted);padding:5px 9px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+.crumbnav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:3px;flex-wrap:wrap;padding:8px 18px;background:color-mix(in srgb,var(--s1) 92%,transparent);border-bottom:2px solid var(--accent);font-family:var(--sans);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.crumbnav .crumb{display:inline-flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:-.1px;padding:3px 9px;border-radius:13px;transition:color .15s,background .15s}
+.crumbnav a.crumb:hover{color:var(--accent);background:var(--s2)}
+.crumbnav .crumb .cr-ico{font-size:13px}.crumbnav .cr-sep{color:var(--dim);font-size:11px}.crumbnav .crumb.current{color:var(--accent);font-weight:700}
+.hero{padding:22px 0 4px}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
+.northstar{font-size:14px;color:var(--text);margin-top:8px;border-left:3px solid var(--accent);padding-left:12px;line-height:1.5}
+.northstar b{color:var(--accent)}
+.purpose{font-size:12px;color:var(--muted);margin-top:8px;max-width:820px;line-height:1.55}
+.metastrip{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:11px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.metastrip .live{color:var(--ok);font-weight:700}.metastrip .live::before{content:'● ';animation:pulse 1.8s infinite}
+.metastrip .sep{color:var(--dim)}.metastrip b{color:var(--text)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+/* seg-head */
+.seg-head{display:flex;align-items:flex-start;gap:11px;padding:10px 14px 9px;border:1px solid var(--border);border-radius:var(--r);background:rgba(125,133,144,.05);margin:24px 0 12px}
+body.mode-light .seg-head,body.mode-warm .seg-head{background:rgba(108,93,76,.04)}
+.seg-icon{font-size:17px;flex-shrink:0;margin-top:1px}.seg-headtext{flex:1;min-width:0}
+.seg-name{font-size:14px;font-weight:700;letter-spacing:-.1px}
+.seg-sub{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px}
+/* TIMELINE strip */
+.tl{display:flex;flex-wrap:wrap;gap:0;align-items:stretch}
+.tl .stg{flex:1 1 0;min-width:150px;background:var(--s1);border:1px solid var(--border);padding:11px 13px;position:relative}
+.tl .stg:first-child{border-radius:var(--r) 0 0 var(--r)}
+.tl .stg:last-child{border-radius:0 var(--r) var(--r) 0}
+.tl .stg+.stg{border-left:none}
+.tl .stg.now{border-top:3px solid var(--warn)}
+.tl .sk{font-family:var(--mono);font-size:9.5px;font-weight:800;letter-spacing:.4px;color:var(--accent)}
+.tl .sn{font-size:13px;font-weight:700;margin-top:3px}
+.tl .sd{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:4px;line-height:1.4}
+.tl .nowtag{position:absolute;top:-9px;right:8px;font-family:var(--mono);font-size:8.5px;font-weight:800;background:var(--warn);color:#0D1117;padding:1px 7px;border-radius:8px;letter-spacing:.3px}
+/* MAP cards */
+.mapgrid{display:flex;flex-wrap:wrap;gap:10px}
+.mapcard{flex:1 1 0;min-width:240px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:13px 15px;border-left:3px solid var(--accent);transition:border-color .15s,transform .15s;display:block}
+.mapcard:hover{transform:translateY(-1px);text-decoration:none}
+.mapcard.use{border-left-color:var(--accent)}.mapcard.ref{border-left-color:var(--info)}.mapcard.up{border-left-color:var(--dim)}
+.mapcard .mt{font-size:14px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px}
+.mapcard .mt .go{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--accent)}
+.mapcard .md{font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.5}
+/* builders */
+.builders{display:flex;flex-wrap:wrap;gap:9px}
+.bcard{flex:1 1 0;min-width:158px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 12px;border-top:3px solid var(--accent);display:block}
+.bcard:hover{transform:translateY(-1px);text-decoration:none}
+.bcard.vac{border-top-color:var(--bad)}.bcard.ov{border-top-color:var(--info)}
+.bcard .bn{font-size:12.5px;font-weight:700;color:var(--text)}
+.bcard .bp{font-family:var(--mono);font-size:9.5px;font-weight:700;color:var(--accent);margin-top:4px}
+.bcard.vac .bp{color:var(--bad)}.bcard.ov .bp{color:var(--info)}
+.note{font-size:12px;color:var(--muted);background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 14px;margin:14px 0;line-height:1.7}
+.note b{color:var(--text)}
+.pagefoot{margin-top:26px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .kmark{font-weight:800;letter-spacing:2px;color:var(--accent)}.pagefoot .upd{margin-left:auto;color:var(--dim)}
+@media(max-width:760px){.wrap{padding:0 13px}.tl .stg,.mapcard,.bcard{flex:none;width:100%;min-width:0}
+  .tl .stg{border-radius:var(--r)!important;border-left:1px solid var(--border)!important;margin-bottom:6px}}
+/* ===== P4-specific (built on house tokens) ===== */
+.segbody{margin:0 2px 6px}
+.statpill{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:9.5px;font-weight:800;letter-spacing:.4px;padding:2px 8px;border-radius:10px;vertical-align:middle}
+.st-todo{background:rgba(255,123,114,.13);color:var(--bad)}.st-prog{background:rgba(227,179,65,.14);color:var(--warn)}.st-done{background:rgba(63,185,80,.14);color:var(--ok)}
+.tobuild{border:1px dashed var(--bad);background:rgba(255,123,114,.05);border-radius:var(--r-sm);padding:12px 14px;color:var(--muted);font-size:12px;line-height:1.65}
+.tobuild b{color:var(--bad)}.tobuild .lab{font-family:var(--mono);font-size:9.5px;font-weight:800;letter-spacing:.5px;color:var(--bad);text-transform:uppercase}
+.tobuild ul{margin:7px 0 0 16px}.tobuild li{margin:2px 0}
+/* FUNNEL */
+.funnel{display:flex;flex-direction:column;gap:3px;margin:6px 0 2px}
+.fstep{display:flex;align-items:center;gap:12px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:9px 14px;position:relative}
+.fstep.gate{border-color:var(--warn);border-width:2px;background:rgba(227,179,65,.06)}
+.fstep .fnum{font-family:var(--mono);font-size:13px;font-weight:800;color:var(--accent);flex-shrink:0;width:24px}
+.fstep.gate .fnum{color:var(--warn)}
+.fstep .ftxt{flex:1;min-width:0}
+.fstep .fn{font-size:13px;font-weight:700}.fstep .fd{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:2px}
+.fstep .fct{font-family:var(--mono);font-size:11px;font-weight:800;color:var(--text);flex-shrink:0}
+.fstep .gtag{position:absolute;top:-8px;right:10px;font-family:var(--mono);font-size:8px;font-weight:800;background:var(--warn);color:#0D1117;padding:1px 7px;border-radius:8px;letter-spacing:.4px}
+.farrow{text-align:center;color:var(--dim);font-size:12px;line-height:.6}
+/* FORM mock */
+.form{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin:6px 0}
+.form .fhd{font-size:13px;font-weight:700;border-bottom:1px solid var(--border);padding-bottom:9px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.form .fhd .ftag{margin-left:auto;font-family:var(--mono);font-size:9px;font-weight:800;color:var(--muted);letter-spacing:.4px}
+.field{margin-bottom:13px}
+.field .q{font-size:12.5px;font-weight:600;margin-bottom:5px}.field .q .req{color:var(--bad);margin-left:3px}
+.field .hint{font-family:var(--mono);font-size:9.5px;color:var(--dim);margin-bottom:5px}
+.blank{display:block;background:var(--s2);border:1px dashed var(--border);border-radius:var(--r-sm);min-height:30px;padding:7px 11px;color:var(--dim);font-size:11.5px}
+.blank.lg{min-height:54px}
+.opts{display:flex;flex-wrap:wrap;gap:6px;margin-top:3px}
+.opt{font-family:var(--mono);font-size:10.5px;color:var(--muted);background:var(--s2);border:1px solid var(--border);border-radius:13px;padding:3px 11px}
+.opt::before{content:'○ ';color:var(--dim)}
+.star{color:var(--accent);font-weight:800}
+/* two-track SOP */
+.dual{display:flex;flex-wrap:wrap;gap:10px}
+.track{flex:1 1 0;min-width:260px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:13px 15px;border-top:3px solid var(--accent)}
+.track.b{border-top-color:var(--warn)}
+.track .tk{font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.5px;color:var(--accent)}
+.track.b .tk{color:var(--warn)}
+.track .tn{font-size:13.5px;font-weight:700;margin:3px 0 7px}
+.track ul{margin:0 0 0 16px}.track li{font-size:11.5px;color:var(--muted);margin:3px 0;line-height:1.5}
+.track li b{color:var(--text)}
+/* checklist */
+.chk{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:6px 0}
+.chk .row{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.chk .row:last-child{border-bottom:none}
+.chk .box{font-family:var(--mono);color:var(--dim);font-size:13px;flex-shrink:0}
+.chk .ct{flex:1}.chk .ct .cn{font-size:12.5px;font-weight:600}.chk .ct .cd{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px}
+.chk .who{font-family:var(--mono);font-size:9.5px;font-weight:700;color:var(--accent);flex-shrink:0}
+.gloss{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.gloss .g{flex:1 1 0;min-width:150px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:9px 12px;border-left:3px solid var(--info)}
+.gloss .g .gt{font-size:12px;font-weight:700}.gloss .g .gd{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:3px}
+
+/* ===== System Map design conform · vibrant section headers + per-category palette (2026-06-19) ===== */
+:root{--p1:#58A6FF;--p2:#A371F7;--p3:#F778BA;--p4:#E3A857;--p5:#56D364;--p6:#2DD4BF;--pm:#7C8CF8;--key:#E3B341;--ref:#8B97A8}
+body.mode-light{--p1:#2D7FD8;--p2:#8957D8;--p3:#C7437F;--p4:#B4781F;--p5:#2A9E3C;--p6:#14B8A6;--pm:#5560D8;--key:#B5852E;--ref:#6B7685}
+body.mode-warm{--p1:#3A6EA5;--p2:#8060B0;--p3:#B5607A;--p4:#B07A2E;--p5:#5E8E4F;--p6:#3E9E8E;--pm:#6A66B0;--key:#C2902E;--ref:#8B7355}
+.seg-head{align-items:center;gap:14px;padding:16px 19px;border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 38%,var(--border));border-left:7px solid var(--sc,var(--accent));border-radius:var(--r);background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 26%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 8%,var(--s1)));margin:42px 0 16px;box-shadow:0 3px 16px color-mix(in srgb,var(--sc,var(--accent)) 15%,transparent)}
+body.mode-light .seg-head,body.mode-warm .seg-head{background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 26%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 8%,var(--s1)))}
+.hero + .seg-head{margin-top:26px}
+.seg-icon{font-size:20px;width:42px;height:42px;min-width:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;background:color-mix(in srgb,var(--sc,var(--accent)) 30%,var(--s1));border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 48%,transparent);margin-top:0;flex-shrink:0}
+.seg-name{font-size:18px;font-weight:800;letter-spacing:-.2px}
+.seg-name .secn{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;padding:0 7px;background:var(--sc,var(--accent));color:var(--bg);font-family:var(--mono);font-weight:800;border-radius:8px;margin-right:10px;font-size:14px;flex-shrink:0}
+.seg-sub{font-size:11px;margin-top:5px}
+</style>
+</head>
+<body>
+
+<div class="modebar" id="modebar"><button data-m="dark" class="on">◐</button><button data-m="light">○</button><button data-m="warm">◑</button></div>
+
+<nav class="crumbnav">
+  <a class="crumb" data-link-removed><span class="cr-ico">🗂</span>System Map</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" data-link-removed><span class="cr-ico">📁</span>Project Monitor</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" href="入局_System_Map.html"><span class="cr-ico">🎬</span>入局</a>
+  <span class="cr-sep">›</span>
+  <span class="crumb current"><span class="cr-ico">🧱</span>P4 Recruitment</span>
+</nav>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">入局 · Pillar 4 · Recruitment 招募系统</div>
+    <h1>🧱 P4 — 招募漏斗 + 预检硬 gate</h1>
+    <div class="northstar"><b>这条 pillar 一句话:</b>把「报名 → 筛 → online interview → <b>预检能否兑现人脉</b> → 选 6」从机制落成可执行系统。唯一硬 gate = <b>预检不到能兑现的人脉就不进 6 强</b> — after-show 兑现的唯一信用防线。</div>
+    <div class="purpose">称呼锁:报名进来的叫 <b>企业家</b>(不叫参赛者)· 三位投资人叫 <b>行业大佬</b>(Norman / Tony / Shane)· Jeff = <b>发起人 / 主持人</b>。本页按 4 个 segment 排:CRM→Database · Form · Online Interview SOP · 预检 gate / 黑名单 / 可兑现人脉池。空 segment 留 🔴 to-build,不删 — form 的空格故意留可见。</div>
+    <div class="metastrip">
+      <span class="live" id="clk">live</span>
+      <span class="sep">·</span><span>↻ <b>2026-06-17</b></span>
+      <span class="sep">·</span><span>owner <b>Wai Kit</b> · 4 segments · 报名→选 <b>6</b> · 漏斗大多 🔴</span>
+    </div>
+  </div>
+
+  <!-- FUNNEL OVERVIEW -->
+  <div class="seg-head"><span class="seg-icon">🛤</span><div class="seg-headtext"><div class="seg-name">招募漏斗总览 — 4 段机制(已锁)</div><div class="seg-sub">报名 → 筛 ~20 强 → online interview → 预检硬 gate → 选 6 · 资格 RM500k–1M</div></div></div>
+  <div class="segbody">
+    <div class="funnel">
+      <div class="fstep"><span class="fnum">1</span><div class="ftxt"><div class="fn">报名 Apply</div><div class="fd">recruitment video drop → 报名页 + Google Form · 强制填「赢了想要什么(人脉诉求)」</div></div><span class="fct">~∞</span></div>
+      <div class="farrow">▼</div>
+      <div class="fstep"><span class="fnum">2</span><div class="ftxt"><div class="fn">初筛 Shortlist</div><div class="fd">按 criteria 筛 ~20 强 · 选「能绑得到三大佬其中一条赛道」的企业家(管理 / 销售 / 零售人脉)</div></div><span class="fct">~20</span></div>
+      <div class="farrow">▼</div>
+      <div class="fstep"><span class="fnum">3</span><div class="ftxt"><div class="fn">Online Interview</div><div class="fd">视讯聊 · 看会不会讲、presentation 能力 · 双轨记录(A 诉求 / B 预检)</div></div><span class="fct">~20</span></div>
+      <div class="farrow">▼</div>
+      <div class="fstep gate"><span class="gtag">硬 GATE</span><span class="fnum">4</span><div class="ftxt"><div class="fn">预检 Pre-vet — 能不能兑现他的人脉诉求?</div><div class="fd">拿他的 ask 回去问 Norman / Tony / Shane「找得到这个人吗 / 帮得到吗」· 兑现不了 = 不进。无聊 / 帮不到的 ask 直接 drop。</div></div><span class="fct">Y/N</span></div>
+      <div class="farrow">▼</div>
+      <div class="fstep"><span class="fnum">5</span><div class="ftxt"><div class="fn">选 6 强 Final 6</div><div class="fd">只有 B = Y(预检过)的才进 · Rae + Jeff 终选 · 反推 8 月正片 prep</div></div><span class="fct">6</span></div>
+    </div>
+    <div class="note"><b>为什么预检是硬 gate:</b>节目卖的是「机会 + 人脉」,赢了要能真的去跟某位大佬吃饭 / 拆解公司。如果选进来的人脉诉求根本兑现不了,after-show fulfillment 就穿帮 — 整个节目信用塌。所以「make sure 我们做得到」才放进来,这是护城河,不是流程洁癖。<span class="statpill st-prog">来源 · 6/16 part-2 + TeamSync ⑥</span></div>
+  </div>
+
+  <!-- SEGMENT 1 — CRM → DATABASE -->
+  <div class="seg-head"><span class="seg-icon">🗄</span><div class="seg-headtext"><div class="seg-name">① CRM → Database(Lark 参赛者表)<span class="statpill st-prog">In progress</span></div><div class="seg-sub">报名数据落库 · 每个企业家一行 · 字段含「人脉可 fulfill」Y/N · owner Wai Kit</div></div></div>
+  <div class="segbody">
+    <div class="note">Lark Base 已有「参赛者」表雏形(团队执行层)。要补的:把漏斗每一段的状态变成<b>字段</b>,让一个企业家从报名到选 6 全程可追。<b>关键新增字段 = 「人脉可 fulfill(Y/N)」</b>(预检 B 栏结果),这是 6 强决策的唯一 gate 字段。</div>
+    <div class="form">
+      <div class="fhd">🗄 参赛者 Database — 建议字段表 <span class="ftag">LARK BASE · 参赛者</span></div>
+      <div class="field"><div class="q">企业家姓名 / 公司 / 行业</div><div class="blank">[ 文本 · 报名带入 ]</div></div>
+      <div class="field"><div class="q">营收区间(资格门槛 RM500k–1M)<span class="req">*</span></div><div class="opts"><span class="opt">&lt; RM500k(不合格)</span><span class="opt">RM500k–1M</span><span class="opt">&gt; RM1M</span></div></div>
+      <div class="field"><div class="q">人脉诉求(赢了想要什么)<span class="req">*</span></div><div class="blank lg">[ A 栏 · 从 form 带入 — 想见谁 / 想要什么资源 ]</div></div>
+      <div class="field"><div class="q"><span class="star">★</span> 人脉可 fulfill?(预检 B 栏 — gate 字段)</div><div class="opts"><span class="opt">🔴 N — 兑现不了</span><span class="opt">🟢 Y — 大佬确认可兑现</span><span class="opt">⚪ 未检</span></div></div>
+      <div class="field"><div class="q">漏斗阶段 Stage</div><div class="opts"><span class="opt">报名</span><span class="opt">~20 强</span><span class="opt">interview 完</span><span class="opt">预检完</span><span class="opt">6 强</span><span class="opt">落选 / 黑名单</span></div></div>
+      <div class="field"><div class="q">备注 / 黑名单理由</div><div class="blank">[ 文本 ]</div></div>
+    </div>
+    <div class="tobuild"><span class="lab">🔴 仍要 build</span> — 把上面字段在 Lark Base 参赛者表落地;接 Google Form responses 自动带入 A 栏 + 资格区间;<b>新增 gate 字段「人脉可 fulfill」</b>。<span style="display:block;margin-top:6px">→ <a href="https://kalozproduction.sg.larksuite.com/base/P5X7bZQV3axKEhsXOsale9s4goc" target="_blank">入局 Lark Base · 参赛者表 ↗</a></span></div>
+  </div>
+
+  <!-- SEGMENT 2 — FORM -->
+  <div class="seg-head"><span class="seg-icon">📝</span><div class="seg-headtext"><div class="seg-name">② 报名 Form(Google Form · 人脉诉求栏)<span class="statpill st-todo">To build</span></div><div class="seg-sub">报名本体 · 强制人脉诉求栏 = 整个 gate 的源头数据 · owner Wai Kit · 7/1 前 ready</div></div></div>
+  <div class="segbody">
+    <div class="note"><b>Form 的命门 = 人脉诉求栏。</b>没有这栏,后面预检 gate 就判不了 Y/N。设计待定:<b>自由填</b> vs <b>资源类别选项</b>(讨论中,建议混合 — 选类别 + 自由补具体诉求)。下面是带空格的 form 草样,空白故意留可见。</div>
+    <div class="form">
+      <div class="fhd">📝 《入局》企业家报名表 <span class="ftag">GOOGLE FORM · DRAFT</span></div>
+      <div class="field"><div class="q">姓名<span class="req">*</span></div><div class="blank">[ 短答 ]</div></div>
+      <div class="field"><div class="q">公司名称 / 你的职位<span class="req">*</span></div><div class="blank">[ 短答 ]</div></div>
+      <div class="field"><div class="q">所属行业 / 赛道<span class="req">*</span></div><div class="blank">[ 短答 ]</div></div>
+      <div class="field"><div class="q">公司年营收区间<span class="req">*</span></div><div class="hint">资格门槛 RM500k–1M</div><div class="opts"><span class="opt">&lt; RM500k</span><span class="opt">RM500k–1M</span><span class="opt">RM1M–5M</span><span class="opt">&gt; RM5M</span></div></div>
+      <div class="field"><div class="q">你现在最想突破什么?<span class="req">*</span></div><div class="hint">节目要的是「想突破」的企业家,不是「遇到问题」的</div><div class="blank lg">[ 长答 ]</div></div>
+      <div class="field"><div class="q"><span class="star">★</span> 如果你赢了,你最想要什么人脉 / 资源?<span class="req">*</span></div><div class="hint">★ 这是评审与预检的核心栏 · 越具体越好(想见谁 / 想拆什么 / 想进哪个圈)</div>
+        <div class="opts"><span class="opt">想见某位特定大佬(请注明)</span><span class="opt">某行业 / 商会人脉</span><span class="opt">管理 / 系统拆解</span><span class="opt">销售 / 渠道资源</span><span class="opt">零售 / 分销资源</span><span class="opt">其他</span></div>
+        <div class="blank lg" style="margin-top:6px">[ 长答 · 补充你具体想要的人脉诉求 — 越具体越能被兑现 ]</div>
+      </div>
+      <div class="field"><div class="q">为什么是你?(给观众一个理由)</div><div class="blank lg">[ 长答 ]</div></div>
+      <div class="field"><div class="q">联络方式(电话 / email)<span class="req">*</span></div><div class="blank">[ 短答 ]</div></div>
+    </div>
+    <div class="tobuild"><span class="lab">🔴 仍要 build</span>
+      <ul>
+        <li>定 form 平台(Google Form 直挂 / landing page / YT 导流)— <b>讨论中</b></li>
+        <li>「人脉诉求栏」最终形态:自由填 vs 类别选项 — <b>建议混合</b></li>
+        <li>responses 接进 Lark 参赛者 database(A 栏自动带入)</li>
+        <li>报名钮 CTA 落地路径(每条 social 的转化终点)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SEGMENT 3 — ONLINE INTERVIEW SOP -->
+  <div class="seg-head"><span class="seg-icon">🎥</span><div class="seg-headtext"><div class="seg-name">③ Online Interview SOP(A 诉求 / B 预检 双栏)<span class="statpill st-todo">To build</span></div><div class="seg-sub">~20 强视讯面试 · 双轨记录表 · A = 他想要什么 / B = 我们能不能兑现 · owner Wai Kit</div></div></div>
+  <div class="segbody">
+    <div class="note">Online interview 两个目的:<b>(1) 看人</b> — 会不会讲、presentation 能不能撑得起镜头;<b>(2) 拿数据喂预检</b> — 把 A 栏诉求问清楚,interview 后才能拿去问大佬能不能兑现(B 栏)。所以记录表 <b>双栏</b>:A 诉求 · B 预检 Y/N。</div>
+    <div class="dual">
+      <div class="track"><div class="tk">TRACK A</div><div class="tn">诉求记录(他想要什么)</div>
+        <ul>
+          <li><b>想见谁 / 想要什么</b> — 把 form 的诉求问到能验证的具体度(具体到「哪位老板 / 哪个圈 / 哪类拆解」)</li>
+          <li><b>突破点</b> — 他想突破什么 · 节目里能呈现的 drama / arc</li>
+          <li><b>presentation 能力</b> — 2 分钟自我介绍试讲、表达、镜头感</li>
+          <li>记进 Lark 参赛者表 A 栏</li>
+        </ul>
+      </div>
+      <div class="track b"><div class="tk">TRACK B · GATE</div><div class="tn">预检记录(我们能不能兑现)</div>
+        <ul>
+          <li>interview 后,拿 A 栏诉求去问 <b>Norman / Tony / Shane</b>:「这个人 / 这条资源,找得到吗?帮得到吗?」</li>
+          <li><b>B = Y</b> → 大佬确认可兑现 → 有资格进 6 强候选</li>
+          <li><b>B = N</b> → 兑现不了 / ask 太虚 → <b>不进 6 强</b>(硬 gate)</li>
+          <li>记进 Lark 参赛者表「人脉可 fulfill」字段 + 备注</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tobuild"><span class="lab">🔴 仍要 build</span>
+      <ul>
+        <li>谁面试(面试官)+ 面什么(题库 / 评分维度)</li>
+        <li>interview 形式:纯视讯 还是 顺便补录当 pre-show 素材 — <b>讨论中</b></li>
+        <li>双轨记录表模板(A / B 两栏,接 Lark database)</li>
+        <li>初筛 ~20 的评分 criteria 表(进 interview 前那一关)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SEGMENT 4 — 预检 GATE / 黑名单 / 可兑现人脉池 -->
+  <div class="seg-head"><span class="seg-icon">🛡</span><div class="seg-headtext"><div class="seg-name">④ 预检硬 gate · 黑名单 · 可兑现人脉池 checklist<span class="statpill st-todo">To build</span></div><div class="seg-sub">part-2 的「能否兑现」筛选机制 · gate 规则 + 黑名单 + 可兑现人脉池基准 · owner Rae(人脉池) + Wai Kit(gate/黑名单)</div></div></div>
+  <div class="segbody">
+    <div class="gloss">
+      <div class="g"><div class="gt">🛡 预检硬 gate</div><div class="gd">B=N 不进 6 强。无聊 / 兑现不了的 ask 直接 drop。写进选 6 SOP。</div></div>
+      <div class="g"><div class="gt">⛔ 黑名单</div><div class="gd">不合资格 / 诉求无法兑现 / 风险人选 记进 database「黑名单」状态 + 理由,避免重复评估。</div></div>
+      <div class="g"><div class="gt">🤝 可兑现人脉池</div><div class="gd">先盘点「三大佬实际能 reach 的人 / 能给的资源」清单,当 B 栏判 Y/N 的基准。</div></div>
+    </div>
+    <div class="note"><b>可兑现人脉池 = 预检的尺。</b>没有这份清单,B 栏只能凭感觉判。先把 Norman / Tony / Shane 实际能动用的资源盘成 checklist(管理拆解 / 销售渠道 / 零售分销 / 可约到的老板圈),interview 时拿企业家的 ask 一条条对 — 对得上 = Y,对不上 = N。<span class="statpill st-todo">owner Rae 盘点</span></div>
+    <div class="chk">
+      <div class="row"><span class="box">☐</span><div class="ct"><div class="cn">盘「可兑现人脉池」checklist v1</div><div class="cd">三大佬实际能 reach 的人 / 能给的资源,分赛道列(管理 / 销售 / 零售 / 老板圈)</div></div><span class="who">Rae</span></div>
+      <div class="row"><span class="box">☐</span><div class="ct"><div class="cn">把预检写进「选 6 SOP」</div><div class="cd">B=N 不进 · 终选 = Rae + Jeff · 大佬资源背书</div></div><span class="who">全队</span></div>
+      <div class="row"><span class="box">☐</span><div class="ct"><div class="cn">database 加「黑名单」状态 + 理由字段</div><div class="cd">落选 / 不兑现 / 风险人选归档,不重复评</div></div><span class="who">Wai Kit</span></div>
+      <div class="row"><span class="box">☐</span><div class="ct"><div class="cn">预检 owner 指派 + 大佬对接流程</div><div class="cd">interview 后谁拿 ask 去问哪位大佬、几时回</div></div><span class="who">Rae / Jeff</span></div>
+    </div>
+    <div class="tobuild"><span class="lab">🔴 待拍决定</span>
+      <ul>
+        <li>预检升硬 gate 会不会卡报名量?— 建议仍硬 gate(信用 &gt; 数量)</li>
+        <li>选 6 谁拍板?— 建议 Rae + Jeff 终选</li>
+        <li>可兑现人脉池谁 own?— 建议 Rae(对接 Jeff / 大佬)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DEPENDENCIES + SOURCE -->
+  <div class="seg-head"><span class="seg-icon">⛔</span><div class="seg-headtext"><div class="seg-name">依赖 + 卡点</div><div class="seg-sub">这条 pillar 卡在 / 卡住谁</div></div></div>
+  <div class="note">
+    ⛔ <b>报名系统未建</b> → 每条 social 的 CTA 没落地终点,转化链断在最后一步。<br>
+    ⛔ <b>「可兑现人脉池」未盘点</b> → 预检 gate 判不了 Y/N → after-show 信用防线悬空(最危险)。<br>
+    ⛔ <b>7/1 promo 是招募期唯一弹药批次</b> → 7/1 顺延则 4 周招募起跑全顺延。<br>
+    ⛔ <b>参赛者衣着 color code</b> 依赖 <a href="入局_P5_Design.html">P5 Design</a> 的 color tone(第一张多米诺)。<br>
+    🔗 <b>招募物料 + 4 周 posting</b> 归 <a href="入局_P3_BrandMarketing.html">P3 Brand &amp; Marketing(🔴 Vacant)</a> — 本 pillar 只管漏斗机制,不管分发。
+  </div>
+
+  <!-- NAV -->
+  <div class="seg-head"><span class="seg-icon">🧭</span><div class="seg-headtext"><div class="seg-name">相关页 + 源</div><div class="seg-sub">canonical source 不在本页重复 — 点过去看</div></div></div>
+  <div class="mapgrid">
+    <a class="mapcard use" href="入局_System_Map.html"><div class="mt">🎬 入局 System Map<span class="go">open ↗</span></div><div class="md">整个项目地图 — timeline + 5 pillar 导航 + tracker 入口。</div></a>
+    <a class="mapcard use" href="入局_Tracker.html"><div class="mt">📊 Tracker<span class="go">open ↗</span></div><div class="md">by-stage 执行看板,32 deliverables — P4 行做到哪看这页。</div></a>
+    <a class="mapcard use" href="入局_Show_Bible.html"><div class="mt">📖 Show Bible<span class="go">open ↗</span></div><div class="md">节目内核 — WHY 老板参加 / WHY 观众看(招募 hook 的源)。</div></a>
+  </div>
+  <div class="mapgrid" style="margin-top:10px">
+    <a class="mapcard ref" data-link-removed><div class="mt">📋 TeamSync ⑥<span class="go">open ↗</span></div><div class="md">招募漏斗 canonical source(有 / 缺 / 讨论 / decide / owner / 怎么落地)。</div></a>
+    <a class="mapcard ref" data-link-removed><div class="mt">🎙 Meeting part-2<span class="go">open ↗</span></div><div class="md">Wai Kit 全程走 show + 预检 gate 机制原话(fulfillable-screening 来源)。</div></a>
+    <a class="mapcard ref" href="https://kalozproduction.sg.larksuite.com/base/P5X7bZQV3axKEhsXOsale9s4goc" target="_blank"><div class="mt">🟦 Lark Base · 参赛者<span class="go">open ↗</span></div><div class="md">团队执行层(live)— database 在这里落地。</div></a>
+  </div>
+  <div class="mapgrid" style="margin-top:10px">
+    <a class="mapcard up" href="入局-Corporate-Reality-Show-2026_Master.html"><div class="mt">⬆ 📋 Project Master<span class="go">up ↗</span></div><div class="md">项目总台 — 团队 / jobscope / 5 pillar 导航。</div></a>
+  </div>
+
+  <!-- OWNERS -->
+  <div class="seg-head"><span class="seg-icon">👤</span><div class="seg-headtext"><div class="seg-name">谁做什么</div><div class="seg-sub">P4 owner = Wai Kit · 可兑现人脉池 = Rae · 终选 = Rae + Jeff</div></div></div>
+  <div class="builders">
+    <a class="bcard" href="入局-Corporate-Reality-Show-2026_Master.html"><div class="bn">Wai Kit</div><div class="bp">报名页 / form / interview SOP / 筛选 / database / gate / 黑名单</div></a>
+    <a class="bcard ov" href="入局-Corporate-Reality-Show-2026_Master.html"><div class="bn">Rae</div><div class="bp">可兑现人脉池盘点 · 选 6 把关</div></a>
+    <a class="bcard ov" href="入局-Corporate-Reality-Show-2026_Master.html"><div class="bn">Jeff(发起人)</div><div class="bp">终选 · 大佬资源背书 · 预检对接</div></a>
+    <a class="bcard vac" href="入局_P3_BrandMarketing.html"><div class="bn">P3(招募物料 / posting)</div><div class="bp">🔴 Vacant — 不在本 pillar</div></a>
+  </div>
+
+  <footer class="pagefoot">
+    <span class="kmark">KALOZ</span>
+    <span>入局 P4 Recruitment · 招募漏斗 + 预检硬 gate · owner Wai Kit · 配 System Map + Tracker</span>
+    <span class="upd">Last updated 2026-06-17</span>
+  </footer>
+</div>
+
+<script>
+(function(){var bar=document.getElementById('modebar');function setMode(m){document.body.classList.remove('mode-light','mode-warm');if(m==='light')document.body.classList.add('mode-light');if(m==='warm')document.body.classList.add('mode-warm');bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});try{localStorage.setItem('raeMode',m);}catch(e){}}
+bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});var saved='dark';try{saved=localStorage.getItem('raeMode')||'dark';}catch(e){}setMode(saved);
+var clk=document.getElementById('clk');function tick(){clk.textContent=new Date().toLocaleTimeString('en-GB');}tick();setInterval(tick,1000);})();
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💰 入局 Budget & Costing · 制作预算</title>
+<style>
+:root{--bg:#0D1117;--s1:#161B22;--s2:#21262D;--s3:#2D333B;--border:#30363D;--text:#E6EDF3;--muted:#7D8590;--dim:#484F58;--accent:#34D399;--ok:#3FB950;--warn:#E3B341;--bad:#FF7B72;--info:#58A6FF;--sans:-apple-system,BlinkMacSystemFont,'Inter','PingFang SC','Noto Sans SC',sans-serif;--mono:'SF Mono',ui-monospace,'JetBrains Mono',monospace;--r:10px;--r-sm:7px;
+  --p1:#58A6FF;--p2:#A371F7;--p3:#F778BA;--p4:#E3A857;--p5:#56D364;--p6:#2DD4BF;--pm:#7C8CF8;--key:#E3B341;--ref:#8B97A8}
+body.mode-light{--bg:#FBFAF6;--s1:#FFFFFF;--s2:#F2F0E9;--s3:#E9E6DC;--border:#D2CCBD;--text:#1E3A42;--muted:#6C6E6F;--dim:#A9A294;--accent:#0E9A6C;--ok:#2E8B6B;--warn:#B5852E;--bad:#CF4F52;--info:#3A6EA5;
+  --p1:#2D7FD8;--p2:#8957D8;--p3:#C7437F;--p4:#B4781F;--p5:#2A9E3C;--p6:#14B8A6;--pm:#5560D8;--key:#B5852E;--ref:#6B7685}
+body.mode-warm{--bg:#F5F0E8;--s1:#FBF7EF;--s2:#EFE7D8;--s3:#E6DAC6;--border:#DDCFB8;--text:#4A3D2E;--muted:#8B7355;--dim:#B0A187;--accent:#2E8B5E;--ok:#5E7E4F;--warn:#C2902E;--bad:#B5605A;--info:#8B7355;
+  --p1:#3A6EA5;--p2:#8060B0;--p3:#B5607A;--p4:#B07A2E;--p5:#5E8E4F;--p6:#3E9E8E;--pm:#6A66B0;--key:#C2902E;--ref:#8B7355}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:13.5px;line-height:1.55;padding-bottom:50px;transition:background .25s,color .25s}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.modebar{position:fixed;top:10px;right:10px;z-index:200;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;box-shadow:0 2px 12px rgba(0,0,0,.22)}
+.modebar button{font-family:var(--mono);font-size:11px;line-height:1;border:none;background:transparent;color:var(--muted);padding:5px 9px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+.crumbnav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:3px;flex-wrap:wrap;padding:8px 18px;background:color-mix(in srgb,var(--s1) 92%,transparent);border-bottom:2px solid var(--accent);font-family:var(--sans);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.crumbnav .crumb{display:inline-flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:-.1px;padding:3px 9px;border-radius:13px;transition:color .15s,background .15s}
+.crumbnav a.crumb:hover{color:var(--accent);background:var(--s2)}
+.crumbnav .crumb .cr-ico{font-size:13px}.crumbnav .cr-sep{color:var(--dim);font-size:11px}.crumbnav .crumb.current{color:var(--accent);font-weight:700}
+.hero{padding:22px 0 4px}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
+.northstar{font-size:13.5px;color:var(--text);margin-top:8px;border-left:3px solid var(--accent);padding-left:12px;line-height:1.5}
+.northstar b{color:var(--accent)}
+.purpose{font-size:12px;color:var(--muted);margin-top:8px;max-width:840px;line-height:1.55}
+.metastrip{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:11px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.metastrip .live{color:var(--ok);font-weight:700}.metastrip .live::before{content:'● ';animation:pulse 1.8s infinite}
+.metastrip .sep{color:var(--dim)}.metastrip b{color:var(--text)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+/* vibrant seg-head (System Map format) */
+.seg-head{display:flex;align-items:center;gap:14px;padding:16px 19px;border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 38%,var(--border));border-left:7px solid var(--sc,var(--accent));border-radius:var(--r);background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 26%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 8%,var(--s1)));margin:42px 0 16px;--sc:var(--accent);box-shadow:0 3px 16px color-mix(in srgb,var(--sc,var(--accent)) 15%,transparent)}
+.hero + .seg-head{margin-top:26px}
+.seg-icon{font-size:20px;width:42px;height:42px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;background:color-mix(in srgb,var(--sc,var(--accent)) 30%,var(--s1));border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 48%,transparent)}.seg-headtext{flex:1;min-width:0}
+.seg-name{font-size:18px;font-weight:800;letter-spacing:-.2px;display:flex;align-items:center}
+.seg-name .secn{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;padding:0 7px;background:var(--sc,var(--accent));color:var(--bg);font-family:var(--mono);font-weight:800;border-radius:8px;margin-right:10px;font-size:14px;flex-shrink:0}
+.seg-sub{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:5px}
+.gate{font-size:12.5px;color:var(--text);background:color-mix(in srgb,var(--bad) 9%,var(--s1));border:1px solid color-mix(in srgb,var(--bad) 40%,var(--border));border-left:4px solid var(--bad);border-radius:var(--r-sm);padding:13px 15px;line-height:1.7}
+.gate b{color:var(--bad)}.gate .k{font-family:var(--mono);color:var(--text)}
+.note{font-size:12px;color:var(--muted);background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 14px;margin:14px 0;line-height:1.7}.note b{color:var(--text)}
+/* table */
+table{width:100%;border-collapse:collapse;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-top:2px}
+th,td{text-align:left;padding:9px 13px;border-bottom:1px solid var(--border);font-size:12.5px;vertical-align:top}
+thead th{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);font-weight:700;background:var(--s2)}
+tbody tr:last-child td{border-bottom:none}
+td .cat{font-weight:700;color:var(--text)}td .li{color:var(--muted);font-size:11.5px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.own{font-family:var(--mono);font-size:10.5px;color:var(--accent)}
+.est{font-family:var(--mono);font-size:10.5px;color:var(--bad);white-space:nowrap}
+.st{font-size:13px}
+.steps{list-style:none;margin-top:2px}
+.steps li{font-size:12.5px;color:var(--text);padding:6px 0 6px 22px;position:relative;line-height:1.55;border-bottom:1px dashed var(--border)}
+.steps li:last-child{border-bottom:none}.steps li::before{content:'▸';position:absolute;left:2px;color:var(--accent)}
+.steps li b{color:var(--text)}
+.pagefoot{margin-top:30px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .kmark{font-weight:800;letter-spacing:2px;color:var(--accent)}.pagefoot .upd{margin-left:auto;color:var(--dim)}
+@media(max-width:760px){.wrap{padding:0 13px}table,thead,tbody,tr,th,td{display:block}thead{display:none}tbody tr{border:1px solid var(--border);border-radius:9px;margin-bottom:9px;padding:5px 4px}td{border:none;padding:4px 13px;font-size:13.5px}}
+</style>
+</head>
+<body>
+
+<div class="modebar" id="modebar"><button data-m="dark" class="on">◐</button><button data-m="light">○</button><button data-m="warm">◑</button></div>
+
+<nav class="crumbnav">
+  <a class="crumb" data-link-removed><span class="cr-ico">🗂</span>System Map</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" data-link-removed><span class="cr-ico">📁</span>Project Monitor</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" href="入局-Corporate-Reality-Show-2026_Master.html"><span class="cr-ico">🎬</span>入局</a>
+  <span class="cr-sep">›</span>
+  <span class="crumb current"><span class="cr-ico">💰</span>Budget & Costing</span>
+</nav>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">入局 · IN THE GAME · BUDGET & COSTING</div>
+    <h1>💰 入局 — 制作预算 / Costing</h1>
+    <div class="northstar"><b>这页 = 成本结构框架</b>(按 phase / category 的线项 + owner + 状态)。<b>不内联实际 RM 数字</b> — 金额在 🔒 GATED。</div>
+    <div class="purpose">production 的成本骨架:团队(Celine)按线项填实际报价,actuals 进 GATED <span class="num">_finance.md</span>。S1 = <b>6 集 · 单一场景</b>(venue 复用 · 2 集/天反推)。Rae×Jeff 商业/分账 = 项目外。</div>
+    <div class="metastrip">
+      <span class="live" id="clk">live</span>
+      <span class="sep">·</span><span>↻ <b>2026-06-19</b></span>
+      <span class="sep">·</span><span>11 categories · owner Celine + Rae · S1 6 集</span>
+    </div>
+  </div>
+
+  <!-- ① GATED 边界 -->
+  <div class="seg-head"><span class="seg-icon">🔒</span><div class="seg-headtext"><div class="seg-name"><span class="secn">①</span>GATED 边界 — 先读</div><div class="seg-sub">框架在这页 · 数字在 GATED · 分账在项目外</div></div></div>
+  <div class="gate"><b>🔒 这页只放成本「结构」,不放实际数字。</b><br>
+  实际金额 / 3 季投资模型 / 收入对照 → <span class="k">_finance.md</span> + <a data-link-removed>入局_Finance_Cost_Plan.html</a>(<b>Rae-only</b>)。<br>
+  Rae×Jeff 商业 / 分账条款 = <b>项目外</b>(需要时另开独立 MD)。本页只做<b>制作 costing</b>。</div>
+
+  <!-- ② 成本结构 -->
+  <div class="seg-head"><span class="seg-icon">📊</span><div class="seg-headtext"><div class="seg-name"><span class="secn">②</span>成本结构 — by phase / category</div><div class="seg-sub">每条:类别 → 线项 → owner → Est.(🔒)→ 状态 · 团队按这个填报价</div></div></div>
+  <table>
+    <thead><tr><th>类别 Category</th><th>线项 Line items</th><th>Owner</th><th>Est.</th><th>状态</th></tr></thead>
+    <tbody>
+      <tr><td><span class="cat">1 · Pre-production 前期</span></td><td class="li">框架 / scripts(内部)· venue scouting · 参考照片</td><td class="own">Wai Kit / Celine</td><td class="est">内部</td><td class="st">🟡</td></tr>
+      <tr><td><span class="cat">2 · Venue 场地</span></td><td class="li">黑棚 / 白景 / LED 租 · 7/1 + 8 月档期 · 复用</td><td class="own">Celine</td><td class="est">🔒 TBD</td><td class="st">🔴</td></tr>
+      <tr><td><span class="cat">3 · Crew 团队</span></td><td class="li">导演 · 摄影 · 灯光 · 收音 · 现场统筹</td><td class="own">Celine</td><td class="est">🔒 TBD</td><td class="st">🔴</td></tr>
+      <tr><td><span class="cat">4 · Equipment 器材</span></td><td class="li">机 · 灯 · LED 屏 · 收音 · monitor</td><td class="own">Celine</td><td class="est">🔒 TBD</td><td class="st">🔴</td></tr>
+      <tr><td><span class="cat">5 · Art / Set 美术</span></td><td class="li">3 椅 + 咖啡桌 + 1 空座 · LED「入局」backlight · Connection Card 道具</td><td class="own">Yong Cheng / Celine</td><td class="est">🔒 TBD</td><td class="st">🔴</td></tr>
+      <tr><td><span class="cat">6 · Talent 嘉宾</span></td><td class="li">3 大佬(Shark)· Jeff(host)· 参赛者 · 化妆 / 造型</td><td class="own">Jeff / Rae</td><td class="est">🔒 TBD</td><td class="st">🟡</td></tr>
+      <tr><td><span class="cat">7 · Shoot days 拍摄日</span></td><td class="li">7/1 promo(1 天)· 8 月正片(6 集 · ~3 天)</td><td class="own">Celine</td><td class="est">🔒 TBD</td><td class="st">🔴</td></tr>
+      <tr><td><span class="cat">8 · Post 后期</span></td><td class="li">剪辑 · VFX(金色「成功入局」)· 调色 · 字幕 · 切片(5/周)</td><td class="own">Celine / Yong Cheng</td><td class="est">🔒 TBD</td><td class="st">🔴</td></tr>
+      <tr><td><span class="cat">9 · Design 设计</span></td><td class="li">Brand CI · logo · 海报系统(招募/单/group/host/episode)</td><td class="own">Yong Cheng</td><td class="est">🔒 TBD</td><td class="st">🔴</td></tr>
+      <tr><td><span class="cat">10 · Marketing / Ads</span></td><td class="li">posting · 招募 ad 投放漏斗</td><td class="own">🔴 Vacant(P3)</td><td class="est">🔒 TBD</td><td class="st">🔴</td></tr>
+      <tr><td><span class="cat">11 · Contingency 预备</span></td><td class="li">~10% buffer</td><td class="own">Rae</td><td class="est">🔒 TBD</td><td class="st">🔴</td></tr>
+    </tbody>
+  </table>
+  <div class="note">状态:🔴 待报价 · 🟡 部分有 · 🟢 锁定。 <b>Est. 全 🔒 TBD</b> — 实际金额只进 GATED <span style="font-family:var(--mono)">_finance.md</span>,本页不内联。</div>
+
+  <!-- ③ 节奏 -->
+  <div class="seg-head"><span class="seg-icon">🛤</span><div class="seg-headtext"><div class="seg-name"><span class="secn">③</span>节奏 / 下一步</div><div class="seg-sub">谁先报什么 · 怎么收口 · 回填哪里</div></div></div>
+  <ul class="steps">
+    <li><b>S0（China 前）</b> — Celine 把 <b>venue + crew + 器材</b> 三大块先报出区间 → 进 GATED <span class="num">_finance.md</span>,Rae 收口。</li>
+    <li><b>锁定后</b> — production costing 回填 <a href="入局_Tracker.html">Execution Tracker</a> 的「production 预算/costing」节点(P2 · 已在 tracker)。</li>
+    <li><b>对外 / 团队</b> 看这页(框架);<b>数字</b>看 🔒 GATED。两层分开。</li>
+  </ul>
+
+  <footer class="pagefoot">
+    <span class="kmark">KALOZ</span>
+    <span>入局 Budget & Costing · 制作成本框架(数字 🔒 GATED)· 配 <a href="入局-Corporate-Reality-Show-2026_Master.html">Project Master</a> + <a href="入局_System_Map.html">System Map</a></span>
+    <span class="upd">Last updated 2026-06-19</span>
+  </footer>
+</div>
+
+<script>
+(function(){var bar=document.getElementById('modebar');function setMode(m){document.body.classList.remove('mode-light','mode-warm');if(m==='light')document.body.classList.add('mode-light');if(m==='warm')document.body.classList.add('mode-warm');bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});try{localStorage.setItem('raeMode',m);}catch(e){}}
+bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});var saved='dark';try{saved=localStorage.getItem('raeMode')||'dark';}catch(e){}setMode(saved);
+var clk=document.getElementById('clk');function tick(){clk.textContent=new Date().toLocaleTimeString('en-GB');}tick();setInterval(tick,1000);})();
+</script>
+</body>
+</html>

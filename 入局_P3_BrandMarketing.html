@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📣 入局 · P3 Brand & Marketing</title>
+<style>
+:root{--bg:#0D1117;--s1:#161B22;--s2:#21262D;--s3:#2D333B;--border:#30363D;--text:#E6EDF3;--muted:#7D8590;--dim:#484F58;--accent:#F778BA;--ok:#3FB950;--warn:#E3B341;--bad:#FF7B72;--info:#58A6FF;--sans:-apple-system,BlinkMacSystemFont,'Inter','PingFang SC','Noto Sans SC',sans-serif;--mono:'SF Mono',ui-monospace,'JetBrains Mono',monospace;--r:10px;--r-sm:7px}
+body.mode-light{--bg:#FBFAF6;--s1:#FFFFFF;--s2:#F2F0E9;--s3:#E9E6DC;--border:#D2CCBD;--text:#1E3A42;--muted:#6C6E6F;--dim:#A9A294;--accent:#C7437F;--ok:#2E8B6B;--warn:#B5852E;--bad:#CF4F52;--info:#3A6EA5}
+body.mode-warm{--bg:#F5F0E8;--s1:#FBF7EF;--s2:#EFE7D8;--s3:#E6DAC6;--border:#DDCFB8;--text:#4A3D2E;--muted:#8B7355;--dim:#B0A187;--accent:#B5607A;--ok:#5E7E4F;--warn:#C2902E;--bad:#B5605A;--info:#8B7355}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:13.5px;line-height:1.55;padding-bottom:50px;transition:background .25s,color .25s}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.modebar{position:fixed;top:10px;right:10px;z-index:200;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;box-shadow:0 2px 12px rgba(0,0,0,.22)}
+.modebar button{font-family:var(--mono);font-size:11px;line-height:1;border:none;background:transparent;color:var(--muted);padding:5px 9px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+.crumbnav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:3px;flex-wrap:wrap;padding:8px 18px;background:color-mix(in srgb,var(--s1) 92%,transparent);border-bottom:2px solid var(--accent);font-family:var(--sans);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.crumbnav .crumb{display:inline-flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:-.1px;padding:3px 9px;border-radius:13px;transition:color .15s,background .15s}
+.crumbnav a.crumb:hover{color:var(--accent);background:var(--s2)}
+.crumbnav .crumb .cr-ico{font-size:13px}.crumbnav .cr-sep{color:var(--dim);font-size:11px}.crumbnav .crumb.current{color:var(--accent);font-weight:700}
+.hero{padding:22px 0 4px}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
+.northstar{font-size:14px;color:var(--text);margin-top:8px;border-left:3px solid var(--accent);padding-left:12px;line-height:1.5}
+.northstar b{color:var(--accent)}
+.purpose{font-size:12px;color:var(--muted);margin-top:8px;max-width:820px;line-height:1.55}
+.metastrip{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:11px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.metastrip .live{color:var(--ok);font-weight:700}.metastrip .live::before{content:'● ';animation:pulse 1.8s infinite}
+.metastrip .sep{color:var(--dim)}.metastrip b{color:var(--text)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+/* seg-head */
+.seg-head{display:flex;align-items:flex-start;gap:11px;padding:10px 14px 9px;border:1px solid var(--border);border-radius:var(--r);background:rgba(125,133,144,.05);margin:24px 0 12px}
+body.mode-light .seg-head,body.mode-warm .seg-head{background:rgba(108,93,76,.04)}
+.seg-icon{font-size:17px;flex-shrink:0;margin-top:1px}.seg-headtext{flex:1;min-width:0}
+.seg-name{font-size:14px;font-weight:700;letter-spacing:-.1px}
+.seg-sub{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px}
+/* TIMELINE strip */
+.tl{display:flex;flex-wrap:wrap;gap:0;align-items:stretch}
+.tl .stg{flex:1 1 0;min-width:150px;background:var(--s1);border:1px solid var(--border);padding:11px 13px;position:relative}
+.tl .stg:first-child{border-radius:var(--r) 0 0 var(--r)}
+.tl .stg:last-child{border-radius:0 var(--r) var(--r) 0}
+.tl .stg+.stg{border-left:none}
+.tl .stg.now{border-top:3px solid var(--warn)}
+.tl .sk{font-family:var(--mono);font-size:9.5px;font-weight:800;letter-spacing:.4px;color:var(--accent)}
+.tl .sn{font-size:13px;font-weight:700;margin-top:3px}
+.tl .sd{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:4px;line-height:1.4}
+.tl .nowtag{position:absolute;top:-9px;right:8px;font-family:var(--mono);font-size:8.5px;font-weight:800;background:var(--warn);color:#0D1117;padding:1px 7px;border-radius:8px;letter-spacing:.3px}
+/* MAP cards */
+.mapgrid{display:flex;flex-wrap:wrap;gap:10px}
+.mapcard{flex:1 1 0;min-width:240px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:13px 15px;border-left:3px solid var(--accent);transition:border-color .15s,transform .15s;display:block}
+.mapcard:hover{transform:translateY(-1px);text-decoration:none}
+.mapcard.use{border-left-color:var(--accent)}.mapcard.ref{border-left-color:var(--info)}.mapcard.up{border-left-color:var(--dim)}
+.mapcard .mt{font-size:14px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px}
+.mapcard .mt .go{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--accent)}
+.mapcard .md{font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.5}
+/* builders */
+.builders{display:flex;flex-wrap:wrap;gap:9px}
+.bcard{flex:1 1 0;min-width:158px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 12px;border-top:3px solid var(--accent);display:block}
+.bcard:hover{transform:translateY(-1px);text-decoration:none}
+.bcard.vac{border-top-color:var(--bad)}.bcard.ov{border-top-color:var(--info)}
+.bcard .bn{font-size:12.5px;font-weight:700;color:var(--text)}
+.bcard .bp{font-family:var(--mono);font-size:9.5px;font-weight:700;color:var(--accent);margin-top:4px}
+.bcard.vac .bp{color:var(--bad)}.bcard.ov .bp{color:var(--info)}
+.note{font-size:12px;color:var(--muted);background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 14px;margin:14px 0;line-height:1.7}
+.note b{color:var(--text)}
+.pagefoot{margin-top:26px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .kmark{font-weight:800;letter-spacing:2px;color:var(--accent)}.pagefoot .upd{margin-left:auto;color:var(--dim)}
+@media(max-width:760px){.wrap{padding:0 13px}.tl .stg,.mapcard,.bcard{flex:none;width:100%;min-width:0}
+  .tl .stg{border-radius:var(--r)!important;border-left:1px solid var(--border)!important;margin-bottom:6px}}
+/* ---- P3 page-local helpers (token-only, no new colors) ---- */
+.ownerstrip{display:flex;flex-wrap:wrap;gap:9px;align-items:stretch;margin:6px 0 2px}
+.ownercard{flex:1 1 0;min-width:200px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;border-left:3px solid var(--bad)}
+.ownercard .ol{font-family:var(--mono);font-size:9.5px;letter-spacing:.6px;color:var(--muted);text-transform:uppercase}
+.ownercard .ov{font-size:15px;font-weight:700;margin-top:3px;color:var(--bad)}
+.ownercard.ok{border-left-color:var(--accent)}.ownercard.ok .ov{color:var(--accent)}
+.ownercard.info{border-left-color:var(--info)}.ownercard.info .ov{color:var(--info)}
+.ownercard .od{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5}
+.statusrow{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 2px}
+.pill{font-family:var(--mono);font-size:10px;font-weight:700;padding:4px 10px;border-radius:13px;border:1px solid var(--border);background:var(--s1);color:var(--muted)}
+.pill.have{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 40%,var(--border))}
+.pill.build{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 40%,var(--border))}
+.pill.gate{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 40%,var(--border))}
+.segbody{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:0 0 4px}
+.segbody h4{font-size:12px;font-weight:700;color:var(--text);margin:12px 0 6px;letter-spacing:-.1px}
+.segbody h4:first-child{margin-top:0}
+.segbody ul{list-style:none;margin:0 0 4px}
+.segbody li{position:relative;padding-left:16px;font-size:12.5px;line-height:1.65;color:var(--text);margin-bottom:3px}
+.segbody li::before{content:'';position:absolute;left:3px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.segbody li.x::before{background:var(--bad)}
+.segbody li.q::before{background:var(--warn)}
+.segbody li b{color:var(--text)}
+.segbody .num{font-family:var(--mono);color:var(--accent);font-weight:700}
+.segbody .src{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:8px;padding-top:8px;border-top:1px dashed var(--border)}
+.segbody .src a{font-weight:700}
+/* to-build banner */
+.tobuild{display:flex;align-items:center;gap:10px;background:color-mix(in srgb,var(--bad) 9%,var(--s1));border:1px dashed color-mix(in srgb,var(--bad) 50%,var(--border));border-radius:var(--r);padding:11px 15px;margin:0 0 4px}
+.tobuild .tbi{font-size:16px}
+.tobuild .tbt{flex:1;min-width:0}
+.tobuild .tbn{font-size:12.5px;font-weight:700;color:var(--bad)}
+.tobuild .tbd{font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.5}
+/* cadence grid */
+.cadwrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--r);background:var(--s1)}
+table.cad{border-collapse:collapse;width:100%;min-width:560px;font-size:11.5px}
+table.cad th,table.cad td{border:1px solid var(--border);padding:7px 9px;text-align:left;vertical-align:top}
+table.cad th{background:var(--s2);font-weight:700;font-size:10.5px;letter-spacing:.2px;color:var(--text)}
+table.cad td .wk{font-family:var(--mono);font-size:10px;color:var(--accent);font-weight:700}
+table.cad tr td:first-child{font-family:var(--mono);font-weight:700;color:var(--accent);white-space:nowrap;background:color-mix(in srgb,var(--accent) 6%,var(--s1))}
+table.cad .ph{font-family:var(--mono);font-size:9.5px;color:var(--muted)}
+/* channel chips */
+.chgrid{display:flex;flex-wrap:wrap;gap:9px}
+.chcard{flex:1 1 0;min-width:170px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 13px;border-top:3px solid var(--accent)}
+.chcard.sec{border-top-color:var(--info)}.chcard.tbd{border-top-color:var(--bad);border-style:dashed}
+.chcard .cn{font-size:13px;font-weight:700;color:var(--text)}
+.chcard .cr{font-family:var(--mono);font-size:9.5px;font-weight:700;color:var(--accent);margin-top:4px;text-transform:uppercase;letter-spacing:.4px}
+.chcard.sec .cr{color:var(--info)}.chcard.tbd .cr{color:var(--bad)}
+.chcard .cd{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5}
+
+/* ===== System Map design conform · vibrant section headers + per-category palette (2026-06-19) ===== */
+:root{--p1:#58A6FF;--p2:#A371F7;--p3:#F778BA;--p4:#E3A857;--p5:#56D364;--p6:#2DD4BF;--pm:#7C8CF8;--key:#E3B341;--ref:#8B97A8}
+body.mode-light{--p1:#2D7FD8;--p2:#8957D8;--p3:#C7437F;--p4:#B4781F;--p5:#2A9E3C;--p6:#14B8A6;--pm:#5560D8;--key:#B5852E;--ref:#6B7685}
+body.mode-warm{--p1:#3A6EA5;--p2:#8060B0;--p3:#B5607A;--p4:#B07A2E;--p5:#5E8E4F;--p6:#3E9E8E;--pm:#6A66B0;--key:#C2902E;--ref:#8B7355}
+.seg-head{align-items:center;gap:14px;padding:16px 19px;border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 38%,var(--border));border-left:7px solid var(--sc,var(--accent));border-radius:var(--r);background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 26%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 8%,var(--s1)));margin:42px 0 16px;box-shadow:0 3px 16px color-mix(in srgb,var(--sc,var(--accent)) 15%,transparent)}
+body.mode-light .seg-head,body.mode-warm .seg-head{background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 26%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 8%,var(--s1)))}
+.hero + .seg-head{margin-top:26px}
+.seg-icon{font-size:20px;width:42px;height:42px;min-width:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;background:color-mix(in srgb,var(--sc,var(--accent)) 30%,var(--s1));border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 48%,transparent);margin-top:0;flex-shrink:0}
+.seg-name{font-size:18px;font-weight:800;letter-spacing:-.2px}
+.seg-name .secn{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;padding:0 7px;background:var(--sc,var(--accent));color:var(--bg);font-family:var(--mono);font-weight:800;border-radius:8px;margin-right:10px;font-size:14px;flex-shrink:0}
+.seg-sub{font-size:11px;margin-top:5px}
+</style>
+</head>
+<body>
+
+<div class="modebar" id="modebar"><button data-m="dark" class="on">◐</button><button data-m="light">○</button><button data-m="warm">◑</button></div>
+
+<nav class="crumbnav">
+  <a class="crumb" data-link-removed><span class="cr-ico">🗂</span>System Map</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" data-link-removed><span class="cr-ico">📁</span>Project Monitor</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" href="入局_System_Map.html"><span class="cr-ico">🎬</span>入局</a>
+  <span class="cr-sep">›</span>
+  <span class="crumb current"><span class="cr-ico">🧱</span>P3 Brand &amp; Marketing</span>
+</nav>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">入局 · Pillar 3 of 5 · Brand &amp; Marketing</div>
+    <h1>📣 P3 — Brand &amp; Marketing</h1>
+    <div class="northstar"><b>这根 pillar 的活:</b>把《入局》变成「会被看见、会被报名、会被相信」的东西 — 用 social 内容矩阵喂 <b>4 周招募</b>,守住 brand voice/定位「入局 = 动词/运动」。</div>
+    <div class="purpose">P3 = 节目的<b>需求引擎</b>:7/1 拍的物料 → 4 周分发 → 把对的老板拉进报名漏斗。<b style="color:var(--bad)">⚠️ 这根 pillar 目前没有 owner</b> — 它直接决定 S1 能不能招到 6 个对的老板,owner gap = recruitment-engine risk。<b>跟 P5 Design(Yong Cheng,做视觉/CI)是分开的两根 pillar</b> — P3 管「发什么/发哪/发多密/什么声音」,P5 管「长什么样」。</div>
+    <div class="metastrip">
+      <span class="live" id="clk">live</span>
+      <span class="sep">·</span><span>↻ <b>2026-06-17</b></span>
+      <span class="sep">·</span><span>owner <b style="color:var(--bad)">🔴 VACANT</b> · 3 segments · 主战场 = 7 月 4 周</span>
+    </div>
+  </div>
+
+  <!-- OWNER GAP -->
+  <div class="seg-head"><span class="seg-icon">👤</span><div class="seg-headtext"><div class="seg-name">Owner — 🔴 这根 pillar 的最大风险</div><div class="seg-sub">没有人扛 marketing = 招募弹药发不出去 · recruitment-engine risk</div></div></div>
+  <div class="ownerstrip">
+    <div class="ownercard"><div class="ol">Pillar Owner</div><div class="ov">🔴 VACANT</div><div class="od">没有人 own marketing/social 的发布与节奏。临时由 <b>YK</b>(posting schedule + 切片源排期)+ <b>Rae</b>(会前推流量 + 矩阵把关)分担,<b>不等于</b>有专职 owner。先补这个洞。</div></div>
+    <div class="ownercard ok"><div class="ol">视觉物料供给</div><div class="ov">P5 Design</div><div class="od"><b>Yong Cheng</b> 出 social poster / 竖版模板(等 color tone 锁)。P5 = 长什么样;P3 = 发什么/发哪/发多密。两根 pillar 分开。</div></div>
+    <div class="ownercard info"><div class="ol">验收 / 方向</div><div class="ov">Jeff(监制)</div><div class="od">敲方向 + 大佬定向触达背书。Rae = 矩阵把关 + 会前推渠道。</div></div>
+  </div>
+  <div class="note"><b>为什么这是风险不是小事:</b>7/1 promo 拍摄是招募期<b>唯一一批弹药</b>。没人 own 分发,这批弹药就发不出去 → 4 周招募断在最后一步 → 招不到 6 个对的老板 → S1 起不来。<b>补 owner = 比补任何单条物料都优先。</b></div>
+
+  <!-- SEGMENT MAP -->
+  <div class="seg-head"><span class="seg-icon">🧩</span><div class="seg-headtext"><div class="seg-name">这根 pillar 的 3 段(本页逐段展开)</div><div class="seg-sub">① Social Media(物料/发文/排期/Ads)· ② 渠道 + 4 周 cadence · ③ Brand Voice / 定位 · 🟢有内容 / 🔴待建</div></div></div>
+  <div class="statusrow">
+    <span class="pill have">🟢 有骨架: 内容矩阵 · social hook 库 · 4 周节奏概念</span>
+    <span class="pill build">🔴 待建: 渠道清单 · cadence 日历 · 切片 SOP · 报名 CTA 落地</span>
+    <span class="pill gate">⚠️ 卡点: color tone 锁前竖版模板做不了 · 报名页未建 CTA 没终点</span>
+  </div>
+
+  <!-- =============== SEGMENT 1: SOCIAL MEDIA =============== -->
+  <div class="seg-head"><span class="seg-icon">①</span><div class="seg-headtext"><div class="seg-name">Social Media — Marketing Material · Posting Content · Posting Schedule · Ads</div><div class="seg-sub">src: TeamSync Checklist 模块 ⑦ Marketing/Social · 6/16 part-2 会议</div></div></div>
+  <div class="segbody">
+    <h4>一句话</h4>
+    <ul><li>YouTube 主 + 社媒切片,用 <b>Hero / Hub / Help</b> 三层矩阵喂 4 周招募 — 每周 <span class="num">≥1</span> video + poster,金句 / 痛点 hook 切 Reels / TikTok。</li></ul>
+
+    <h4>🅐 Marketing Material(弹药库)</h4>
+    <ul>
+      <li><b>🟢 有 — 内容矩阵骨架</b>:Hero(节目本体)· Hub(日常流量)· Help(实用价值)三层。</li>
+      <li><b>🟢 有 — 切片源</b>:13min beat 含 金句 / 人脉解密 / 大佬交锋 → 都是可切的素材。</li>
+      <li><b>🟢 有 — 7/1 招募物料 = 前 4 周弹药</b>:形式解释片 · recruitment ×3-4 · 3 嘉宾单人 · 4 人 interview。</li>
+      <li><b>🟢 有 — after-show / highlight = 招募收尾王牌</b>:成功案例 highlight = 「See-to-Believe」信用图,证明人脉真兑现(S1 首季靠 promo 立信,after-show 在后)。</li>
+      <li class="x"><b>🔴 缺 — Hub / Help 具体内容形态</b>:只有三层骨架,没拆每层发什么。</li>
+      <li class="x"><b>🔴 缺 — 竖版 social 模板</b>(由 P5 Yong Cheng 出,<b>等 color tone 锁</b>才能动)。</li>
+    </ul>
+
+    <h4>🅑 Posting Content(发什么)· social hook 角度库</h4>
+    <ul>
+      <li><b>🟢 有 — hook 角度库</b>:① 「<b>人脉好看</b>」(大佬当场接通上市公司董事 = 可视化权力)· ② 「<b>那可能是我</b>」(真老板真痛点,高代入)· ③ 「<b>FOMO</b>」(谁都能报名,观众即人才池)。</li>
+      <li><b>🟢 有 — 切片逻辑</b>:7/1 的 4 人 interview = 招募切片主源,按 <b>一句一痛点 hook</b> 拍 + 多收特写。</li>
+      <li class="q"><b>💬 待讨论 — 切片源排序</b>:招募期切片只用 7/1 一批,还是中段补拍?(建议先排 7/1 痛点 hook)</li>
+    </ul>
+
+    <h4>🅒 Posting Schedule(几时发)</h4>
+    <ul>
+      <li><b>🟢 有 — 4 周 cadence 已锁(概念)</b>:7 月 = 招募主战场,video 周 + poster 隔天 + 切片填空。</li>
+      <li><b>🟡 有母版(6/16 part-2)— 每集分发 pattern</b>:每周 <b>1 长(10–12min 正片)+ ~5 条 1 分钟短</b>;每集 = teaser(提升)+ poster → 播后 5 短切片,跟 <b>Breakthrough cadence</b> 一样。每集一张 teaser poster(6 集)。</li>
+      <li class="x"><b>🔴 缺 — 可排的 posting cadence 日历</b>:把上面 pattern 落到 4 周 × 7 天格子 + 标首发日(YK posting schedule v1 要加「social 分发」栏)。→ 见下方 ② 的 cadence 模板。</li>
+      <li class="x"><b>🔴 缺 — 切片分发 SOP</b>:切多长 / 字幕 / 钩子首帧 / CTA 导报名页(写半页)。</li>
+    </ul>
+
+    <h4>🅓 Ads / 推流(付费 + 会前推)</h4>
+    <ul>
+      <li><b>🟡 有方向(6/16 part-2)— 招募 ad 漏斗</b>:promo + recruitment video + poster <b>专门用来导报名</b>(「专门是 recruitment 用的」),对接 <b>5 个 intake 渠道</b>(part-2「5 个方报名」)。</li>
+      <li class="x"><b>🔴 缺 — 「会前推流量」定义</b>:推观众还是推大佬?建议<b>双线</b> — 公开预热(推观众报名)+ 大佬定向触达(Jeff 资源背书)。</li>
+      <li class="x"><b>🔴 缺 — 报名 CTA 落地路径</b>:每条 social 的 CTA 现在没终点(报名系统未建,见 <a href="入局_P4_Recruitment.html">P4 Recruitment</a>)→ 转化链断在最后一步。</li>
+      <li class="q"><b>💬 待决 — ads team / buy 仍在谈</b>(6/16 framework:「ad 还在讲找更好的…还要去谈」)+ 会前推几条线(建议双线:公开预热 + 大佬定向)。</li>
+    </ul>
+    <h4>🅔 On-screen style(剪辑 ×文案共用)</h4>
+    <ul>
+      <li><b>🟡 有 cue(6/15)— 大字幕 / 资源弹出</b>:说话时旁边持续弹「大字幕 + 资源 pop-up」动效(「资源什么什么弹出来的,像很多节目这样子」)= 招募片 + 短切片统一 motion-graphics 风。</li>
+    </ul>
+    <div class="src">canonical src → <a data-link-removed>入局_TeamSync_Execution_Checklist.md</a> 模块 ⑦ · Meeting/「20260616 - inner circle part 2.txt」(promote+recruitment video / posting marketing / 5 平台报名 / highlight 牺牲图)</div>
+  </div>
+
+  <!-- =============== SEGMENT 2: CHANNELS + 4-WEEK CADENCE =============== -->
+  <div class="seg-head"><span class="seg-icon">②</span><div class="seg-headtext"><div class="seg-name">渠道清单 + 4 周 Posting Cadence</div><div class="seg-sub">src: TeamSync 模块 ⑦ · cadence = 7 月招募主战场 · 🔴 渠道组合 + 日历待落地</div></div></div>
+
+  <div class="tobuild"><span class="tbi">🔴</span><div class="tbt"><div class="tbn">渠道清单 — 待建(明天会上拍渠道组合 + 密度)</div><div class="tbd">现在只有「YouTube + 社媒」没具体平台组合。下面是 TeamSync ⑦ 的<b>建议起点</b>,不是锁定 — owner 一到就拍板。</div></div></div>
+  <div class="chgrid">
+    <div class="chcard"><div class="cn">▶ YouTube</div><div class="cr">主平台 · 长片</div><div class="cd">节目长片 16:9 主阵地 + 招募 video 落点。</div></div>
+    <div class="chcard"><div class="cn">📸 IG Reels</div><div class="cr">起步 · 切片</div><div class="cd">竖版 9:16 切片主分发(金句 / 痛点 hook)。</div></div>
+    <div class="chcard"><div class="cn">🎵 TikTok</div><div class="cr">起步 · 切片</div><div class="cd">同 IG Reels,扩触达 + FOMO 角度。</div></div>
+    <div class="chcard sec"><div class="cn">👥 Facebook</div><div class="cr">触达老板</div><div class="cd">大马 SME 老板还在 FB → 触达 + 大佬定向。</div></div>
+    <div class="chcard tbd"><div class="cn">📕 小红书 / 其他</div><div class="cr">🔴 待定</div><div class="cd">是否进入待 owner 拍板(渠道组合未锁)。</div></div>
+  </div>
+  <div class="note"><b>建议(TeamSync ⑦,待 owner 拍板):</b>YT 主 + IG Reels / TikTok 起步,FB 触达老板。<b>🎯 待决:</b>① 切片主平台锁两个 · ② 4 周密度 · ③ 招募期切片只用 7/1 一批还是中段补拍 · ④ 会前推几条线。</div>
+
+  <div class="tobuild"><span class="tbi">🟡</span><div class="tbt"><div class="tbn">4 周 Posting Cadence 日历 — 有母版,待落格(YK posting schedule v1 加「social 分发」栏)</div><div class="tbd">每集分发 pattern 已由 6/16 part-2 给出(跟 <b>Breakthrough cadence</b> 一样):每周 <b>1 长正片 + ~5 条 1 分钟短</b>,每集 = teaser + poster → 播后 5 短切片。下面是 <b>posting-plan 模板</b>(form with blanks)— 把这个 pattern 落到格子,待 owner 填首发日 + 具体物料。</div></div></div>
+  <div class="cadwrap">
+    <table class="cad">
+      <thead><tr><th>周</th><th>阶段</th><th>主 video(Hero)</th><th>Poster</th><th>切片 / Reels(Help/Hub)</th><th>CTA → 报名</th></tr></thead>
+      <tbody>
+        <tr><td>第 0 周<br><span class="ph">会前预热</span></td><td>预热 / 双线推</td><td>🔴 待填 — 形式解释片?</td><td>🔴 待填</td><td>🔴 待填 — 痛点 hook teaser</td><td>🔴 待落地(报名页)</td></tr>
+        <tr><td>第 1 周<br><span class="ph">招募 open</span></td><td>recruitment 主片</td><td>🔴 单人 poster</td><td>🔴 切片 ×?(7/1 4 人 interview 痛点 hook)</td><td>🔴 报名按钮</td></tr>
+        <tr><td>第 2 周</td><td>嘉宾单人 ×3</td><td>🔴 group poster</td><td>🔴 「人脉好看」角度切片</td><td>🔴 报名按钮</td></tr>
+        <tr><td>第 3 周</td><td>4 人 interview 切段</td><td>🔴 episode poster</td><td>🔴 「那可能是我」角度切片</td><td>🔴 报名按钮</td></tr>
+        <tr><td>第 4 周<br><span class="ph">招募 close</span></td><td>最后冲刺 / FOMO</td><td>🔴 倒计时 poster</td><td>🔴 FOMO + 截止切片</td><td>🔴 报名截止 CTA</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="segbody"><div class="src">canonical src → <a data-link-removed>入局_TeamSync_Execution_Checklist.md</a> 模块 ⑦ · timeline(7/1 拍齐弹药 → 7 月 4 周分发主战场 → 8 月正片 → post 切金句 / after-show 续推) · 报名 CTA 终点见 <a href="入局_P4_Recruitment.html">P4 Recruitment</a></div></div>
+
+  <!-- =============== SEGMENT 3: BRAND VOICE / POSITIONING =============== -->
+  <div class="seg-head"><span class="seg-icon">③</span><div class="seg-headtext"><div class="seg-name">Brand Voice / Positioning — 入局 as a movement</div><div class="seg-sub">src: 360 Ecosystem Playbook §5(JW 定位层)· 每条 social 都要守这个声音</div></div></div>
+  <div class="segbody">
+    <h4>定位锚(发任何内容前先守这 5 条)</h4>
+    <ul>
+      <li><b>先诊断,别卖药</b> — 解的不是「缺商业内容」,是老板的 <b>可见性 + 连接 + 归属</b> 缺失。Marketing 文案打这个痛,不打「我们做内容」。</li>
+      <li><b>Ownable idea — 把「入局」做成动词 / 身份</b>:「<b>你入局了吗?</b>」。不靠「全马最强」这种品类宣称。</li>
+      <li><b>Both-and</b>:不是「节目 OR 平台」,是「节目 = 建平台的那个周期性大典」。</li>
+      <li><b>原型 = Ruler × Rebel</b>:Ruler(权威 / 江湖地位 / 标准)× Rebel(打破「商业内容很闷」、重定义企业媒体)。Voice 既权威又敢。</li>
+      <li class="q"><b>⚠️ inclusive-aspirational 护栏(红线)</b>:<b>不能做成「有钱人秀」</b>。观众必须觉得「自己也能入局」 — 这是运动 vs 精英秀的分水岭。每条 social 自检:这条让普通老板觉得「那可能是我」还是「那不是我的世界」?</li>
+    </ul>
+    <h4>北极星(对外口径)</h4>
+    <ul>
+      <li><span class="num">「让对的老板,遇见对的局。」</span></li>
+      <li><b>敌人</b>:老板「一个人闷头撑、卡在天花板、孤独又 invisible」。<b>入局 = 不再一个人。</b></li>
+      <li><b>One-line(JW angle)</b>:入局不是一档节目,是大马华人老板的<b>身份动词 + 一场运动</b>。</li>
+    </ul>
+    <div class="src">canonical src → <a data-link-removed>入局_360_Ecosystem_Playbook.md</a> §5 Brand &amp; Positioning + §0 North Star · 原型 / 身份运动 = JW 定位层(刻在 social 声音里)</div>
+  </div>
+
+  <!-- DEPENDENCIES -->
+  <div class="seg-head"><span class="seg-icon">⛔</span><div class="seg-headtext"><div class="seg-name">这根 pillar 卡在哪 / 依赖谁</div><div class="seg-sub">P3 不是孤岛 — 卡点全在上游</div></div></div>
+  <div class="segbody">
+    <ul>
+      <li class="x"><b>⛔ color tone / logo 未锁</b>(P5 Design,Yong Cheng)→ 竖版 social 模板 + 海报 + 后期字幕 全 downstream 做不了。第一张多米诺。</li>
+      <li class="x"><b>⛔ 报名系统未建</b>(P4 Recruitment)→ 每条 social 的 CTA 没落地终点,转化链断在最后一步。</li>
+      <li class="x"><b>⛔ 7/1 promo 顺延</b> → 4 周招募弹药全顺延(7/1 是招募期唯一弹药批次)。</li>
+      <li><b>⬩ owner gap 本身</b> = 上面全部下游卡点没人统筹接 → <b>补 owner 优先于补单条物料。</b></li>
+    </ul>
+  </div>
+
+  <!-- NAV BACK -->
+  <div class="seg-head"><span class="seg-icon">🧭</span><div class="seg-headtext"><div class="seg-name">关联页(同项目)</div><div class="seg-sub">P3 跟谁互喂 · 往上回 System Map</div></div></div>
+  <div class="mapgrid">
+    <a class="mapcard use" href="入局_P5_Design.html"><div class="mt">🎨 P5 Design<span class="go">open ↗</span></div><div class="md">Yong Cheng · Brand CI / logo / color / 字体 / 竖版模板 — P3 的视觉物料供给上游。</div></a>
+    <a class="mapcard use" href="入局_P4_Recruitment.html"><div class="mt">📨 P4 Recruitment<span class="go">open ↗</span></div><div class="md">报名页 / form / 漏斗 — P3 每条 CTA 的落地终点。</div></a>
+    <a class="mapcard use" href="入局_Show_Bible.html"><div class="mt">📖 Show Bible<span class="go">open ↗</span></div><div class="md">基石 — WHY 老板参加 / WHY 观众看 = social hook 的母矿。</div></a>
+  </div>
+  <div class="mapgrid" style="margin-top:10px">
+    <a class="mapcard ref" href="入局_Tracker.html"><div class="mt">📊 Tracker<span class="go">open ↗</span></div><div class="md">by-stage 看板 — P3 物料 / 切片状态在这里 track。</div></a>
+    <a class="mapcard up" href="入局_System_Map.html"><div class="mt">⬆ 🎬 入局 System Map<span class="go">up ↗</span></div><div class="md">5 pillar + PM 的项目总台。</div></a>
+    <a class="mapcard up" href="入局-Corporate-Reality-Show-2026_Master.html"><div class="mt">⬆ 📋 Project Master<span class="go">up ↗</span></div><div class="md">Inner Circle / 团队 / jobscope 总台。</div></a>
+  </div>
+  <div class="note"><b>读这页的方式:</b>先看 <b>owner gap(🔴 这根 pillar 最大风险)</b> → 再过 3 段(Social / 渠道 cadence / Brand voice)→ 红点 = 待建,跟上游 P5 / P4 的卡点连起来看。 <b>商业 / 分账条款(Rae×Jeff)= 项目外,从不在此。</b></div>
+
+  <footer class="pagefoot">
+    <span class="kmark">KALOZ</span>
+    <span>入局 · P3 Brand &amp; Marketing · owner 🔴 VACANT · src TeamSync ⑦ + 360 §5</span>
+    <span class="upd">Last updated 2026-06-17</span>
+  </footer>
+</div>
+
+<script>
+(function(){var bar=document.getElementById('modebar');function setMode(m){document.body.classList.remove('mode-light','mode-warm');if(m==='light')document.body.classList.add('mode-light');if(m==='warm')document.body.classList.add('mode-warm');bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});try{localStorage.setItem('raeMode',m);}catch(e){}}
+bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});var saved='dark';try{saved=localStorage.getItem('raeMode')||'dark';}catch(e){}setMode(saved);
+var clk=document.getElementById('clk');function tick(){clk.textContent=new Date().toLocaleTimeString('en-GB');}tick();setInterval(tick,1000);})();
+</script>
+</body>
+</html>
