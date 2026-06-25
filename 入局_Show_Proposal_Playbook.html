@@ -86,6 +86,13 @@ a{color:var(--accent);text-decoration:none}
 .pagefoot{margin-top:30px;padding:18px 0 40px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.4px;color:var(--muted)}
 .pagefoot .km{font-weight:800;letter-spacing:2px;color:var(--gold)}.pagefoot .up{margin-left:auto;color:var(--dim)}
 @media(max-width:640px){.beat,.kv{grid-template-columns:1fr;gap:3px}.wrap{padding:0 16px}}
+/* ===== PRINT / PDF ===== */
+@page{margin:12mm}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .modebar{display:none!important}
+  .beat,.boss,.stat,.wr,.kv,.pull,.close,.seg,.stats,.bosses,.beats,.kvs{break-inside:avoid}
+}
 </style>
 </head>
 <body>
@@ -158,11 +165,11 @@ a{color:var(--accent);text-decoration:none}
   <!-- 03 Format -->
   <section class="sec">
     <div class="seg" style="--sc:var(--p1)"><span class="n">03</span><span class="t"><span class="s">The Format</span>一集 13 分钟，怎么走</div></div>
-    <div class="prose"><p>对标 Shark Tank / The Apprentice，节奏<b>前快、中狠、后重</b> —— 核心是 5.5 分钟的「大老交锋」与 2 分钟的「人脉解密」。</p></div>
+    <div class="prose"><p>对标 Shark Tank / The Apprentice，节奏<b>前快、中狠、后重</b> —— 核心是 5.5 分钟的「大佬交锋」与 2 分钟的「人脉解密」。</p></div>
     <div class="beats">
       <div class="beat"><span class="bt">0:00–0:30</span><span><span class="bl">炸裂开场</span><div class="bd">Jeff 一句 Hook 点痛点 → 企业家走入聚光灯</div></span></div>
       <div class="beat"><span class="bt">0:30–2:30</span><span><span class="bl">终极陈述 Pitch</span><div class="bd">2 分钟路演融入自介 + 企业空镜 / 产品 montage，讲他想突破什么</div></span></div>
-      <div class="beat star"><span class="bt">2:30–8:00 ★</span><span><span class="bl">大老交锋（核心高潮）</span><div class="bd">三位大佬轮番盘他的营销、系统、实业 —— 火药味与高价值商业干货</div></span></div>
+      <div class="beat star"><span class="bt">2:30–8:00 ★</span><span><span class="bl">大佬交锋（核心高潮）</span><div class="bd">三位大佬轮番盘他的营销、系统、实业 —— 火药味与高价值商业干货</div></span></div>
       <div class="beat"><span class="bt">8:00–9:30</span><span><span class="bl">大佬博弈</span><div class="bd">当面讨论：值不值得为他动用自己的人脉，拉满悬念</div></span></div>
       <div class="beat"><span class="bt">9:30–10:00</span><span><span class="bl">终极宣判</span><div class="bd">举牌 YES / NO，2 票以上 → 金色「成功入局」特效</div></span></div>
       <div class="beat star"><span class="bt">10:00–12:00 ★</span><span><span class="bl">人脉解密</span><div class="bd">大佬当场签发 <b>Connection Card</b>：「我帮你约见某上市集团董事吃饭。」</div></span></div>
@@ -182,9 +189,9 @@ a{color:var(--accent);text-decoration:none}
     <div class="seg" style="--sc:var(--p2)"><span class="n">04</span><span class="t"><span class="s">The Table</span>谁坐在桌上</div></div>
     <div class="lead">销售 × 实业商脉 × 系统 —— 这正是大马 SME 从百万跨到千万，最缺的<span class="a">黄金三角</span>。每位大佬，代表一类高端人脉资源。</div>
     <div class="bosses">
-      <div class="boss" style="--sc:var(--p3)"><div class="bn">Norman Pang</div><div class="brl">销售 · 领导力</div><div class="bd">扩建销售铁军、突破营收天花板。镜头里「撕营销」的那位。</div></div>
-      <div class="boss" style="--sc:var(--p4)"><div class="bn">Dato' Tony Looi</div><div class="brl">实业 · 商脉</div><div class="bd">Ban Lee Hin Group 主席兼 CEO（钢构起家 → 多元集团）· PUMM 进步企业家协会会长。实业韧性 + 深厚商会人脉。</div></div>
-      <div class="boss" style="--sc:var(--p5)"><div class="bn">Shane Mun</div><div class="brl">系统 · 企业算盘</div><div class="bd">理清股权、系统与机制，让生意可规模化复制。镜头里「盘系统」的那位。</div></div>
+      <div class="boss" style="--sc:var(--p3)"><div class="bn">Dato' Sri Norman Pang</div><div class="brl">销售 · 领导力</div><div class="bd">扩建销售铁军、突破营收天花板。镜头里「撕营销」的那位。</div></div>
+      <div class="boss" style="--sc:var(--p4)"><div class="bn">Dato' Tony Looi</div><div class="brl">实业 · 商脉</div><div class="bd">Ban Lee Hin Group 主席兼 CEO（钢构起家的多元实业集团）· 深耕华商企业家圈层。实业韧性 + 深厚商脉。</div></div>
+      <div class="boss" style="--sc:var(--p5)"><div class="bn">Shane Mun</div><div class="brl">系统 · 企业算盘</div><div class="bd">理清分配、激励与系统机制，让生意可规模化复制。镜头里「盘系统」的那位。</div></div>
       <div class="boss host"><div class="bn">Jeff Chin 陈浩然</div><div class="brl">主持 · 监制 · 发起人</div><div class="bd">18 年中文电台 DJ + media-personality；3,000+ 场活动主持。台前掌镜、开场 Hook、金句收尾。</div></div>
     </div>
     <div class="prose"><p><b>结构不变，脸可轮换</b> —— 大佬阵容每季可换新，节目的「黄金三角」格式恒定。这让《入局》是一个能长跑的品牌，不是一次性的节目。</p></div>
