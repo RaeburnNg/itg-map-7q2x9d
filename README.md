@@ -1,6 +1,6 @@
 # 入局 · Public Use — 团队共享 System Map
 
-> 这是《入局 In The Game》项目的**团队共享文件夹**(public use)。给团队(目前 = Jeff + 协作同事)**看 + 改**。
+> 这是《入局 Inner Circle》项目的**团队共享文件夹**(public use)。给团队(目前 = Jeff + 协作同事)**看 + 改**。
 > Rae 的私人 / 内部文件**不在这里**(在 Rae 自己的 workspace),所以这个 folder 可以放心分享、协作。
 
 ## 🔗 怎么看
