@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>入局 · Inner Circle · About 关于</title>
+<!--
+  入局 · INNER CIRCLE — ABOUT DECK (对外生态介绍 · 配合单位 / 合作伙伴 / 大佬).
+  讲「入局是什么 + 整个生态」。对外版:empowerment-framed,只放生态与价值,不含成本/财务/资本/数据/招商局-分账 内部战略层。
+  对标 About Project Breakthrough。资本策略另存内部 入局_360_Ecosystem_Playbook.md。Self-contained · 3-mode · no CDN.
+-->
+<style>
+:root{--bg:#0B0E14;--s1:#141A23;--s2:#1E2630;--s3:#2A333F;--border:#2C3540;--text:#ECF2F8;--muted:#8B96A5;--dim:#4A5360;--accent:#46C5B5;--gold:#E3B341;--ok:#3FB950;--warn:#E3B341;--bad:#FF7B72;--info:#58A6FF;--p1:#58A6FF;--p2:#A371F7;--p3:#F778BA;--p4:#E3A857;--p5:#56D364;--pm:#7C8CF8;--key:#E3B341;--sans:-apple-system,BlinkMacSystemFont,'Inter','PingFang SC','Noto Sans SC',sans-serif;--mono:'SF Mono',ui-monospace,'JetBrains Mono',monospace;--r:12px;--r-sm:8px}
+body.mode-light{--bg:#FBFAF6;--s1:#FFFFFF;--s2:#F2F0E9;--s3:#E9E6DC;--border:#D8D2C4;--text:#1E2A33;--muted:#6C6E6F;--dim:#A9A294;--accent:#1E8C7E;--gold:#B5852E;--key:#B5852E;--p1:#2D7FD8;--p2:#8957D8;--p3:#C7437F;--p4:#B4781F;--p5:#2A9E3C;--pm:#5560D8}
+body.mode-warm{--bg:#F5F0E8;--s1:#FBF7EF;--s2:#EFE7D8;--s3:#E6DAC6;--border:#DDCFB8;--text:#3A2E20;--muted:#8B7355;--dim:#B0A187;--accent:#1E8C7E;--gold:#C2902E;--key:#C2902E;--p1:#3A6EA5;--p2:#8060B0;--p3:#B5607A;--p4:#B07A2E;--p5:#5E8E4F;--pm:#6A66B0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.6;transition:background .25s,color .25s}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px}
+a{color:var(--accent);text-decoration:none}
+.modebar{position:fixed;top:12px;right:12px;z-index:200;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.modebar button{font-family:var(--mono);font-size:11px;line-height:1;border:none;background:transparent;color:var(--muted);padding:5px 9px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+/* ===== COVER ===== */
+.cover{min-height:94vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:40px 0}
+.cover::before{content:'';position:absolute;inset:0;background:radial-gradient(120% 80% at 70% 20%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 60%),radial-gradient(90% 70% at 10% 90%,color-mix(in srgb,var(--gold) 13%,transparent),transparent 55%);pointer-events:none}
+.cover .cv{position:relative;z-index:1}
+.cv .kick{font-family:var(--mono);font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-weight:700}
+.cv .big{font-size:clamp(64px,15vw,140px);font-weight:800;letter-spacing:-2px;line-height:.92;margin:14px 0 2px;background:linear-gradient(135deg,var(--text),color-mix(in srgb,var(--accent) 70%,var(--text)));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.cv .en{font-family:var(--mono);font-size:clamp(15px,3vw,22px);letter-spacing:5px;color:var(--muted);text-transform:uppercase;font-weight:600}
+.cv .rule{height:3px;width:80px;background:var(--gold);margin:26px 0 22px;border-radius:2px}
+.cv .tag{font-size:clamp(20px,4.2vw,30px);font-weight:700;line-height:1.3;max-width:680px}
+.cv .tag .a{color:var(--accent)}
+.cv .sub{font-size:14px;color:var(--muted);margin-top:16px;max-width:560px;line-height:1.7}
+.cv .chips{margin-top:26px;display:flex;gap:8px;flex-wrap:wrap}
+.cv .chip{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.4px;color:var(--text);border:1px solid var(--border);background:var(--s1);padding:5px 12px;border-radius:20px}
+.cv .chip.g{color:var(--gold);border-color:color-mix(in srgb,var(--gold) 50%,var(--border))}
+.scrollcue{margin-top:40px;font-family:var(--mono);font-size:10.5px;color:var(--dim);letter-spacing:1px}
+/* ===== SECTION HEADER ===== */
+.sec{padding:30px 0 4px}
+.seg{display:flex;align-items:center;gap:15px;margin:30px 0 18px}
+.seg .n{font-family:var(--mono);font-size:13px;font-weight:800;color:var(--bg);background:var(--sc,var(--accent));min-width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;border-radius:9px;flex-shrink:0}
+.seg .t{font-size:23px;font-weight:800;letter-spacing:-.4px}
+.seg .t .s{display:block;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:3px}
+.lead{font-size:18px;line-height:1.65;color:var(--text);font-weight:600;margin:2px 0 14px}
+.lead .a{color:var(--accent)}.lead .g{color:var(--gold)}
+.prose{font-size:14px;line-height:1.75;color:var(--muted);max-width:760px}
+.prose p{margin:11px 0}.prose b{color:var(--text);font-weight:700}.prose .a{color:var(--accent);font-weight:700}
+.pull{font-size:21px;font-weight:700;line-height:1.45;color:var(--text);border-left:4px solid var(--gold);padding:6px 0 6px 18px;margin:22px 0;max-width:780px}
+.pull .a{color:var(--accent)}
+/* stat tiles */
+.stats{display:flex;flex-wrap:wrap;gap:11px;margin:16px 0}
+.stat{flex:1 1 0;min-width:150px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:15px 16px;border-top:3px solid var(--sc,var(--accent))}
+.stat .v{font-family:var(--mono);font-size:21px;font-weight:800;color:var(--sc,var(--accent));letter-spacing:-.5px}
+.stat .l{font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.45}
+/* why rows */
+.why{display:flex;flex-direction:column;gap:9px;margin:14px 0}
+.wr{display:grid;grid-template-columns:34px 1fr;gap:13px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:12px 15px;border-left:3px solid var(--sc,var(--accent))}
+.wr .wn{font-family:var(--mono);font-size:15px;font-weight:800;color:var(--sc,var(--accent))}
+.wr .wt{font-size:13.5px;line-height:1.6;color:var(--muted)}.wr .wt b{color:var(--text)}
+/* arms grid */
+.arms{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
+.arm{flex:1 1 0;min-width:160px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:16px 17px;border-top:3px solid var(--sc,var(--accent))}
+.arm .ai{font-family:var(--mono);font-size:10.5px;font-weight:700;color:var(--sc,var(--accent));letter-spacing:.4px;text-transform:uppercase}
+.arm .an{font-size:15px;font-weight:800;color:var(--text);margin-top:5px}
+.arm .ad{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.55}
+/* loop */
+.loop{display:flex;flex-direction:column;gap:0;margin:14px 0;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--s1)}
+.lp{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:13px 16px;border-bottom:1px solid var(--border);align-items:baseline}
+.lp:last-child{border-bottom:none}
+.lp .ls{font-family:var(--mono);font-size:11.5px;font-weight:800;color:var(--accent)}
+.lp .ll{font-weight:700;color:var(--text);font-size:14px}
+.lp .ld{color:var(--muted);font-size:12.5px;margin-top:2px;line-height:1.55}
+/* boss cards */
+.bosses{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.boss{flex:1 1 0;min-width:210px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:16px 17px;border-top:3px solid var(--sc,var(--accent))}
+.boss.host{--sc:var(--gold)}
+.boss .bn{font-size:16px;font-weight:800;color:var(--text)}
+.boss .brl{font-family:var(--mono);font-size:10.5px;font-weight:700;color:var(--sc,var(--accent));margin-top:4px;letter-spacing:.4px;text-transform:uppercase}
+.boss .bd{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.55}
+/* params table */
+.kvs{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--s1);margin:14px 0}
+.kv{display:grid;grid-template-columns:130px 1fr;gap:14px;padding:10px 16px;border-bottom:1px solid var(--border);font-size:13.5px;align-items:baseline}
+.kv:last-child{border-bottom:none}
+.kv .k{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.4px}
+.kv .v{color:var(--text)}.kv .v .m{color:var(--muted)}
+/* close */
+.close{margin:44px 0 30px;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--s1)),color-mix(in srgb,var(--gold) 10%,var(--s1)));border:1px solid color-mix(in srgb,var(--gold) 30%,var(--border));border-radius:18px;padding:38px 30px;text-align:center}
+.close .ct{font-size:clamp(28px,6vw,44px);font-weight:800;letter-spacing:-.6px;line-height:1.15}
+.close .ct .a{color:var(--accent)}
+.close .cs{font-size:15px;color:var(--muted);margin-top:14px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.7}
+.pagefoot{margin-top:30px;padding:18px 0 40px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .km{font-weight:800;letter-spacing:2px;color:var(--gold)}.pagefoot .up{margin-left:auto;color:var(--dim)}
+@media(max-width:640px){.lp,.kv{grid-template-columns:1fr;gap:3px}.wrap{padding:0 16px}}
+/* ===== PRINT / PDF ===== */
+@page{margin:12mm}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .modebar{display:none!important}
+  .arm,.boss,.stat,.wr,.kv,.pull,.close,.seg,.stats,.arms,.bosses,.loop,.lp{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="modebar" id="modebar"><button data-m="dark" class="on">◐</button><button data-m="light">○</button><button data-m="warm">◑</button></div>
+
+<!-- ░░░ COVER ░░░ -->
+<div class="wrap">
+  <header class="cover"><div class="cv">
+    <div class="kick">Kaloz Production × Jeff Chin · 联合呈献</div>
+    <div class="big">入局</div>
+    <div class="en">Inner Circle</div>
+    <div class="rule"></div>
+    <div class="tag">让对的老板，<span class="a">遇见对的局</span>。</div>
+    <div class="sub">入局 不只是一档节目。它是一个让大马华人企业家<b style="color:var(--gold)">被看见、被接住、入对局</b>的完整生态，从真人秀，到真实兑现的高端人脉，到彼此引荐、共同成局的老板社群。</div>
+    <div class="chips">
+      <span class="chip g">关于入局 · ABOUT</span>
+      <span class="chip">生态，不只一档节目</span>
+      <span class="chip">黄金三角</span>
+      <span class="chip">奖励 = 人脉，非现金</span>
+    </div>
+    <div class="scrollcue">↓ 入局是什么 · About Inner Circle</div>
+  </div></header>
+</div>
+
+<div class="wrap">
+
+  <!-- 序 -->
+  <section class="sec">
+    <div class="seg" style="--sc:var(--gold)"><span class="n">序</span><span class="t"><span class="s">The Idea</span>比钱更重要的，是「局」</span></div>
+    <div class="prose">
+      <p>在生意的世界里，钱很重要，但比钱更重要的，是<b>人</b>，是<b>对的局</b>。</p>
+      <p>大马有无数年营收百万、做得不错却卡在天花板的华人老板。他们缺的往往不是几万块资金，而是<b>那个能帮他破局的贵人</b>，一个平时根本约不到的大佬、一条打不进去的渠道、一句点醒他的话。</p>
+      <p><span class="a">入局，把这件事做成一个生态。</span>表面是一档真人秀，本质是一座桥：让想突破的老板，被对的人看见、被对的人接住、入对的局。</p>
+    </div>
+    <div class="pull">这不是一档「有钱人秀」。<br>这是一场<span class="a">代表大马华人商业群体</span>的身份运动。<br>因为，你值得<span class="a">入这个局</span>。</div>
+  </section>
+
+  <!-- 01 What -->
+  <section class="sec">
+    <div class="seg" style="--sc:var(--accent)"><span class="n">01</span><span class="t"><span class="s">What is 入局</span>不只是一档节目，是一个生态</div></div>
+    <div class="lead">入局 = 从一档<span class="a">国际水准的中文企业真人秀</span>，到一段<span class="a">真实兑现的高端人脉</span>，再到一个<span class="g">彼此引荐、共同成局</span>的老板社群。</div>
+    <div class="prose"><p>它不是一次性的内容，而是一台会自转的机器，节目把人聚起来，人脉把价值兑现，社群让连接持续发生。五个部分，环环相扣。</p></div>
+    <div class="arms">
+      <div class="arm" style="--sc:var(--accent)"><div class="ai">01 Show</div><div class="an">节目《入局》</div><div class="ad">国际水准中文企业真人秀，整个生态的入口。</div></div>
+      <div class="arm" style="--sc:var(--p1)"><div class="ai">02 Content</div><div class="an">内容矩阵</div><div class="ad">竞技正片 + 暖人物 + 切片 + 兑现追踪。</div></div>
+      <div class="arm" style="--sc:var(--p2)"><div class="ai">03 Academy</div><div class="an">入局学院</div><div class="ad">把大佬的打法，变成能学的方法。</div></div>
+      <div class="arm" style="--sc:var(--p3)"><div class="ai">04 Circle</div><div class="an">入局圈</div><div class="ad">老板们持续连接、互相引荐的社群。</div></div>
+      <div class="arm" style="--sc:var(--gold)"><div class="ai">05 Loop</div><div class="an">生态闭环</div><div class="ad">被看见 → 入局 → 连接 → 成局 → 传递。</div></div>
+    </div>
+  </section>
+
+  <!-- 02 The Show -->
+  <section class="sec">
+    <div class="seg" style="--sc:var(--accent)"><span class="n">02</span><span class="t"><span class="s">The Show</span>节目《入局》</div></div>
+    <div class="prose"><p>国际企业水准的中文真人秀，一季 6 集、每集 13 分钟。营收 <b class="a">RM 500k–1M</b> 的企业家上台 pitch，3 位行业大佬当场盘他的生意、投票，<b class="a">2 票以上即「入局」</b>。赢到的不是钱，是一段平时买不到的高端人脉：一个饭局、一场会议，直接对接他想见的大佬或上市公司董事。</p></div>
+    <div class="lead">桌上的黄金三角：<span class="a">销售 × 商脉 × 系统</span>，大马 SME 从百万跨到千万，最缺的三块。</div>
+    <div class="bosses">
+      <div class="boss" style="--sc:var(--p3)"><div class="bn">Dato' Sri Norman Pang</div><div class="brl">销售 · 领导力</div><div class="bd">扩建销售铁军、突破营收天花板。镜头里「撕营销」的那位。</div></div>
+      <div class="boss" style="--sc:var(--p4)"><div class="bn">Dato' Tony Looi</div><div class="brl">实业 · 商脉</div><div class="bd">Ban Lee Hin Group 主席兼 CEO（钢构起家的多元实业集团）· 深耕华商企业家圈层。</div></div>
+      <div class="boss" style="--sc:var(--p5)"><div class="bn">Shane Mun</div><div class="brl">系统 · 机制</div><div class="bd">理清分配、激励与系统机制，让生意可规模化复制。镜头里「盘系统」的那位。</div></div>
+      <div class="boss host"><div class="bn">Jeff Chin 陈浩然</div><div class="brl">主持 · 监制 · 发起人</div><div class="bd">18 年中文电台 DJ + media-personality；3,000+ 场活动主持。台前掌镜、开场 Hook、金句收尾。</div></div>
+    </div>
+    <div class="prose"><p><b>结构不变，脸可轮换</b>，大佬阵容每季可换新，「黄金三角」格式恒定。这让入局是一个能长跑的品牌，不是一次性的节目。</p></div>
+  </section>
+
+  <!-- 03 Content -->
+  <section class="sec">
+    <div class="seg" style="--sc:var(--p1)"><span class="n">03</span><span class="t"><span class="s">The Content</span>内容矩阵 · 不只一档节目</div></div>
+    <div class="prose"><p>一次拍摄，长出多层内容：</p></div>
+    <div class="why">
+      <div class="wr" style="--sc:var(--p1)"><span class="wn">正</span><span class="wt"><b>竞技正片。</b>每集一位企业家完整的「入局」故事线。</span></div>
+      <div class="wr" style="--sc:var(--p1)"><span class="wn">暖</span><span class="wt"><b>暖人物层。</b>上台之前，先走进他真实的工厂与办公室。先见人，再见 pitch，先讲他的信念与故事，不只讲数字。</span></div>
+      <div class="wr" style="--sc:var(--p1)"><span class="wn">切</span><span class="wt"><b>高光切片。</b>把每集最有料的商业干货、最动人的瞬间剪成短视频，日常喂社媒、破圈引流。</span></div>
+      <div class="wr" style="--sc:var(--p1)"><span class="wn">兑</span><span class="wt"><b>兑现追踪。</b>节目播完后，拍下赢家真实兑现人脉的过程（跟大佬会面、大佬到他工厂巡一轮给意见），剪成 highlight。看得见的兑现，就是最强的信用。</span></div>
+    </div>
+  </section>
+
+  <!-- 04 Academy + Circle -->
+  <section class="sec">
+    <div class="seg" style="--sc:var(--p2)"><span class="n">04</span><span class="t"><span class="s">Academy + Circle</span>入局学院 · 入局圈</div></div>
+    <div class="arms">
+      <div class="arm" style="--sc:var(--p2)"><div class="ai">Academy</div><div class="an">入局学院</div><div class="ad">把三位大佬的打法（销售、商脉、系统）整理成可学的内容与课程，让没上台的老板也能受益。真实案例、可复制的步骤；不喝鸡汤，只讲方法。</div></div>
+      <div class="arm" style="--sc:var(--p3)"><div class="ai">Circle</div><div class="an">入局圈</div><div class="ad">节目只是入口，真正的价值在节目之外持续发生：线上社群交流引荐 + 线下真实的饭局与沙龙，让人脉不只是认识，而是真的成局；小圈深度互助，让每位入局的老板都不再一个人闷头撑。</div></div>
+    </div>
+  </section>
+
+  <!-- 05 Loop -->
+  <section class="sec">
+    <div class="seg" style="--sc:var(--gold)"><span class="n">05</span><span class="t"><span class="s">The Loop</span>生态闭环 · 从被看见，到成局</div></div>
+    <div class="loop">
+      <div class="lp"><span class="ls">① 被看见</span><span><span class="ll">上节目、被内容看见</span><div class="ld">真人秀 + 暖人物 + 切片，让对的老板被对的人注意到。</div></span></div>
+      <div class="lp"><span class="ls">② 入局</span><span><span class="ll">通过大佬的认可，进入这个圈</span><div class="ld">2 票以上即「入局」—— 一段 pre-arranged 的高端人脉。</div></span></div>
+      <div class="lp"><span class="ls">③ 连接</span><span><span class="ll">在社群与饭局里，遇见对的人</span><div class="ld">入局圈让连接持续发生，不止一次性曝光。</div></span></div>
+      <div class="lp"><span class="ls">④ 成局</span><span><span class="ll">真实的合作、引荐、生意，在线下发生</span><div class="ld">人脉真的兑现，这是入局最强的信用。</div></span></div>
+      <div class="lp"><span class="ls">⑤ 传递</span><span><span class="ll">赢家的故事，成为下一个老板入局的理由</span><div class="ld">看得见的兑现，喂回生态顶端，吸引更多人入局。</div></span></div>
+    </div>
+  </section>
+
+  <!-- 06 Why partner -->
+  <section class="sec">
+    <div class="seg" style="--sc:var(--pm)"><span class="n">06</span><span class="t"><span class="s">Why partner</span>为什么值得一起入这个局</div></div>
+    <div class="prose"><p>入局聚拢的，是大马中文商圈<b>最有决策权、最有消费力、最难触达</b>的一群人，年营收百万以上的企业老板与高管。这不是大水漫灌的流量，是高净值、精准的注意力。</p></div>
+    <div class="why">
+      <div class="wr" style="--sc:var(--pm)"><span class="wn">影</span><span class="wt"><b>影响力。</b>把品牌 / 单位绑定在一档「为大马企业内容立标杆」的国际水准生态上，你出现在老板们最认真观看的地方。</span></div>
+      <div class="wr" style="--sc:var(--pm)"><span class="wn">脉</span><span class="wt"><b>人脉现场。</b>不只是 logo 露出，走进录制现场、走进赢家与大佬的高端饭局，成为这个局的一部分。</span></div>
+      <div class="wr" style="--sc:var(--pm)"><span class="wn">势</span><span class="wt"><b>趋势先机。</b>这是大马第一个认真做的企业内容生态，现在一起，是和一个正在升起的 IP 一起长大。</span></div>
+    </div>
+    <div class="prose"><p style="font-size:12.5px;color:var(--dim)">合作形式（冠名 / 联合呈献 / 资源置换 / 大佬席位等）与细节，我们当面聊，按你的目标来设计。</p></div>
+  </section>
+
+  <!-- CLOSE -->
+  <section class="close">
+    <div class="ct">入局，<span class="a">你有资格吗？</span></div>
+    <div class="cs">一个让对的老板遇见对的局的生态。我们想邀请对的伙伴，一起把它做成大马的标杆。入这个局，从这里开始。</div>
+  </section>
+
+  <footer class="pagefoot">
+    <span class="km">KALOZ × JEFF CHIN</span>
+    <span>入局 · Inner Circle · About 关于 · S1</span>
+    <span class="up">2026</span>
+  </footer>
+</div>
+
+<script>
+(function(){var bar=document.getElementById('modebar');function setMode(m){document.body.classList.remove('mode-light','mode-warm');if(m==='light')document.body.classList.add('mode-light');if(m==='warm')document.body.classList.add('mode-warm');bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});try{localStorage.setItem('raeMode',m);}catch(e){}}
+bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});var saved='dark';try{saved=localStorage.getItem('raeMode')||'dark';}catch(e){}setMode(saved);})();
+</script>
+</body>
+</html>
