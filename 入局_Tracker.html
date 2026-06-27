@@ -187,7 +187,7 @@ tbody tr:last-child td{border-bottom:none}
   <div class="seg-head plain"><span class="seg-icon" style="font-size:15px">⚖</span><div class="seg-headtext"><div class="seg-name">Owner Load — 谁手上几件 open</div><div class="seg-sub">open = 未完成(To build + In progress)</div></div></div>
   <div class="load" id="load"></div>
 
-  <div class="note warn"><b>读法:</b>🔴 To build · 🟡 In progress · 🟢 Done · <b>S0 现在最重</b>(7/1 前 ready)。<b>按柱</b>=结构(段+deliverables)· <b>按 Stage</b>=timeline 进度。P2 Budgeting = <span class="gate">🔒 GATED</span> 指针。Master Pillar 已并进此页(2026-06-17)。商业/分账 = 项目外。</div>
+  <div class="note warn"><b>读法:</b>🔴 To build · 🟡 In progress · 🟢 Done · <b>S0 现在最重</b>(30/7 前 ready)。<b>按柱</b>=结构(段+deliverables)· <b>按 Stage</b>=timeline 进度。P2 Budgeting = <span class="gate">🔒 GATED</span> 指针。Master Pillar 已并进此页(2026-06-17)。商业/分账 = 项目外。</div>
 
   <footer class="pagefoot">
     <span class="kmark">KALOZ</span>
@@ -199,11 +199,11 @@ tbody tr:last-child td{border-bottom:none}
 <script>
 /* ===== SNAPSHOT — mirror of Lark Tracker (tblNoX00KTZJ46si). Refresh = regenerate DATA. ===== */
 const STAGES=[
-  {key:'S0',name:'Pre-7/1 Setup',sub:'现在–6/30 · 7/1 之前要 ready 的全部',now:true},
-  {key:'S1',name:'7/1 Promo Shoot',sub:'7/1 拍摄日 artifact'},
-  {key:'S2',name:'Recruiting',sub:'7 月 4 周 · 报名→interview→预检→选 6'},
-  {key:'S3',name:'正片 Shoot',sub:'8 月 · S1·6 集 lock'},
-  {key:'S4',name:'Post + Launch',sub:'8 月后 · 剪/切片/上线'},
+  {key:'S0',name:'Pre-30/7 Setup',sub:'现在–7 月底 · 30/7 之前要 ready 的全部',now:true},
+  {key:'S1',name:'30/7 Promo Shoot',sub:'30/7 拍摄日 artifact'},
+  {key:'S2',name:'Recruiting',sub:'8 月 4 周 · 报名→interview→预检→选 6'},
+  {key:'S3',name:'正片 Shoot',sub:'9-10 月 · S1·6 集 lock'},
+  {key:'S4',name:'Post + Launch',sub:'9-10 月后 · 剪/切片/上线'},
   {key:'X',name:'跨 Stage / Decision',sub:'决策 · hire · 归档 · 大佬时间'}
 ];
 const DATA=[
@@ -221,21 +221,21 @@ const DATA=[
   {sg:'S0',b:'P5',item:'字体规范 + 海报三模板',own:'Yong Cheng',st:'todo',when:'',pri:'M'},
   {sg:'S0',b:'P5',item:'《视觉对齐 ID》one-pager',own:'Yong Cheng',st:'todo',when:'',pri:'M'},
   {sg:'S0',b:'P3',item:'marketing plan(media + #videos)',own:'Vacant',st:'todo',when:'',pri:'H'},
-  {sg:'S0',b:'P4',item:'报名页 + Google Form(人脉诉求栏)',own:'Wai Kit',st:'todo',when:'7/1 前',pri:'H'},
+  {sg:'S0',b:'P4',item:'报名页 + Google Form(人脉诉求栏)',own:'Wai Kit',st:'todo',when:'30/7 前',pri:'H'},
   {sg:'S0',b:'P4',item:'可兑现人脉池 checklist',own:'Rae',st:'todo',when:'',pri:'H'},
   {sg:'S0',b:'PM',item:'节目 Master 收口',own:'Rae',st:'todo',when:'China 前',pri:'H'},
-  {sg:'S1',b:'P2',item:'shot list · call sheet(7/1)',own:'Celine',st:'todo',when:'7/1 前',pri:'M'},
-  {sg:'S1',b:'P2',item:'7/1「为切片而拍」owner(9:16+空镜+reaction)',own:'Wai Kit',st:'todo',when:'7/1',pri:'M'},
-  {sg:'S2',b:'P3',item:'4 周招募 posting 日历 + 渠道清单',own:'Vacant',st:'todo',when:'7 月',pri:'H'},
-  {sg:'S2',b:'P3',item:'切片 SOP + 分发',own:'Vacant',st:'todo',when:'7 月',pri:'M'},
+  {sg:'S1',b:'P2',item:'shot list · call sheet(30/7)',own:'Celine',st:'todo',when:'30/7 前',pri:'M'},
+  {sg:'S1',b:'P2',item:'30/7「为切片而拍」owner(9:16+空镜+reaction)',own:'Wai Kit',st:'todo',when:'30/7',pri:'M'},
+  {sg:'S2',b:'P3',item:'4 周招募 posting 日历 + 渠道清单',own:'Vacant',st:'todo',when:'8 月',pri:'H'},
+  {sg:'S2',b:'P3',item:'切片 SOP + 分发',own:'Vacant',st:'todo',when:'8 月',pri:'M'},
   {sg:'S2',b:'P4',item:'participants database(Lark)',own:'Wai Kit',st:'prog',when:'',pri:'M'},
   {sg:'S2',b:'P4',item:'online interview SOP(A诉求/B预检)',own:'Wai Kit',st:'todo',when:'',pri:'M'},
   {sg:'S2',b:'P4',item:'预检 gate + 黑名单 机制',own:'Wai Kit',st:'todo',when:'',pri:'M'},
-  {sg:'S3',b:'P2',item:'8 月正片排期框架(2集/天反推 · 6 集)',own:'Wai Kit/Celine',st:'todo',when:'8 月',pri:'M'},
+  {sg:'S3',b:'P2',item:'9-10 月正片排期框架(2集/天反推 · 6 集)',own:'Wai Kit/Celine',st:'todo',when:'9-10 月',pri:'M'},
   {sg:'S4',b:'P2',item:'post 协调(谁剪 + deadline)',own:'Celine',st:'todo',when:'',pri:'M'},
   {sg:'X',b:'STRAT',item:'决策 6 vs 12 集 → 6 集 lock(S1)',own:'Rae+Jeff',st:'done',when:'RESOLVED',pri:'H'},
-  {sg:'X',b:'STRAT',item:'决策 7/1 hard / soft',own:'Rae+Jeff',st:'todo',when:'',pri:'H'},
-  {sg:'X',b:'STRAT',item:'大佬时间 confirm 7/1 vs 7/2',own:'Jeff',st:'prog',when:'2 周内',pri:'H'},
+  {sg:'X',b:'STRAT',item:'决策 30/7(已锁)',own:'Rae+Jeff',st:'todo',when:'',pri:'H'},
+  {sg:'X',b:'STRAT',item:'大佬时间 confirm 30/7',own:'Jeff',st:'prog',when:'2 周内',pri:'H'},
   {sg:'X',b:'STRAT',item:'Marketing(P3)hire / 暂代',own:'Rae',st:'todo',when:'',pri:'H'},
   {sg:'X',b:'P5',item:'接手 Lark Design & Edit timeline',own:'Yong Cheng',st:'todo',when:'本周',pri:'L'},
   {sg:'X',b:'P2',item:'文档归档 setup',own:'Celine',st:'todo',when:'',pri:'L'}
@@ -245,11 +245,11 @@ const PILLARS=[
   {k:'P1',icon:'🎬',name:'P1 · Creative',pic:'Wai Kit',vac:0,form:'document',detail:'入局_P1_Creative.html',sub:'内容内核 — Show Outline · Show Content · Boss Profile',
    segs:[['🟡','Show Outline (13min flow)','beat sheet 有方向,跟 Wai Kit 重做成 ID doc'],['🔴','Show Content (scripts)','promo 1–4 + recruitment 文字稿,YK 周三 deck'],['🟡','Boss Profile','名字锁 Norman/Tony/Shane/Jeff;域/Q&A framing → Wai Kit 定']]},
   {k:'P2',icon:'🎥',name:'P2 · Production',pic:'Celine',vac:0,form:'document',detail:'入局_P2_Production.html',sub:'怎么做出来 — Timeline/Preprod/Prod/Post · Budgeting(GATED)· Lark',
-   segs:[['🟡','Timeline','working + posting schedule(7/1 promo · 8 月正片)'],['🔴','Pre-production','shot list · call sheet · 参考照片 · description'],['🟡','Production(拍摄)','venue 未定(黑棚/白景/LED)· set/灯光/crew/器材'],['🟡','Post-production','剪/VFX/文案/切片/after-show · owner 待 Rae 拍 · cadence 已定'],['🟡','Budgeting 🔒GATED','production costing → Finance Cost Plan;此页不列数字'],['✅','Lark 执行层','团队中央 dump(Working/Design Timeline/参赛者)']]},
+   segs:[['🟡','Timeline','working + posting schedule(30/7 promo · 9-10 月正片)'],['🔴','Pre-production','shot list · call sheet · 参考照片 · description'],['🟡','Production(拍摄)','venue 未定(黑棚/白景/LED)· set/灯光/crew/器材'],['🟡','Post-production','剪/VFX/文案/切片/after-show · owner 待 Rae 拍 · cadence 已定'],['🟡','Budgeting 🔒GATED','production costing → Finance Cost Plan;此页不列数字'],['✅','Lark 执行层','团队中央 dump(Working/Design Timeline/参赛者)']]},
   {k:'P3',icon:'📣',name:'P3 · Brand & Marketing',pic:'🔴 Vacant',vac:1,form:'document',detail:'入局_P3_BrandMarketing.html',sub:'怎么被看见&长大 — Social/channels/brand voice · 独立于 Design',
    segs:[['⚠️','owner 待定','第一优先 hire / 暂代(空着 = 招募期没人推流量)'],['🟡','Posting Schedule','每集 1 长+5 短 · teaser+poster→5 切片(每集切片 cadence)· 日历待落格'],['🟡','Ads','招募 ad 漏斗(导报名+5 intake)· 团队仍在谈'],['🔴','Material / Content','切片素材库 + 内容矩阵(Hero/Hub/Help)'],['🔴','channels / brand voice','渠道清单(IG/TikTok/FB)+ 对外文案口吻']]},
   {k:'P4',icon:'🧲',name:'P4 · Recruitment',pic:'Wai Kit',vac:0,form:'doc + form',detail:'入局_P4_Recruitment.html',sub:'报名→筛→online interview→预检 gate→选 6',
-   segs:[['🔴','CRM → Database (Lark)','participants database(Lark 参赛者)'],['🔴','Form','报名页 + Google Form(强制人脉诉求栏)· 7/1 前'],['🟡','Online Interview SOP','A 诉求 / B 预检 Y/N 双栏 · 有 draft'],['🟡','预检 gate / 黑名单 / 人脉池','硬 gate + 黑名单 + 可兑现人脉池(Rae 盘)']]},
+   segs:[['🔴','CRM → Database (Lark)','participants database(Lark 参赛者)'],['🔴','Form','报名页 + Google Form(强制人脉诉求栏)· 30/7 前'],['🟡','Online Interview SOP','A 诉求 / B 预检 Y/N 双栏 · 有 draft'],['🟡','预检 gate / 黑名单 / 人脉池','硬 gate + 黑名单 + 可兑现人脉池(Rae 盘)']]},
   {k:'P5',icon:'🎨',name:'P5 · Design',pic:'Yong Cheng',vac:0,form:'present',detail:'入局_P5_Design.html',sub:'视觉/CI — Brand CI · 视觉对齐 ID · poster system · 剪辑 style',
    segs:[['🔴','Brand CI (logo/color/font)','color tone HEX + logo 多版 + 字体。THE 卡点 · China 前定方向'],['🔴','视觉对齐 ID one-pager','《入局 视觉对齐 ID》交 Celine 维护'],['🟡','poster system','key-art 母题选定(3 椅+咖啡桌+1 空座)+ Celine 全清单(Logo/招募/主/Group/Host)'],['🔴','剪辑/视觉 style','金色 VFX + 字幕 + Connection Card 视觉']]}
 ];
