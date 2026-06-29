@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧩 入局 · Eng Zheng Persona</title>
+<!-- 入局 · Eng Zheng Persona — 专业介绍「Eng Zheng 是谁」(team-safe)。深入分析另存内部。Self-contained · 3-mode. -->
+<style>
+:root{--bg:#0D1117;--s1:#161B22;--s2:#21262D;--s3:#2D333B;--border:#30363D;--text:#E6EDF3;--muted:#7D8590;--dim:#484F58;--accent:#46C5B5;--ok:#3FB950;--warn:#E3B341;--bad:#FF7B72;--info:#58A6FF;--sans:-apple-system,BlinkMacSystemFont,'Inter','PingFang SC','Noto Sans SC',sans-serif;--mono:'SF Mono',ui-monospace,'JetBrains Mono',monospace;--r:10px;--r-sm:7px;--key:#E3B341;--pm:#7C8CF8;--ref:#8B97A8}
+body.mode-light{--bg:#FBFAF6;--s1:#FFFFFF;--s2:#F2F0E9;--s3:#E9E6DC;--border:#D2CCBD;--text:#1E3A42;--muted:#6C6E6F;--dim:#A9A294;--accent:#1E8C7E;--ok:#2E8B6B;--warn:#B5852E;--bad:#CF4F52;--info:#3A6EA5;--key:#B5852E;--pm:#5560D8;--ref:#6B7685}
+body.mode-warm{--bg:#F5F0E8;--s1:#FBF7EF;--s2:#EFE7D8;--s3:#E6DAC6;--border:#DDCFB8;--text:#4A3D2E;--muted:#8B7355;--dim:#B0A187;--accent:#1E8C7E;--ok:#5E7E4F;--warn:#C2902E;--bad:#B5605A;--info:#8B7355;--key:#C2902E;--pm:#6A66B0;--ref:#8B7355}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:13.5px;line-height:1.55;padding-bottom:50px;transition:background .25s,color .25s}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.modebar{position:fixed;top:10px;right:10px;z-index:200;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;box-shadow:0 2px 12px rgba(0,0,0,.22)}
+.modebar button{font-family:var(--mono);font-size:11px;line-height:1;border:none;background:transparent;color:var(--muted);padding:5px 9px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+.crumbnav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:3px;flex-wrap:wrap;padding:8px 118px 8px 18px;background:color-mix(in srgb,var(--s1) 92%,transparent);border-bottom:2px solid var(--accent);font-family:var(--sans);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.crumbnav .crumb{display:inline-flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:-.1px;padding:3px 9px;border-radius:13px}
+.crumbnav a.crumb:hover{color:var(--accent);background:var(--s2)}
+.crumbnav .crumb .cr-ico{font-size:13px}.crumbnav .cr-sep{color:var(--dim);font-size:11px}.crumbnav .crumb.current{color:var(--accent);font-weight:700}
+.hero{padding:22px 0 4px}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
+.role{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:6px;font-weight:700}
+.northstar{font-size:14px;color:var(--text);margin-top:10px;border-left:3px solid var(--accent);padding-left:12px;line-height:1.5}
+.pills{margin-top:12px;display:flex;gap:7px;flex-wrap:wrap}
+.spill{font-family:var(--mono);font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.3px;border:1px solid var(--border);color:var(--muted)}
+.spill.go{background:rgba(70,197,181,.12);color:var(--accent);border-color:var(--accent)}
+.seg-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 38%,var(--border));border-left:7px solid var(--sc,var(--accent));border-radius:var(--r);background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 22%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 7%,var(--s1)));margin:30px 0 14px}
+.hero + .seg-head{margin-top:24px}
+.seg-icon{font-size:18px;width:38px;height:38px;min-width:38px;display:inline-flex;align-items:center;justify-content:center;border-radius:11px;background:color-mix(in srgb,var(--sc,var(--accent)) 30%,var(--s1));border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 48%,transparent);flex-shrink:0}
+.seg-name{font-size:16px;font-weight:800;letter-spacing:-.2px}
+.card{background:var(--s1);border:1px solid var(--border);border-left:3px solid var(--cc,var(--accent));border-radius:var(--r);padding:13px 16px;margin-top:10px}
+.card .cd{font-size:12.5px;color:var(--muted);line-height:1.65}.card .cd b{color:var(--text)}
+.card ul{margin:2px 0 0 0;padding-left:18px}.card li{font-size:12.5px;color:var(--muted);margin:5px 0;line-height:1.55}.card li b{color:var(--text)}
+.src{font-family:var(--mono);font-size:9.5px;color:var(--dim);letter-spacing:.2px}
+.ctbl{width:100%;border-collapse:collapse;margin-top:10px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.ctbl th{text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);background:var(--s2);padding:9px 14px;border-bottom:1px solid var(--border)}
+.ctbl td{font-size:12.5px;color:var(--muted);padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.55}
+.ctbl tr:last-child td{border-bottom:none}
+.ctbl td b{color:var(--text)}
+.mode-chip{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;padding:2px 9px;border-radius:12px;background:rgba(124,140,248,.13);color:var(--pm);border:1px solid color-mix(in srgb,var(--pm) 45%,transparent)}
+.tells{display:flex;gap:7px;flex-wrap:wrap;margin-top:4px}
+.tell{font-family:var(--mono);font-size:11px;padding:4px 11px;border-radius:14px;background:var(--s2);border:1px solid var(--border);color:var(--muted)}
+.pagefoot{margin-top:30px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .kmark{font-weight:800;letter-spacing:2px;color:var(--accent)}.pagefoot .upd{margin-left:auto;color:var(--dim)}
+@media(max-width:760px){.wrap{padding:0 13px}}
+</style>
+</head>
+<body>
+<div class="modebar" id="modebar"><button data-m="dark" class="on">◐</button><button data-m="light">○</button><button data-m="warm">◑</button></div>
+<nav class="crumbnav">
+  <a class="crumb" href="入局_System_Map.html"><span class="cr-ico">🎬</span>入局</a><span class="cr-sep">›</span>
+  <a class="crumb" href="入局-Corporate-Reality-Show-2026_Master.html"><span class="cr-ico">📋</span>Master</a><span class="cr-sep">›</span>
+  <span class="crumb current"><span class="cr-ico">🧩</span>Eng Zheng Persona</span>
+</nav>
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">入局 · PERSONA · 专业介绍</div>
+    <h1>🧩 Eng Zheng（Chua Eng Zheng · 咏辰 · Yong Cheng）</h1>
+    <div class="role">Creative Production · Junior Creative · 《入局》creative + 视觉 build</div>
+    <div class="northstar">Kaloz 跨 creative 与摄影两条线的一手 —— 视觉执行可靠、reference 直觉好,正在从「把活接住的 support」长成「想扛起创意方向」的 creative。在《入局》主动接住了 creative content + 视觉,是这一轮把内容做出来的核心一员。</div>
+    <div class="pills">
+      <span class="spill go">🟢 Team · circulation-safe</span>
+      <span class="spill">被准确认识 + 被尊重</span>
+    </div>
+  </div>
+
+  <div class="seg-head" style="--sc:var(--accent)"><span class="seg-icon">🪪</span><div class="seg-name">他是谁 · Role</div></div>
+  <div class="card"><div class="cd"><ul>
+    <li><b>Full name</b>: Chua Eng Zheng · 三个叫法可互换 —— <b>Eng Zheng · 咏辰 · Yong Cheng</b>。</li>
+    <li><b>Base role</b>: Creative Production 的 Junior Creative,在 <b>SY（Creative stream lead）</b>线下 · CP 项目 crew · 同时是 Rae 的 <b>photography backup partner</b> + 未来 <b>Photography Archive Base co-maintainer</b>(与 Celine)。</li>
+    <li><b>在《入局》</b>: creative + 视觉 build —— 找 reference / 整理 deck / 拆 video 清单 / poster 视觉框架 / CI look-and-feel。跟 Rae(概念·把关)+ Celine(统筹)三人接住 Wai Kit 退出后的 creative content。</li>
+  </ul></div></div>
+
+  <div class="seg-head" style="--sc:var(--pm)"><span class="seg-icon">🧠</span><div class="seg-name">他怎么想(appreciative)</div></div>
+  <div class="card" style="--cc:var(--pm)"><div class="cd"><ul>
+    <li><b>Reference 驱动的视觉直觉</b> —— 想东西先找参照:fisheye、GQ、TikTok 街访、铁人娱乐 graphic… 用一批 reference 把「感觉」对齐,再往下落。对调性有自己的偏好(CI 倾向金色版)。<span class="src">(src: 2026-06-28 creative)</span></li>
+    <li><b>结构化整理者</b> —— 习惯把乱的东西理清楚:video 按 individual / group 分、promo 与 recruitment 分轨,方便排 schedule。给团队一个干净的清单当地基。<span class="src">(src: 2026-06-28 RCZ)</span></li>
+    <li><b>内容 &gt; 形式的判断</b> —— 不只看「帅不帅」:明确指出耍帅只是「排的方式」,真正重要的是讲出来的内容。这是难得的成熟判断。<span class="src">(src: 2026-06-27 RCZ)</span></li>
+    <li><b>懂 social 分发机制</b> —— 提出借嘉宾自己的 star / 账号 boost 再 collect 回 page,借影响力导流而不是另开空号。一个被 Rae 当场采纳的好判断。<span class="src">(src: 2026-06-27 RCZ)</span></li>
+    <li><b>flow / option 思维</b> —— 会自己结构出几条替代方案(如两条 promo flow:先讲痛点 vs 直接介绍)让团队挑,而不是只给一个答案。<span class="src">(src: 2026-06-28 creative)</span></li>
+  </ul></div></div>
+
+  <div class="seg-head" style="--sc:var(--key)"><span class="seg-icon">💪</span><div class="seg-name">强项 + 可以跟他学的</div></div>
+  <div class="card" style="--cc:var(--key)"><div class="cd"><ul>
+    <li><b>视觉执行 + CI</b> —— design / poster / look-and-feel / 修图,落地能力强。</li>
+    <li><b>AI 辅助整理</b> —— 把会议、reference、idea summarize 进 deck / Lark,是团队的「整理引擎」。</li>
+    <li><b>平台 / 流量直觉</b> —— 对 social 怎么 boost、怎么借势有手感。</li>
+    <li><b>Multi-skilled</b> —— design 之外摆拍形象照也能自己上,不必事事外包。</li>
+    <li><b>Cross-functional breadth</b> —— creative + photography 双线,团队里少见的「两边都搭得上」。</li>
+  </ul></div></div>
+
+  <div class="seg-head" style="--sc:var(--accent)"><span class="seg-icon">👀</span><div class="seg-name">团队 / 领导眼中(appreciative)</div></div>
+  <div class="card"><div class="cd"><ul>
+    <li><b>Rae</b>:把咏辰当<b>真心来做、能做事、可信赖的补位 / 合作伙伴</b> —— 这一轮 creative content 就是放手交给他先去找 idea、试做;甚至在考虑把他提上来跟 Celine 并肩。"你是来真心做好的。" <span class="src">(src: 2026-06-28 RCZ)</span></li>
+    <li><b>对他的成长定位</b>:<b>给他结构,他能把 idea 跑起来</b> —— Rae 说"structure 我帮你们搭,你们发挥 idea,不难"。咏辰自己也明确想往<b>掌握整个 direction</b>、多放自己的创意进去的方向长。这份上进是被看见的。<span class="src">(src: 2026-06-28 creative)</span></li>
+  </ul></div></div>
+
+  <div class="seg-head" style="--sc:var(--pm)"><span class="seg-icon">🎚</span><div class="seg-name">怎么 consult 他(带这个去 → 学到的)</div></div>
+  <table class="ctbl">
+    <thead><tr><th>Mode</th><th>带这个来</th><th>学到的</th></tr></thead>
+    <tbody>
+      <tr><td><span class="mode-chip">Create</span></td><td>一个要定调的视觉 / 一支 video 的 reference</td><td>怎么用一批 reference 把「感觉」对齐、定 look-and-feel</td></tr>
+      <tr><td><span class="mode-chip">Clarity</span></td><td>一堆散的素材 / video 清单</td><td>怎么按 individual/group、promo/recruit 分轨理干净</td></tr>
+      <tr><td><span class="mode-chip">Conversation</span></td><td>social 怎么铺、怎么借流量</td><td>借号 boost / collect 的分发手感</td></tr>
+    </tbody>
+  </table>
+
+  <div class="seg-head" style="--sc:var(--key)"><span class="seg-icon">🤝</span><div class="seg-name">怎么跟他合作(how to collaborate)</div></div>
+  <div class="card" style="--cc:var(--key)"><div class="cd"><ul>
+    <li><b>给结构 + 他发挥</b> —— 把框架 / 目标搭好,让他在里面跑 idea;这是他长得最快的配合方式。</li>
+    <li><b>给清楚的 step + 一两个 reference</b> —— 他对 structured brief 接得最稳,落地漂亮。</li>
+    <li><b>当成正在升的 creative 来带</b> —— 他想扛方向,给他 direction-level 的 rope + exposure,别只当纯执行。</li>
+    <li><b>早点把他拉进 loop</b> —— 他信息不通时会自然变被动;让他在 session / 录入里在场,主动度就上来。<span class="src">(src: 2026-06-28 creative)</span></li>
+    <li><b>跨线的活找他</b> —— creative 与摄影之间要搭桥时,他是合适的那个人。</li>
+  </ul></div></div>
+
+  <div class="seg-head" style="--sc:var(--ref)"><span class="seg-icon">💬</span><div class="seg-name">词汇 / tells</div></div>
+  <div class="card" style="--cc:var(--ref)"><div class="cd">
+    <div class="tells">
+      <span class="tell">可以 / 明白 / 还好</span>
+      <span class="tell">flow</span>
+      <span class="tell">reference</span>
+      <span class="tell">look and feel</span>
+      <span class="tell">individual / group</span>
+      <span class="tell">boost / collect</span>
+    </div>
+    <div style="margin-top:9px;color:var(--dim);font-size:11.5px">简短确认式应答,被点名才展开。</div>
+  </div></div>
+
+  <div class="seg-head" style="--sc:var(--accent)"><span class="seg-icon">🎬</span><div class="seg-name">在《入局》怎么用</div></div>
+  <div class="card"><div class="cd">creative + 视觉 build:Rae 丢 idea / 把关,咏辰找 reference + 落地成 deck / poster / CI,Celine 统筹排期。给他结构 + 早拉进 loop + direction-level 的空间,他这一轮的产出会最稳。</div></div>
+
+  <footer class="pagefoot"><span class="kmark">KALOZ</span><span>入局 · Eng Zheng Persona · 专业介绍 · 持续更新</span><span class="upd">Last updated 2026-06-29</span></footer>
+</div>
+<script>(function(){var bar=document.getElementById('modebar');function setMode(m){document.body.classList.remove('mode-light','mode-warm');if(m==='light')document.body.classList.add('mode-light');if(m==='warm')document.body.classList.add('mode-warm');bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});try{localStorage.setItem('raeMode',m);}catch(e){}}bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});var saved='dark';try{saved=localStorage.getItem('raeMode')||'dark';}catch(e){}setMode(saved);})();</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧩 入局 · Celine Persona</title>
+<!-- 入局 · Celine Persona — 专业介绍「Celine 是谁」(team-safe)。深入分析另存内部。Self-contained · 3-mode. -->
+<style>
+:root{--bg:#0D1117;--s1:#161B22;--s2:#21262D;--s3:#2D333B;--border:#30363D;--text:#E6EDF3;--muted:#7D8590;--dim:#484F58;--accent:#46C5B5;--ok:#3FB950;--warn:#E3B341;--bad:#FF7B72;--info:#58A6FF;--sans:-apple-system,BlinkMacSystemFont,'Inter','PingFang SC','Noto Sans SC',sans-serif;--mono:'SF Mono',ui-monospace,'JetBrains Mono',monospace;--r:10px;--r-sm:7px;--key:#E3B341;--pm:#7C8CF8;--ref:#8B97A8}
+body.mode-light{--bg:#FBFAF6;--s1:#FFFFFF;--s2:#F2F0E9;--s3:#E9E6DC;--border:#D2CCBD;--text:#1E3A42;--muted:#6C6E6F;--dim:#A9A294;--accent:#1E8C7E;--ok:#2E8B6B;--warn:#B5852E;--bad:#CF4F52;--info:#3A6EA5;--key:#B5852E;--pm:#5560D8;--ref:#6B7685}
+body.mode-warm{--bg:#F5F0E8;--s1:#FBF7EF;--s2:#EFE7D8;--s3:#E6DAC6;--border:#DDCFB8;--text:#4A3D2E;--muted:#8B7355;--dim:#B0A187;--accent:#1E8C7E;--ok:#5E7E4F;--warn:#C2902E;--bad:#B5605A;--info:#8B7355;--key:#C2902E;--pm:#6A66B0;--ref:#8B7355}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:13.5px;line-height:1.55;padding-bottom:50px;transition:background .25s,color .25s}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.modebar{position:fixed;top:10px;right:10px;z-index:200;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;box-shadow:0 2px 12px rgba(0,0,0,.22)}
+.modebar button{font-family:var(--mono);font-size:11px;line-height:1;border:none;background:transparent;color:var(--muted);padding:5px 9px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+.crumbnav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:3px;flex-wrap:wrap;padding:8px 118px 8px 18px;background:color-mix(in srgb,var(--s1) 92%,transparent);border-bottom:2px solid var(--accent);font-family:var(--sans);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.crumbnav .crumb{display:inline-flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:-.1px;padding:3px 9px;border-radius:13px}
+.crumbnav a.crumb:hover{color:var(--accent);background:var(--s2)}
+.crumbnav .crumb .cr-ico{font-size:13px}.crumbnav .cr-sep{color:var(--dim);font-size:11px}.crumbnav .crumb.current{color:var(--accent);font-weight:700}
+.hero{padding:22px 0 4px}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
+.role{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:6px;font-weight:700}
+.northstar{font-size:14px;color:var(--text);margin-top:10px;border-left:3px solid var(--accent);padding-left:12px;line-height:1.5}
+.pills{margin-top:12px;display:flex;gap:7px;flex-wrap:wrap}
+.spill{font-family:var(--mono);font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.3px;border:1px solid var(--border);color:var(--muted)}
+.spill.go{background:rgba(70,197,181,.12);color:var(--accent);border-color:var(--accent)}
+.seg-head{display:flex;align-items:center;gap:14px;padding:14px 18px;border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 38%,var(--border));border-left:7px solid var(--sc,var(--accent));border-radius:var(--r);background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 22%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 7%,var(--s1)));margin:30px 0 14px}
+.hero + .seg-head{margin-top:24px}
+.seg-icon{font-size:18px;width:38px;height:38px;min-width:38px;display:inline-flex;align-items:center;justify-content:center;border-radius:11px;background:color-mix(in srgb,var(--sc,var(--accent)) 30%,var(--s1));border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 48%,transparent);flex-shrink:0}
+.seg-name{font-size:16px;font-weight:800;letter-spacing:-.2px}
+.card{background:var(--s1);border:1px solid var(--border);border-left:3px solid var(--cc,var(--accent));border-radius:var(--r);padding:13px 16px;margin-top:10px}
+.card .cd{font-size:12.5px;color:var(--muted);line-height:1.65}.card .cd b{color:var(--text)}
+.card ul{margin:2px 0 0 0;padding-left:18px}.card li{font-size:12.5px;color:var(--muted);margin:5px 0;line-height:1.55}.card li b{color:var(--text)}
+.ctab{width:100%;border-collapse:collapse;margin-top:10px;font-size:12.5px}
+.ctab th{text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.4px;text-transform:uppercase;color:var(--muted);font-weight:700;padding:8px 12px;border-bottom:1px solid var(--border);background:var(--s2)}
+.ctab td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--muted);line-height:1.55;vertical-align:top}
+.ctab tr:last-child td{border-bottom:none}
+.ctab td b{color:var(--text)}
+.ctab .mode{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--accent);white-space:nowrap}
+.pagefoot{margin-top:30px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .kmark{font-weight:800;letter-spacing:2px;color:var(--accent)}.pagefoot .upd{margin-left:auto;color:var(--dim)}
+@media(max-width:760px){.wrap{padding:0 13px}.ctab th,.ctab td{padding:7px 8px}}
+</style>
+</head>
+<body>
+<div class="modebar" id="modebar"><button data-m="dark" class="on">◐</button><button data-m="light">○</button><button data-m="warm">◑</button></div>
+<nav class="crumbnav">
+  <a class="crumb" href="入局_System_Map.html"><span class="cr-ico">🎬</span>入局</a><span class="cr-sep">›</span>
+  <a class="crumb" href="入局-Corporate-Reality-Show-2026_Master.html"><span class="cr-ico">📋</span>Master</a><span class="cr-sep">›</span>
+  <span class="crumb current"><span class="cr-ico">🧩</span>Celine Persona</span>
+<span class="cr-sep">›</span><a class="crumb" href="入局_Show_Proposal_Playbook.html"><span class="cr-ico">📑</span>Proposal Deck</a></nav>
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">入局 · PERSONA · 专业介绍</div>
+    <h1>🧩 Celine（沈琳 / Chin Zi Ern）</h1>
+    <div class="role">IP Team Assistant Producer · 《入局》Producer / 统筹 · 把活跑到交付的人</div>
+    <div class="northstar">Kaloz IP 团队的 Assistant Producer，在《入局》担任 Producer / 统筹 —— 把一档活从第一通 call 跑到交付的那个人。她正走在「end-to-end 拥有制作」的路上，也明确想往有自己署名的创作长，不只做 support。</div>
+    <div class="pills">
+      <span class="spill go">🧩 Persona = 是谁</span>
+      <span class="spill">沈琳 · Shen Lin · Chin Zi Ern</span>
+    </div>
+  </div>
+
+  <div class="seg-head" style="--sc:var(--accent)"><span class="seg-icon">🙋</span><div class="seg-name">她是谁</div></div>
+  <div class="card"><div class="cd">
+    Celine（Chin Zi Ern · 沈琳）是 Kaloz IP 团队的 <b>Assistant Producer</b>，在《入局》担任 <b>Producer / 统筹</b> —— 把一档活从第一通 call 跑到交付的那个人。她正走在「end-to-end 拥有制作」的路上，也明确想往<b>有自己署名的创作</b>长，不只做 support。<br><br>
+    在 IP 线她是 <b>可靠的 bench</b> —— 一个能让团队接更多活、不必什么都过一个人的存在。FY25 她扛了 <b>Joy Paradise</b> 的内容交付（周年晚宴 + 公司旅游）到上线。
+  </div></div>
+
+  <div class="seg-head" style="--sc:var(--pm)"><span class="seg-icon">🔧</span><div class="seg-name">她怎么做事（appreciatively）</div></div>
+  <div class="card" style="--cc:var(--pm)"><div class="cd"><ul>
+    <li><b>统筹 / 排期是她的 backbone</b> —— 一档拍摄她能先 break down 好：当天 makeup→video→photo 次序、video 分 batch、crew/器材/服装（formal + smart casual）、CTA，全部理成可执行的清单。</li>
+    <li><b>Reference 驱动</b> —— 每个概念先找参考片再谈，把抽象需求落成可挑的具体方案。</li>
+    <li><b>桥梁 / 翻译者</b> —— 能把 Rae 抽象的要求 reframe 成团队能动手的「用途 / objective」。一个让讨论落地的关键角色。</li>
+    <li><b>受众判断好</b> —— 会从「观众/年轻人 get 到什么」反推调性，主张内容要有痛点、不能纯耍帅、teaser 要浅、慢慢透露。</li>
+    <li><b>会 surface 自己的不懂</b> —— 不懂就讲「我有点不是很 get」逼出清楚，而不是点头带过。对的协作习惯。</li>
+    <li><b>收口者</b> —— 会议尾声常由她口头 recap，把整盘 creative scope 锁成共识。</li>
+  </ul></div></div>
+
+  <div class="seg-head" style="--sc:var(--key)"><span class="seg-icon">💪</span><div class="seg-name">Strengths + skills</div></div>
+  <div class="card" style="--cc:var(--key)"><div class="cd"><ul>
+    <li><b>Production / ops 统筹</b> —— run-of-show · crew · 排期 · 器材 · 把活跑到交付。</li>
+    <li><b>Reference-driven concepting</b> —— 用参考把"感觉"对齐成可选方案。</li>
+    <li><b>桥梁/翻译 + 收口</b> —— 把抽象 brief 翻成可执行用途，会议尾 recap 锁共识。</li>
+    <li><b>受众/调性判断</b> —— 从观众视角反推该走什么 register。</li>
+    <li><b>Account delivery + 成本意识</b> —— Joy Paradise 端到端交付；成长中的 budget/cost-first 的 producer 嗅觉。</li>
+  </ul></div></div>
+
+  <div class="seg-head" style="--sc:var(--info)"><span class="seg-icon">👀</span><div class="seg-name">团队 / 领导眼中（appreciative）</div></div>
+  <div class="card" style="--cc:var(--info)"><div class="cd"><ul>
+    <li><b>Rae</b> 把 Celine 定位为 <b>掌控全局的制作人</b>（不只是 crew），强调她「责任极大、是这个项目的核心」，且信任她已经把下游（crew/排期/分批）聊到位。她在 creative 上的 reframe，Rae 当场认是对的。</li>
+    <li><b>成长方向</b>：她想往<b>靠自己的力量做出有署名的作品</b>长 —— 从 support 走向被认得的创作者。这份创作野心是被看见的，也是团队该接住、给她空间的。</li>
+  </ul></div></div>
+
+  <div class="seg-head" style="--sc:var(--accent)"><span class="seg-icon">🎚</span><div class="seg-name">怎么 consult 她（带这个去 → 学到的）</div></div>
+  <table class="ctab">
+    <thead><tr><th>Mode</th><th>带这个来</th><th>学到的</th></tr></thead>
+    <tbody>
+      <tr><td class="mode">Clarity</td><td>一团抽象的 brief / scope</td><td>怎么翻成「用途/objective」+ 收口成共识</td></tr>
+      <tr><td class="mode">Conversation</td><td>排期 / crew / 器材 / 落地</td><td>怎么把一个 plan 跑成交付</td></tr>
+      <tr><td class="mode">Create（成长中）</td><td>参考 / 调性方向</td><td>用 reference 对齐"感觉" + 受众反推</td></tr>
+    </tbody>
+  </table>
+
+  <div class="seg-head" style="--sc:var(--ok)"><span class="seg-icon">🤝</span><div class="seg-name">怎么跟她协作</div></div>
+  <div class="card" style="--cc:var(--ok)"><div class="cd"><ul>
+    <li><b>给她结构 + 清楚的 scope</b> —— format/deliverable 明确时她跑得最稳，会运得干净。</li>
+    <li><b>干净地把 ownership 交给她</b> —— 一块真正属于她端到端的活，比半块/会变的活更出彩。</li>
+    <li><b>早点把她拉进 loop</b> —— production + budget 的全貌早给她，她是那个让事情真的运起来的人。</li>
+    <li><b>两面对话，给她空间问</b> —— 直接的双向比单向 brief 好；给她 room 问，她会 surface 出真正需要的。</li>
+    <li><b>给她创作空间，不只当执行</b> —— 她想要署名的创作；适时让她 own 一块创意，长得最快。</li>
+  </ul></div></div>
+
+  <footer class="pagefoot"><span class="kmark">KALOZ</span><span>入局 · Celine Persona · 专业介绍 · 持续更新</span><span class="upd">Last updated 2026-06-29</span></footer>
+</div>
+<script>(function(){var bar=document.getElementById('modebar');function setMode(m){document.body.classList.remove('mode-light','mode-warm');if(m==='light')document.body.classList.add('mode-light');if(m==='warm')document.body.classList.add('mode-warm');bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});try{localStorage.setItem('raeMode',m);}catch(e){}}bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});var saved='dark';try{saved=localStorage.getItem('raeMode')||'dark';}catch(e){}setMode(saved);})();</script>
+</body>
+</html>

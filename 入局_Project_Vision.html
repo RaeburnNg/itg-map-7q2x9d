@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎬 入局 · Project Vision（合）</title>
+<!--
+  入局 · Project Vision（合）— vision-director synergy merge:以 vision director 的眼睛读完 Rae + Jeff 两人 vision + 所有会议,找出协同、把两条视角同步成一个连贯的项目方向。SYNTHESIS,不是 catalog。
+  Team-facing render · team-safe · 远期战略层留内部。Self-contained · 3-mode · no CDN。
+  源 = 入局_Project_Vision.md(synthesis of 入局_Rae_Vision.md + 入局_Jeff_Vision.md + 6/15–6/28 transcripts)。
+-->
+<style>
+:root{--bg:#0D1117;--s1:#161B22;--s2:#21262D;--s3:#2D333B;--border:#30363D;--text:#E6EDF3;--muted:#7D8590;--dim:#484F58;--accent:#46C5B5;--ok:#3FB950;--warn:#E3B341;--bad:#FF7B72;--info:#58A6FF;--sans:-apple-system,BlinkMacSystemFont,'Inter','PingFang SC','Noto Sans SC',sans-serif;--mono:'SF Mono',ui-monospace,'JetBrains Mono',monospace;--r:10px;--r-sm:7px;
+  --p1:#58A6FF;--p2:#A371F7;--p3:#F778BA;--p4:#E3A857;--p5:#56D364;--p6:#2DD4BF;--pm:#7C8CF8;--key:#E3B341;--ref:#8B97A8}
+body.mode-light{--bg:#FBFAF6;--s1:#FFFFFF;--s2:#F2F0E9;--s3:#E9E6DC;--border:#D2CCBD;--text:#1E3A42;--muted:#6C6E6F;--dim:#A9A294;--accent:#1E8C7E;--ok:#2E8B6B;--warn:#B5852E;--bad:#CF4F52;--info:#3A6EA5;
+  --p1:#2D7FD8;--p2:#8957D8;--p3:#C7437F;--p4:#B4781F;--p5:#2A9E3C;--p6:#14B8A6;--pm:#5560D8;--key:#B5852E;--ref:#6B7685}
+body.mode-warm{--bg:#F5F0E8;--s1:#FBF7EF;--s2:#EFE7D8;--s3:#E6DAC6;--border:#DDCFB8;--text:#4A3D2E;--muted:#8B7355;--dim:#B0A187;--accent:#1E8C7E;--ok:#5E7E4F;--warn:#C2902E;--bad:#B5605A;--info:#8B7355;
+  --p1:#3A6EA5;--p2:#8060B0;--p3:#B5607A;--p4:#B07A2E;--p5:#5E8E4F;--p6:#3E9E8E;--pm:#6A66B0;--key:#C2902E;--ref:#8B7355}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:13.5px;line-height:1.55;padding-bottom:50px;transition:background .25s,color .25s}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.modebar{position:fixed;top:10px;right:10px;z-index:200;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;box-shadow:0 2px 12px rgba(0,0,0,.22)}
+.modebar button{font-family:var(--mono);font-size:11px;line-height:1;border:none;background:transparent;color:var(--muted);padding:5px 9px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+.crumbnav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:3px;flex-wrap:wrap;padding:8px 118px 8px 18px;background:color-mix(in srgb,var(--s1) 92%,transparent);border-bottom:2px solid var(--accent);font-family:var(--sans);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.crumbnav .crumb{display:inline-flex;align-items:center;gap:5px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:-.1px;padding:3px 9px;border-radius:13px;transition:color .15s,background .15s}
+.crumbnav a.crumb:hover{color:var(--accent);background:var(--s2)}
+.crumbnav .crumb .cr-ico{font-size:13px}.crumbnav .cr-sep{color:var(--dim);font-size:11px}.crumbnav .crumb.current{color:var(--accent);font-weight:700}
+.hero{padding:22px 0 4px}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
+.northstar{font-size:14px;color:var(--text);margin-top:8px;border-left:3px solid var(--accent);padding-left:12px;line-height:1.5}
+.northstar b{color:var(--accent)}
+.purpose{font-size:12px;color:var(--muted);margin-top:8px;max-width:840px;line-height:1.55}.purpose b{color:var(--text)}
+.metastrip{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:11px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}.metastrip .sep{color:var(--dim)}.metastrip b{color:var(--text)}
+.pills{margin-top:12px;display:flex;gap:7px;flex-wrap:wrap}
+.spill{font-family:var(--mono);font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.3px;border:1px solid var(--border)}
+.spill.ok{background:rgba(63,185,80,.12);color:var(--ok);border-color:var(--ok)}.spill.info{background:rgba(88,166,255,.12);color:var(--info);border-color:var(--info)}
+.spill.warn{background:rgba(227,179,65,.12);color:var(--warn);border-color:var(--warn)}
+.seg-head{display:flex;align-items:center;gap:14px;padding:16px 19px;border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 38%,var(--border));border-left:7px solid var(--sc,var(--accent));border-radius:var(--r);background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 26%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 8%,var(--s1)));margin:42px 0 16px;box-shadow:0 3px 16px color-mix(in srgb,var(--sc,var(--accent)) 15%,transparent)}
+.hero + .seg-head{margin-top:26px}
+.seg-icon{font-size:20px;width:42px;height:42px;min-width:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;background:color-mix(in srgb,var(--sc,var(--accent)) 30%,var(--s1));border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 48%,transparent);flex-shrink:0}.seg-headtext{flex:1;min-width:0}
+.seg-name{font-size:18px;font-weight:800;letter-spacing:-.2px}
+.seg-name .secn{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;padding:0 7px;background:var(--sc,var(--accent));color:var(--bg);font-family:var(--mono);font-weight:800;border-radius:8px;margin-right:10px;font-size:14px;flex-shrink:0}
+.seg-sub{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:5px}
+.card{background:var(--s1);border:1px solid var(--border);border-left:3px solid var(--cc,var(--accent));border-radius:var(--r);padding:13px 16px;margin-top:10px}
+.card .cd{font-size:12.5px;color:var(--muted);margin-top:0;line-height:1.6}.card .cd b{color:var(--text)}
+.card ul{margin:4px 0 0 0;padding-left:18px}.card li{font-size:12.5px;color:var(--muted);margin:4px 0;line-height:1.55}.card li b{color:var(--text)}
+.quote{font-size:14px;color:var(--text);font-weight:600;line-height:1.6;border-left:3px solid var(--sc,var(--accent));padding:4px 0 4px 14px;margin:12px 0 4px}.quote b{color:var(--sc,var(--accent))}
+.note{font-size:12px;color:var(--muted);background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 14px;margin:14px 0;line-height:1.7}.note b{color:var(--text)}
+.vtable{width:100%;border-collapse:collapse;margin-top:12px;font-size:12.5px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.vtable th,.vtable td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5}
+.vtable thead th{background:var(--s2);font-weight:800;color:var(--text);font-size:12px}
+.vtable thead th.colA{color:var(--info)}.vtable thead th.colB{color:var(--accent)}
+.vtable tbody tr:last-child td{border-bottom:none}
+.vtable td:first-child{font-weight:700;color:var(--text);font-family:var(--mono);font-size:11px;white-space:nowrap}
+.vtable td{color:var(--muted)}.vtable td b{color:var(--text)}
+.pagefoot{margin-top:30px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .kmark{font-weight:800;letter-spacing:2px;color:var(--accent)}.pagefoot .upd{margin-left:auto;color:var(--dim)}
+@media(max-width:760px){.wrap{padding:0 13px}.vtable th,.vtable td{padding:7px 9px;font-size:11.5px}}
+[data-link-removed]{color:var(--muted)!important;cursor:default;pointer-events:none;text-decoration:none!important}</style>
+</head>
+<body>
+<div class="modebar" id="modebar"><button data-m="dark" class="on">◐</button><button data-m="light">○</button><button data-m="warm">◑</button></div>
+<nav class="crumbnav">
+  <a class="crumb" href="入局_System_Map.html"><span class="cr-ico">🗂</span>System Map</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" href="入局_System_Map.html"><span class="cr-ico">🎬</span>入局</a>
+  <span class="cr-sep">›</span>
+  <a class="crumb" href="入局-Corporate-Reality-Show-2026_Master.html"><span class="cr-ico">📋</span>Master</a>
+  <span class="cr-sep">›</span>
+  <span class="crumb current"><span class="cr-ico">🎬</span>Project Vision（合）</span>
+<span class="cr-sep">›</span><a class="crumb" href="入局_Rae_Vision.html"><span class="cr-ico">🎬</span>Rae Vision</a></nav>
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">入局 · PROJECT VISION · VISION-DIRECTOR SYNERGY MERGE</div>
+    <h1>🎬 入局 · Project Vision（合）</h1>
+    <div class="northstar">以 vision director 的眼睛读完两人 + 所有会议,把 Jeff 与 Rae 的两条视角<b>合成一个连贯的项目方向</b> —— 不是把两份并起来列清单,是找出<b>协同（synergy）</b>+ 决策含义。</div>
+    <div class="purpose">这页 ≠ 个人 vision（那是各自的 insight）。本页是 <b>synthesis</b>:把两人最强的一手<b>同步成同一根脊梁</b>,标出哪里互补、哪里要校准、什么会打破它。和 <a href="入局_Rae_Vision.html">Rae Vision</a> / Jeff Vision 配着看 —— 个人 vision = 各自怎么看;本页 = 合起来是什么。</div>
+    <div class="pills">
+      <span class="spill ok">🔒 LOCKED · 脊梁已 sync</span>
+      <span class="spill warn">🟡 OPEN · 待校准 4 处</span>
+      <span class="spill info">🌱 LIVING · 两人 vision 更新 → 重新 merge</span>
+    </div>
+    <div class="metastrip"><span>synthesis of</span><span class="sep">·</span><span>Rae Vision + Jeff Vision + 6/15–6/28 transcripts</span></div>
+  </div>
+
+  <!-- 一、合点：脊梁 -->
+  <div class="seg-head" style="--sc:var(--ok)"><span class="seg-icon">🦴</span><div class="seg-headtext"><div class="seg-name"><span class="secn">一</span>合点 — 他们其实早就同步的脊梁</div><div class="seg-sub">已经合上的地基</div></div></div>
+  <div class="card" style="--cc:var(--ok)"><div class="cd">两个人吵的从来不是「节目是什么」—— 那层早 sync 了。这是已经合上的地基:</div>
+    <div class="quote" style="--sc:var(--ok)">一档 <b>以「人脉」（非现金）为奖励</b> 的中文企业真人秀 —— 营收 RM500k–1M 的企业家 pitch 3 位行业大佬,金卡 ≥2 票 = 入局,奖励 = 买不到的高端人脉。<b>6 集 · 双趴 format · 国际企业水准制作。</b></div>
+    <div class="cd" style="margin-top:8px">这脊梁本身就是一次合成:<b>Jeff 的「人脉发明」+ Rae 的「制作标准」已经长在一起</b>。它不是妥协的中点,是两人各自最强的一手叠在了同一根骨头上。</div>
+  </div>
+
+  <!-- 二、两双眼睛 -->
+  <div class="seg-head" style="--sc:var(--pm)"><span class="seg-icon">👁</span><div class="seg-headtext"><div class="seg-name"><span class="secn">二</span>两双眼睛,一个项目</div><div class="seg-sub">互补的两轴 · 为什么缺一不可</div></div></div>
+  <div class="card" style="--cc:var(--pm)"><div class="cd">真正的 vision 不在脊梁里,在<b>两人看的方向刚好垂直、且互为对方的解药</b>:</div>
+    <table class="vtable">
+      <thead><tr><th></th><th class="colA">Jeff 这轴 → 往外 / 往大</th><th class="colB">Rae 这轴 → 往实 / 往久</th></tr></thead>
+      <tbody>
+        <tr><td>进场点</td><td>「这能变成一个能放大的生态」</td><td>「这怎么跑得起来、跑得不靠我」</td></tr>
+        <tr><td>底层驱动</td><td>趁影响力在峰值把「关系」资产化</td><td>守→放→<b>建立</b>,放手回到自己的作品</td></tr>
+        <tr><td>核心动作</td><td>network-as-inventory · 前端流量后端变现 · vision-casting</td><td>system-over-gravity · craft/气场 · outcome-first 纪律</td></tr>
+        <tr><td>天然倾向</td><td>往更大格局 <b>扩</b> scope</td><td>往框架/边界/把活做对 <b>收</b> scope</td></tr>
+        <tr><td>失手时</td><td>画的饼落不了地、scope 外溢</td><td>系统完美但太慢、错过时机</td></tr>
+      </tbody>
+    </table>
+    <div class="cd" style="margin-top:10px"><b>机制不是「两人都对」—— 是每一轴的失手,正好是另一轴的强项</b>:Jeff 的 scope 外溢 → Rae 的 A/B 分层 + escalation ladder 接住;Rae 的过度打磨/慢 → Jeff 的速度 + 时机感推一把。<b>他们互相当对方的刹车和油门。</b></div>
+  </div>
+
+  <!-- 三、Synergy thesis -->
+  <div class="seg-head" style="--sc:var(--accent)"><span class="seg-icon">⚡</span><div class="seg-headtext"><div class="seg-name"><span class="secn">三</span>Synergy thesis — 合起来 入局 是什么</div><div class="seg-sub">1 + 1 &gt; 2</div></div></div>
+  <div class="card"><div class="quote">Jeff 画饼,Rae 接地 —— <b>饼才真的被烤出来。</b></div>
+    <div class="cd" style="margin-top:8px">把两轴叠起来,《入局》既不是「一档节目」,也不是「一个空想的大愿景」,而是 <b>一颗能被真正建出来的「生态种子」</b>:</div>
+    <ul>
+      <li><b>Jeff 的人脉奖励机制</b> → 给它别人抄不到的内核（vs Shark Tank）;</li>
+      <li><b>Rae 的国际制作标准 + 系统化</b> → 给它被市场当真的质感 + 可复制性;</li>
+      <li>二者叠加 → 一个「有内核、有质感、能复制」的东西,才配得上要押的那个终局。</li>
+    </ul>
+  </div>
+  <div class="card" style="--cc:var(--accent)"><div class="cd"><b>★ 最深的那条 synergy（整个 merge 的脊柱）</b></div>
+    <div class="quote">Jeff 要让节目「不靠他个人」才能放大。Rae 要「不靠自己的 gravity」才能解放自己。<br><b>同一个方向,两人从相反的动机,指向同一个终局 —— 让它不靠任何单一个人也能跑。</b></div>
+    <div class="cd" style="margin-top:8px">这不是巧合,是项目 vision 的<b>真北</b>:</div>
+    <ul>
+      <li>Jeff 知道靠人撑的生意做不大 → 要拿掉自己;</li>
+      <li>Rae 累了、要回到创作 → 要拿掉 gravity;</li>
+      <li><b>→ 把《入局》建成一个不靠任何单一个人也能运转、并能持续长大的企业内容系统。</b></li>
+    </ul>
+    <div class="cd" style="margin-top:8px">正因为两人都要这个,它不是某一个人的偏好,而是<b>项目级的、双方背书的方向</b> —— 这是 Rae 那句「共用 AI workspace / persona / 跑在系统上」为什么重要:它同时是 Rae 近期的解脱、和 Jeff 远期放大的命门。<b>一笔投资,两头都赚。</b></div>
+  </div>
+
+  <!-- 四、决策滤网 -->
+  <div class="seg-head" style="--sc:var(--key)"><span class="seg-icon">🎯</span><div class="seg-headtext"><div class="seg-name"><span class="secn">四</span>合起来该怎么做决策</div><div class="seg-sub">the merged decision filter</div></div></div>
+  <div class="card" style="--cc:var(--key)"><div class="cd">当一个决策上桌,vision director 的滤网是问:</div>
+    <div class="quote" style="--sc:var(--key)">它是否同时喂到「Jeff 的网络内核」和「Rae 的、不靠 gravity 的系统」?</div>
+    <ul>
+      <li><b>两个都喂到 = core</b>,优先做（例:共用 AI workspace · Connection Card · 国际制作标准）。</li>
+      <li><b>只喂到一个 = secondary</b>,做但别让它独大（例:纯耍帅视觉 = 只喂质感不喂内核 → 砍;纯愿景 PPT = 只喂愿景不喂 S1 → 留 B 层）。</li>
+      <li><b>两个都没喂到 = drop。</b></li>
+    </ul>
+    <div class="cd" style="margin-top:8px">这把滤网,能把 Jeff 的发散和 Rae 的收敛,自动校准到同一条线上。</div>
+  </div>
+
+  <!-- 五、要 sync up 的地方 -->
+  <div class="seg-head" style="--sc:var(--warn)"><span class="seg-icon">⚖️</span><div class="seg-headtext"><div class="seg-name"><span class="secn">五</span>要 sync up 的地方</div><div class="seg-sub">vision director 标出的待校准 · 含怎么校</div></div></div>
+  <div class="card" style="--cc:var(--warn)">
+    <ul>
+      <li>⚖️ <b>Scope 张力（最关键）</b> —— Jeff 往 B 层扩、Rae 守 A 层先。<b>校法</b>:不是压住 Jeff,是用 A/B 分层 + escalation ladder 当<b>蓄能阀</b> —— 让 B 层能量蓄着、按梯子放进来,不在 S1 阶段泄出来污染执行。张力是引擎,阀门是治理。</li>
+      <li>🟡 <b>差异化 hook 缺口</b> —— 两人都点过「还缺一个 distinctive 特色/赛道」却都没拍。<b>校法</b>:这个 hook 不该从任一轴单独长 —— 它要长在<b>交集</b>上:Jeff 的「人脉/局」内核 × Rae 的「画面仪式」（那个空座）→ 记忆点应该是「<b>入局</b>」这个动作本身的可视化,而不是又一个 slogan。</li>
+      <li>🟡 <b>B 层要不要分家</b> —— 更大的远期愿景是否另开 venture 文件,跟「入局-制作」解耦。<b>校法</b>:分家 = 让两轴各有干净的家（A 层全速执行、B 层慢慢养）,不是切断。待两人拍。</li>
+      <li>🎚 <b>调性两股拉力</b> —— Jeff 的「高大上/impress」× Rae 的「弱/亲民/不要很官方」。<b>校法</b>:合起来是优势不是矛盾 —— 「<b>贵但不装</b>」（高级的质感 + 不端着的人味）。要的是同时,不是二选一。</li>
+    </ul>
+  </div>
+
+  <!-- 六、failure modes -->
+  <div class="seg-head" style="--sc:var(--bad)"><span class="seg-icon">🔴</span><div class="seg-headtext"><div class="seg-name"><span class="secn">六</span>什么会打破这个 synergy</div><div class="seg-sub">failure modes · 提前看见</div></div></div>
+  <div class="card" style="--cc:var(--bad)">
+    <ul>
+      <li>🔴 <b>Jeff 的 scope 漫过 A 层</b> —— 大梦冲进 S1 执行,团队跟着发散、6 集做不对。→ 阀门失守。</li>
+      <li>🔴 <b>Rae 的系统/打磨拖死时机</b> —— 把「建立」做成完美主义,错过影响力窗口。→ 油门没踩。</li>
+      <li>🔴 <b>两轴各算各的</b> —— 一旦开始计较谁占多少,互补就退化成博弈。Rae 已明确「这是一起做的事,不是各算各的」= 守住这条,synergy 才在。</li>
+    </ul>
+  </div>
+
+  <!-- 七、Combined North Star -->
+  <div class="seg-head" style="--sc:var(--p5)"><span class="seg-icon">⭐</span><div class="seg-headtext"><div class="seg-name"><span class="secn">七</span>Combined North Star</div><div class="seg-sub">一句话</div></div></div>
+  <div class="card" style="--cc:var(--p5)"><div class="quote" style="--sc:var(--p5)">让对的老板,遇见对的局。</div>
+    <div class="cd" style="margin-top:8px">用一档抄不到内核（人脉）、做到国际水准（制作）、跑在系统上（不靠 gravity）的企业真人秀,长成一个<b>不靠任何单一个人也能运转、能持续长大</b>的企业内容生态。近期把 S1 这 6 集做对、做漂亮、做成系统模板;远期让它自己长成 Jeff 看见的那个生态 —— 而那一天,它已经不需要任何一个人扛着。<b>那既是 Jeff 的放大,也是 Rae 的自由。</b></div>
+  </div>
+
+  <div class="note">🧭 <b>Vision Director synthesis</b> —— 读 <a href="入局_Rae_Vision.html">Rae Vision</a> + Jeff Vision + 6/15–6/28 transcripts merge 而成。<b>不是 catalog,是 synergy + 决策含义。</b>两人个人 vision 更新 → 本档重新 merge。</div>
+
+  <footer class="pagefoot">
+    <span class="kmark">KALOZ</span>
+    <span>入局 · Project Vision（合）· vision-director synergy merge</span>
+    <span class="upd">Last updated 2026-06-29</span>
+  </footer>
+</div>
+<script>
+(function(){var bar=document.getElementById('modebar');function setMode(m){document.body.classList.remove('mode-light','mode-warm');if(m==='light')document.body.classList.add('mode-light');if(m==='warm')document.body.classList.add('mode-warm');bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});try{localStorage.setItem('raeMode',m);}catch(e){}}
+bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});var saved='dark';try{saved=localStorage.getItem('raeMode')||'dark';}catch(e){}setMode(saved);})();
+</script>
+</body>
+</html>

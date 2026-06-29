@@ -4,10 +4,11 @@
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🧠 入局 · Jeff 的 Vision</title>
+<title>🎯 入局 · Jeff 的 Vision</title>
 <!--
-  入局 · Jeff's Vision — 记录 Jeff（陈浩然）讲过、想要的东西。LIVING collection,会一直长。
-  Team-facing(挂 Master ⑤ Appendix · 上 GitHub team site)。Log 源 = 入局_Jeff_Vision_Log.md。Self-contained · 3-mode · no CDN.
+  入局 · Jeff's Vision — 记录 Jeff（陈浩然）个人对《入局》的 vision/视角/insight。聚焦个人 insight + 底层为什么。
+  Team-safe render：内部层已 strip;只渲 Locked/Open/Idea/Seed。Team-facing · 上 GitHub。
+  源 = 入局_Jeff_Vision.md。Self-contained · 3-mode · no CDN.
 -->
 <style>
 :root{--bg:#0D1117;--s1:#161B22;--s2:#21262D;--s3:#2D333B;--border:#30363D;--text:#E6EDF3;--muted:#7D8590;--dim:#484F58;--accent:#46C5B5;--ok:#3FB950;--warn:#E3B341;--bad:#FF7B72;--info:#58A6FF;--sans:-apple-system,BlinkMacSystemFont,'Inter','PingFang SC','Noto Sans SC',sans-serif;--mono:'SF Mono',ui-monospace,'JetBrains Mono',monospace;--r:10px;--r-sm:7px;
@@ -33,13 +34,10 @@ h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
 .northstar{font-size:14px;color:var(--text);margin-top:8px;border-left:3px solid var(--accent);padding-left:12px;line-height:1.5}
 .northstar b{color:var(--accent)}
 .purpose{font-size:12px;color:var(--muted);margin-top:8px;max-width:840px;line-height:1.55}.purpose b{color:var(--text)}
-.metastrip{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:11px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.metastrip .sep{color:var(--dim)}.metastrip b{color:var(--text)}
+.metastrip{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:11px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}.metastrip .sep{color:var(--dim)}.metastrip b{color:var(--text)}
 .pills{margin-top:12px;display:flex;gap:7px;flex-wrap:wrap}
 .spill{font-family:var(--mono);font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.3px;border:1px solid var(--border)}
-.spill.ok{background:rgba(63,185,80,.12);color:var(--ok);border-color:var(--ok)}
-.spill.info{background:rgba(88,166,255,.12);color:var(--info);border-color:var(--info)}
-.spill.warn{background:rgba(227,179,65,.12);color:var(--warn);border-color:var(--warn)}
+.spill.ok{background:rgba(63,185,80,.12);color:var(--ok);border-color:var(--ok)}.spill.info{background:rgba(88,166,255,.12);color:var(--info);border-color:var(--info)}
 .seg-head{display:flex;align-items:center;gap:14px;padding:16px 19px;border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 38%,var(--border));border-left:7px solid var(--sc,var(--accent));border-radius:var(--r);background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 26%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 8%,var(--s1)));margin:42px 0 16px;box-shadow:0 3px 16px color-mix(in srgb,var(--sc,var(--accent)) 15%,transparent)}
 .hero + .seg-head{margin-top:26px}
 .seg-icon{font-size:20px;width:42px;height:42px;min-width:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;background:color-mix(in srgb,var(--sc,var(--accent)) 30%,var(--s1));border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 48%,transparent);flex-shrink:0}.seg-headtext{flex:1;min-width:0}
@@ -47,13 +45,16 @@ h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
 .seg-name .secn{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;padding:0 7px;background:var(--sc,var(--accent));color:var(--bg);font-family:var(--mono);font-weight:800;border-radius:8px;margin-right:10px;font-size:14px;flex-shrink:0}
 .seg-sub{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:5px}
 .card{background:var(--s1);border:1px solid var(--border);border-left:3px solid var(--cc,var(--accent));border-radius:var(--r);padding:13px 16px;margin-top:10px}
-.card .ct{font-size:14px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px}
-.card .cd{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.6}.card .cd b{color:var(--text)}
-.card ul{margin:7px 0 0 0;padding-left:18px}.card li{font-size:12.5px;color:var(--muted);margin:4px 0;line-height:1.55}.card li b{color:var(--text)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;margin-top:10px}
-.tag{font-family:var(--mono);font-size:8.5px;font-weight:800;letter-spacing:.3px;padding:1px 7px;border-radius:9px;text-transform:uppercase;margin-left:auto}
-.tag.s1{background:rgba(63,185,80,.14);color:var(--ok)}.tag.vis{background:rgba(124,140,248,.16);color:var(--pm)}.tag.open{background:rgba(88,166,255,.14);color:var(--info)}
+.card .cd{font-size:12.5px;color:var(--muted);margin-top:0;line-height:1.6}.card .cd b{color:var(--text)}
+.card ul{margin:4px 0 0 0;padding-left:18px}.card li{font-size:12.5px;color:var(--muted);margin:4px 0;line-height:1.55}.card li b{color:var(--text)}
+.chip{display:inline-flex;align-items:center;font-family:var(--mono);font-size:9.5px;font-weight:700;padding:1px 7px;border-radius:11px;letter-spacing:.3px;border:1px solid var(--border);margin-right:6px;vertical-align:middle;white-space:nowrap}
+.chip.lock{background:rgba(227,179,65,.13);color:var(--key);border-color:var(--key)}
+.chip.open{background:rgba(88,166,255,.13);color:var(--info);border-color:var(--info)}
+.chip.idea{background:rgba(163,113,247,.14);color:var(--p2);border-color:var(--p2)}
+.chip.seed{background:rgba(63,185,80,.13);color:var(--p5);border-color:var(--p5)}
 .note{font-size:12px;color:var(--muted);background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 14px;margin:14px 0;line-height:1.7}.note b{color:var(--text)}
+.tension{background:var(--s1);border:1px solid var(--border);border-left:3px solid var(--p3);border-radius:var(--r);padding:13px 16px;margin-top:10px}
+.tension ol{margin:2px 0 0 0;padding-left:20px}.tension li{font-size:12.5px;color:var(--muted);margin:7px 0;line-height:1.6}.tension li b{color:var(--text)}
 .pagefoot{margin-top:30px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.4px;color:var(--muted)}
 .pagefoot .kmark{font-weight:800;letter-spacing:2px;color:var(--accent)}.pagefoot .upd{margin-left:auto;color:var(--dim)}
 @media(max-width:760px){.wrap{padding:0 13px}}
@@ -61,7 +62,6 @@ h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
 </head>
 <body>
 <div class="modebar" id="modebar"><button data-m="dark" class="on">◐</button><button data-m="light">○</button><button data-m="warm">◑</button></div>
-
 <nav class="crumbnav">
   <a class="crumb" href="入局_System_Map.html"><span class="cr-ico">🗂</span>System Map</a>
   <span class="cr-sep">›</span>
@@ -69,101 +69,98 @@ h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
   <span class="cr-sep">›</span>
   <a class="crumb" href="入局-Corporate-Reality-Show-2026_Master.html"><span class="cr-ico">📋</span>Master</a>
   <span class="cr-sep">›</span>
-  <span class="crumb current"><span class="cr-ico">🧠</span>Jeff 的 Vision</span>
-</nav>
-
+  <span class="crumb current"><span class="cr-ico">🎯</span>Jeff 的 Vision</span>
+<span class="cr-sep">›</span><a class="crumb" href="入局_Rae_Vision.html"><span class="cr-ico">🎬</span>Rae 的 Vision</a></nav>
 <div class="wrap">
   <div class="hero">
-    <div class="eyebrow">入局 · JEFF'S VISION · 收集 COLLECTION</div>
-    <h1>🧠 Jeff 的 Vision</h1>
-    <div class="northstar">Jeff 想做的:<b>马来西亚最高水准的中文线上企业节目</b>,为企业节目立标杆、国际水准;<b>以人脉为最终奖励</b>。</div>
-    <div class="purpose">这页 = <b>直接记录 Jeff 讲过、想要的东西</b>(vision + input),会一直长。<b>①–④ = Jeff 已经 input 的</b>;<b>⑤ = 还可以互补进来的</b>(open)。internal · 不上发布站 · 有合适入口再 pull 回 core。</div>
+    <div class="eyebrow">入局 · JEFF'S VISION · 个人视角 PERSONAL LENS</div>
+    <h1>🎯 Jeff 的 Vision</h1>
+    <div class="northstar">用我的<b>影响力</b>开一个大马首个「企业为主题」的自媒体平台/生态，并在过程中把它做到<b>不靠我也能转</b>。</div>
+    <div class="purpose">这页 = <b>Jeff（陈浩然）个人对《入局》的 vision</b> —— 他独有地看见什么、带进什么、坚持什么、为什么。聚焦<b>个人 insight + 底层为什么</b>。和 <a href="入局_Rae_Vision.html">Rae Vision</a> 一对，两边一起看（这正是 Jeff × Rae 互补的地方）。</div>
     <div class="pills">
       <span class="spill info">🟡 LIVING COLLECTION</span>
-      <span class="spill">✅ 三大佬已定</span>
+      <span class="spill ok">🧭 个人视角 · source-tagged</span>
     </div>
-    <div class="metastrip">
-      <span>来源 <b>Jeff × Gemini brainstorm</b></span>
-      <span class="sep">·</span><span>2026-05-26 · 分享 06-19</span>
-      <span class="sep">·</span><span>raw → <a data-link-removed>Jeff Ideal/…md</a></span>
-    </div>
+    <div class="metastrip"><span>seeded from 6/15–6/20 transcript</span><span class="sep">·</span><span>log → <a data-link-removed>入局_Jeff_Vision_Log.md</a></span></div>
   </div>
 
-  <!-- ① 节目内核 -->
-  <div class="seg-head" style="--sc:var(--key)"><span class="seg-icon">💎</span><div class="seg-headtext"><div class="seg-name"><span class="secn">①</span>节目内核 — 以人脉为奖励</div><div class="seg-sub">Jeff 定的核心机制</div></div></div>
-  <div class="card" style="--cc:var(--key)">
-    <div class="cd">Jeff 要的奖励 = <b>可兑现的高端商业人脉</b>(饭局/会议/引荐),不是现金 — 因为大马市场小,现场逼大佬大额投资显得小气。胜出企业家 = 大佬带他「入局」顶层商圈,连接上市公司董事、业界大佬。</div>
+  <!-- ◎ 底层驱动 -->
+  <div class="seg-head" style="--sc:var(--key)"><span class="seg-icon">◎</span><div class="seg-headtext"><div class="seg-name"><span class="secn">◎</span>底层驱动 — 读懂 Jeff 的 vision 要先读这一层</div><div class="seg-sub">他独有的进场维度</div></div></div>
+  <div class="card" style="--cc:var(--key)"><div class="cd">Jeff 是一个 <b>celebrity-entrepreneur</b> —— 18 年媒体人、网红营销公司创办人。他最深的那条 vision 不是「做一档节目」，是<b>把自己积累了一辈子的「影响力 + 人脉」，变成一个能独立运转的资产</b>。<br><br>这解释了他几乎所有动作：他不是在卖节目，是在<b>把「关系」做成「资产」</b>。他天然往大想（一档节目 → 一个生态），天然懂「做名 vs 做利」，也天然往「零固定成本、借力分成」的结构去设计。<br><br><b>两个识别信号：</b>① 他往「格局 / 平台 / 生态」这类维度想，是他真实的进场尺度，不是吹牛；② 他主动想把节目做到<b>「不靠他个人也能转」</b>——这很反直觉（明星却要让自己变得非必须），但正是他商业成熟的证据：他知道一个靠一个人撑的生意走不远。<b>这也是他跟 Rae 最深的合拍点。</b></div></div>
+
+  <!-- 🕸 Network-as-inventory -->
+  <div class="seg-head" style="--sc:var(--p2)"><span class="seg-icon">🕸</span><div class="seg-headtext"><div class="seg-name">Network-as-inventory — 他最核心的发明</div><div class="seg-sub">整盘的真王牌</div></div></div>
+  <div class="card" style="--cc:var(--p2)"><div class="cd"><b>为什么这是他最强的一手：</b>它同时解决了「奖励」和「商业模式」两件事——把别人当成本的东西（人脉）变成他的库存。</div>
     <ul>
-      <li><b>前置人脉诉求</b> — 线上初筛就要企业家填「胜出最想连接谁/什么资源、为什么」,提前发大佬评估。</li>
-      <li><b>Connection Card「人脉令」</b> — 2 票通过,大佬亲笔签承诺当场递出,做成实体道具。</li>
+      <li><span class="chip lock">🔒 LOCKED</span><b>奖励 = 人脉，不是现金</b> —— 钱给 SME 不实际、显小气；人脉 / 资源才是买不到的王牌，这是《入局》区别 Shark Tank 的真分野。</li>
+      <li><span class="chip idea">💡 IDEA</span><b>人脉一路商业化</b> —— Connection Card 人脉令 → 俱乐部 → 引荐经纪。他看人脉像看库存：可签约、可分级、可变现。</li>
+      <li><span class="chip seed">🌱 SEED</span><b>生态连接器</b> —— 越来越多企业想跟「入局」connect，节目是帮人接触到想见的人的门。门后面才是生意。</li>
     </ul>
   </div>
 
-  <!-- ② 节目执行 -->
-  <div class="seg-head" style="--sc:var(--accent)"><span class="seg-icon">🎬</span><div class="seg-headtext"><div class="seg-name"><span class="secn">②</span>节目执行 — Jeff 的 input</div><div class="seg-sub">名字 · 招募脚本 · 流程 · 赞助分级</div></div></div>
-  <div class="grid">
-    <div class="card"><div class="ct">🏷 名字 = 《入局》<span class="tag s1">已采用</span></div><div class="cd">Jeff 否掉「老板出招」、定《入局》(阶级感/电影感:赢了入局、输了局外)。现版定名。</div></div>
-    <div class="card"><div class="ct">🎥 1-min 招募脚本</div><div class="cd">Netflix 质感 · 冷调西装眼神杀 · 三大佬各一句 + Connection Card + 年营收 50万门槛。<a data-link-removed>全文↗</a></div></div>
-    <div class="card"><div class="ct">⏱ 13-min 流程(优化版)</div><div class="cd">前快中狠后重:30s 开场 · 2min pitch · <b>5.5min 大佬交锋</b> · 1.5min 内部博弈 · 30s 宣判 · <b>2min 人脉解锁</b> · 1min 金句。</div></div>
-    <div class="card"><div class="ct">💼 赞助商权益分级</div><div class="cd">冠名 1 席(片名特约 + 闭门餐会 VIP + 切片带标)· 联合 2 席(高热环节联合呈献 + 产品内嵌)。锁高净值老板/高管。</div></div>
-  </div>
-
-  <!-- ③ 更大的愿景 -->
-  <div class="seg-head" style="--sc:var(--pm)"><span class="seg-icon">🌐</span><div class="seg-headtext"><div class="seg-name"><span class="secn">③</span>更大的愿景 — Jeff 想要的格局</div><div class="seg-sub">自媒体帝国 · 后端变现 · IPO（vision,非 S1 交付）</div></div></div>
-  <div class="card" style="--cc:var(--pm)">
-    <div class="ct">🏛 中文企业自媒体帝国 — InBiz Media Group <span class="tag vis">vision</span></div>
-    <div class="cd">Jeff 想把《入局》当<b>龙头 IP</b>,建大马首个「企业题材」自媒体平台(对标「大马 SME 的彭博社」),终点 <b>IPO</b>。</div>
+  <!-- 📊 前端 / 后端思维 -->
+  <div class="seg-head" style="--sc:var(--p1)"><span class="seg-icon">📊</span><div class="seg-headtext"><div class="seg-name">前端 / 后端思维 — 他的商业操作系统</div><div class="seg-sub">节目是漏斗，不是终点</div></div></div>
+  <div class="card" style="--cc:var(--p1)"><div class="cd"><b>为什么落选者也是金矿：</b>他从不把节目当终点——节目是漏斗，真正的价值在漏斗下游那些「没上节目但留了资料」的企业。</div>
     <ul>
-      <li><b>内容矩阵:</b>Hero《入局》定江山 · Hub《大马隐形冠军》《老板开什么车》吸流量 · Help《商业避坑》每日短视频留客户。</li>
-      <li><b>后端 5 模式:</b>① 精英俱乐部/私董会(落选老板年费)· ② 联合跟投基金(台下入股黑马)· ③ 企业加速器(三大佬全案咨询 100k+)· ④ 商脉引荐经纪 · ⑤ IP 出海/细分(新加坡站 · 巾帼/科技衍生)。</li>
-      <li><b>IPO 路 = 去 Jeff 化:</b>第 1 年 Jeff 开路 → 2-3 年退幕后孵化第二代 KOL → 第 4 年系统资产化敲钟。</li>
+      <li><span class="chip lock">🔒 LOCKED</span><b>铁律：前端做流量做名，后端做利</b> —— 节目 = 获客 + 初筛器。</li>
     </ul>
   </div>
-  <div class="note">📌 ③ 是 Jeff 的<b>更大愿景</b>,不是 S1 的交付项 — 先记录收着,S1 阶段先专注把节目做好,有合理入口再说。</div>
 
-  <!-- ④ 制作质感 -->
-  <div class="seg-head" style="--sc:var(--p2)"><span class="seg-icon">🎞</span><div class="seg-headtext"><div class="seg-name"><span class="secn">④</span>制作质感 — 拍摄场地候选</div><div class="seg-sub">Gemini 列的 4 类候选(喂给 P2 踩点)</div></div></div>
-  <div class="grid">
-    <div class="card" style="--cc:var(--p2)"><div class="ct">🏙 现代资本风</div><div class="cd">天际线落地窗 — <b>Exchange 106 @ TRX</b> · <b>EQ Kuala Lumpur</b>(+ Blue 观景台 B-Roll)。</div></div>
-    <div class="card" style="--cc:var(--p2)"><div class="ct">🕯 复古奢华暗调</div><div class="cd">暗铜胡桃木、电影质感 — <b>The RuMa</b>(收音最佳)· <b>St. Regis KL</b>(老钱董事厅)。</div></div>
-    <div class="card" style="--cc:var(--p2)"><div class="ct">🎬 电影感黑盒影棚</div><div class="cd">100% 控光、一束聚光审判舞台 — <b>Metal Bees Studio</b> · <b>APW Bangsar</b>。</div></div>
-    <div class="card" style="--cc:var(--p2)"><div class="ct">✨ 顶配轻奢共享</div><div class="cd">新贵朝气、华丽吊灯大理石 — <b>Colony</b>(Star Boulevard KLCC / Eco City)。</div></div>
+  <!-- 🎯 Brand / positioning -->
+  <div class="seg-head" style="--sc:var(--p6)"><span class="seg-icon">🎯</span><div class="seg-headtext"><div class="seg-name">Brand / positioning 直觉 — 这块可以信他</div><div class="seg-sub">18 年电台 + 网红营销练出来的本行</div></div></div>
+  <div class="card" style="--cc:var(--p6)"><div class="cd"><b>为什么这块该让台给他：</b>「市场会怎么读」的直觉，是他练了 18 年的本行。</div>
+    <ul>
+      <li><span class="chip lock">🔒 LOCKED</span><b>《入局》naming</b> —— 自己毙掉「老板出招」、选《入局》（阶级感 + 电影感：赢了入局，输了局外）。理由说得准。</li>
+      <li><span class="chip seed">🌱 SEED</span><b>不可复制的「深局」</b> —— 用华人心思布局做护城河，viral 后人人谈「很顶」。</li>
+    </ul>
   </div>
 
-  <!-- ⑤ 还可互补进来的 -->
-  <div class="seg-head" style="--sc:var(--p5)"><span class="seg-icon">➕</span><div class="seg-headtext"><div class="seg-name"><span class="secn">⑤</span>还可以互补进来的</div><div class="seg-sub">Jeff 的 vision(①–④)之外 · 让它更完整可执行的 open 项</div></div></div>
+  <!-- ✨ 专业印象工程 -->
+  <div class="seg-head" style="--sc:var(--p4)"><span class="seg-icon">✨</span><div class="seg-headtext"><div class="seg-name">专业印象工程 / 高大上 — 他的体验设计本能</div><div class="seg-sub">他卖的是「身份感」</div></div></div>
+  <div class="card" style="--cc:var(--p4)"><div class="cd"><b>为什么对「impress」近乎偏执：</b>他卖的是「身份感」——一个让上台者觉得自己「有 level」的舞台，本身就是奖励的一部分。</div>
+    <ul>
+      <li><span class="chip lock">🔒 LOCKED</span><b>impress 至上</b> —— 每个细节都要让大佬 / 参赛者 / 合作方觉得「马来西亚没人复制得到」。（src 原话：「我要 impress 他们」）</li>
+      <li><span class="chip lock">🔒 LOCKED</span><b>舞台赋予身份</b> —— 上台第一感觉就是「我是有 level 的人」。</li>
+    </ul>
+  </div>
+
+  <!-- 🎬 Vision-casting + 导演 show 思维 -->
+  <div class="seg-head" style="--sc:var(--p3)"><span class="seg-icon">🎬</span><div class="seg-headtext"><div class="seg-name">Vision-casting + 导演 show 思维</div><div class="seg-sub">给他图比给他文字快</div></div></div>
+  <div class="card" style="--cc:var(--p3)"><div class="cd"><b>为什么给他图比给他文字快：</b>他在脑里跑画面来审方案——具象的 case / 镜头他最能想象、最快拍板。</div>
+    <ul>
+      <li><span class="chip lock">🔒 LOCKED</span><b>画面先行 / imagine-first</b> —— 口述镜头氛围（背光摇、打断、凝聚力）做参照。</li>
+      <li><span class="chip idea">💡 IDEA</span><b>真人秀 = 可导演的多层 show</b> —— 现场可 NG、补台词、教大佬加 dramatic 动作，后期堆叠 intensity。</li>
+      <li><span class="chip lock">🔒 LOCKED</span><b>自我定位：发起人 / host，不抢戏</b> —— 刻意压低出镜，把舞台让给内容与大佬（与「让自己非必须」同源）。</li>
+    </ul>
+  </div>
+
+  <!-- 🤝 关系驱动 + 跨国嗅觉 -->
+  <div class="seg-head" style="--sc:var(--p5)"><span class="seg-icon">🤝</span><div class="seg-headtext"><div class="seg-name">关系驱动 + 跨国嗅觉</div><div class="seg-sub">把「人脉变现」当核心卖点亲自操盘</div></div></div>
   <div class="card" style="--cc:var(--p5)">
-    <div class="cd">Jeff 已 input 的是上面 ①–④。以下是 vision 还没定义、<b>可以补进来让它更完整、可执行</b>的(open · 待定):</div>
     <ul>
-      <li><b>制作预算 / costing 框架</b> — vision 要「高大上」,但成本线还没框(→ 已起的 Budget 页可接)。</li>
-      <li><b>招募漏斗实际机制</b> — 报名页 / Form / 初筛 SOP / 预检 gate / 黑名单 / 选 6 的标准。</li>
-      <li><b>视觉 CI + 海报系统 + 金色「成功入局」VFX</b> 的具体规格。</li>
-      <li><b>6 位企业家选角标准</b> — 行业多元 + 冲突感(Gemini 提了方向,可细化成 checklist)。</li>
-      <li><b>短视频切片 SOP + 分发日历</b> — 金句/痛点切片怎么剪、发哪、什么节奏。</li>
-      <li><b>可兑现人脉池清单</b> — 三位大佬实际能动用的资源,作预检的尺。</li>
-      <li><b>后期 / 剪辑执行</b> — 凌厉剪辑、收音、控光的落地方案。</li>
+      <li><span class="chip lock">🔒 LOCKED</span><b>亲自牵线大佬 + 合作单位</b> —— 把「人脉变现」当核心卖点亲自操盘；反射性往更大的市场池（跨国）找。</li>
     </ul>
   </div>
 
-  <!-- ⑥ 怎么用这页 -->
-  <div class="seg-head" style="--sc:var(--ref)"><span class="seg-icon">📎</span><div class="seg-headtext"><div class="seg-name"><span class="secn">⑥</span>怎么用这页</div><div class="seg-sub">常驻收集 · 有入口再切入 · 跟 persona 分开</div></div></div>
-  <div class="card" style="--cc:var(--ref)">
-    <ul>
-      <li><b>一直收集:</b>Jeff 之后再讲到的新想法,就往这页加,它会越长越厚。</li>
-      <li><b>有合理入口再 pull 回 core:</b>觉得合理、或改次谈到/想到时,把相关那条拎回对的地方(Master / Playbook / pillar)。没入口先停这里,不动核心页。</li>
-      <li><b>跟 persona 分开:</b><a data-link-removed>Jeff persona</a> = 介绍他是谁;<b>本页 = 记录他的 vision/想法</b>。</li>
-      <li><b>讨论记录:</b><a data-link-removed>Meeting/…Minutes.md</a>。</li>
-      <li><b>✅ 已定:</b>Shark #2 = Dato' Tony Looi(Ban Lee Hin 集团主席兼 CEO)。Jeff 早稿曾写 Calvin Chan,现已退役。</li>
-    </ul>
+  <!-- ⚡ 三组内在张力 -->
+  <div class="seg-head" style="--sc:var(--bad)"><span class="seg-icon">⚡</span><div class="seg-headtext"><div class="seg-name">Jeff vision 里的三组内在张力</div><div class="seg-sub">要团队 / Rae 接住的地方</div></div></div>
+  <div class="tension">
+    <ol>
+      <li><b>画饼 × 落地</b> —— 他最强是把愿景讲到让人想入局，但「讲得动人」和「做得出来」之间需要别人接。Vision-casting 的引力强，执行的重量得有人扛。</li>
+      <li><b>扩 scope × 守焦点</b> —— 他天然往大处扩，这是燃料，但在 S1 阶段会自然外溢、污染近期执行（这正是 Rae 守边界的原因）。</li>
+      <li><b>让自己「非必须」 × 此刻是 Jeff 在撑</b> —— 长期他想让节目不靠他个人，但当下跑在他的脸 / 网络 / 影响力上。「什么时候从 frontman 转出品人」是这条线最微妙的节奏。</li>
+    </ol>
+    <div class="cd" style="margin-top:10px">这三组张力解释了为什么 <b>Jeff × Rae 是互补而非冗余</b>：Jeff 的每一组张力，刚好都是 Rae 这一轴在接。</div>
   </div>
+
+  <div class="note">🧭 <b>怎么读这页。</b>这是 Jeff <b>个人</b>的视角 —— 想理解他「为什么这样想 / 会怎么拍板」时看这页。和 <a href="入局_Rae_Vision.html">Rae Vision</a> 一对，两边一起看。Status：🔒 已锁 · 🟡 开放 · 💡 想法 · 🌱 种子。</div>
 
   <footer class="pagefoot">
     <span class="kmark">KALOZ</span>
-    <span>入局 · Jeff's Vision · 常驻收集 · internal</span>
-    <span class="upd">Last updated 2026-06-20</span>
+    <span>入局 · Jeff's Vision · 个人视角 · source-tagged</span>
+    <span class="upd">Last updated 2026-06-29</span>
   </footer>
 </div>
-
 <script>
 (function(){var bar=document.getElementById('modebar');function setMode(m){document.body.classList.remove('mode-light','mode-warm');if(m==='light')document.body.classList.add('mode-light');if(m==='warm')document.body.classList.add('mode-warm');bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});try{localStorage.setItem('raeMode',m);}catch(e){}}
 bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});var saved='dark';try{saved=localStorage.getItem('raeMode')||'dark';}catch(e){}setMode(saved);})();

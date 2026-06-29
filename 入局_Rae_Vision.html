@@ -6,9 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🎬 入局 · Rae 的 Vision</title>
 <!--
-  入局 · Rae's Vision — 记录 Rae（Raeburn Ng · 制作总监）对《入局》的 vision/想法。LIVING collection,会一直长。
-  Scaffold + 已 seed on-record 的(制作标准/视觉母题/系统);其余留给 Rae 续 feed。Team-facing · 上 GitHub。
-  Log 源 = 入局_Rae_Vision_Log.md。Self-contained · 3-mode · no CDN.
+  入局 · Rae's Vision — 记录 Rae（Raeburn Ng · 制作总监）个人对《入局》的 vision/想法 + 底层为什么。
+  team-safe render：status-graded（🔒Locked / 🟡Open / 💡Idea / 🌱Seed），含底层驱动 + 内在张力。
+  源 = 入局_Rae_Vision.md。Self-contained · 3-mode · no CDN · 双击可开。
 -->
 <style>
 :root{--bg:#0D1117;--s1:#161B22;--s2:#21262D;--s3:#2D333B;--border:#30363D;--text:#E6EDF3;--muted:#7D8590;--dim:#484F58;--accent:#46C5B5;--ok:#3FB950;--warn:#E3B341;--bad:#FF7B72;--info:#58A6FF;--sans:-apple-system,BlinkMacSystemFont,'Inter','PingFang SC','Noto Sans SC',sans-serif;--mono:'SF Mono',ui-monospace,'JetBrains Mono',monospace;--r:10px;--r-sm:7px;
@@ -38,6 +38,7 @@ h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
 .pills{margin-top:12px;display:flex;gap:7px;flex-wrap:wrap}
 .spill{font-family:var(--mono);font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.3px;border:1px solid var(--border)}
 .spill.ok{background:rgba(63,185,80,.12);color:var(--ok);border-color:var(--ok)}.spill.info{background:rgba(88,166,255,.12);color:var(--info);border-color:var(--info)}
+.spill.warn{background:rgba(227,179,65,.12);color:var(--warn);border-color:var(--warn)}.spill.acc{background:rgba(70,197,181,.12);color:var(--accent);border-color:var(--accent)}
 .seg-head{display:flex;align-items:center;gap:14px;padding:16px 19px;border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 38%,var(--border));border-left:7px solid var(--sc,var(--accent));border-radius:var(--r);background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--accent)) 26%,var(--s1)),color-mix(in srgb,var(--sc,var(--accent)) 8%,var(--s1)));margin:42px 0 16px;box-shadow:0 3px 16px color-mix(in srgb,var(--sc,var(--accent)) 15%,transparent)}
 .hero + .seg-head{margin-top:26px}
 .seg-icon{font-size:20px;width:42px;height:42px;min-width:42px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;background:color-mix(in srgb,var(--sc,var(--accent)) 30%,var(--s1));border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 48%,transparent);flex-shrink:0}.seg-headtext{flex:1;min-width:0}
@@ -47,7 +48,21 @@ h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
 .card{background:var(--s1);border:1px solid var(--border);border-left:3px solid var(--cc,var(--accent));border-radius:var(--r);padding:13px 16px;margin-top:10px}
 .card .cd{font-size:12.5px;color:var(--muted);margin-top:0;line-height:1.6}.card .cd b{color:var(--text)}
 .card ul{margin:4px 0 0 0;padding-left:18px}.card li{font-size:12.5px;color:var(--muted);margin:4px 0;line-height:1.55}.card li b{color:var(--text)}
+.why{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:4px}.why b{color:var(--text)}
+.item{display:flex;gap:10px;align-items:flex-start;margin:9px 0}
+.item .ico{font-size:13px;line-height:1.5;flex-shrink:0;margin-top:1px}
+.item .body{flex:1;min-width:0;font-size:12.5px;color:var(--muted);line-height:1.58}.item .body b{color:var(--text)}
+.tag{display:inline-flex;align-items:center;font-family:var(--mono);font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:11px;letter-spacing:.3px;border:1px solid var(--border);margin-right:7px;white-space:nowrap;vertical-align:middle}
+.tag.lock{background:rgba(63,185,80,.13);color:var(--ok);border-color:var(--ok)}
+.tag.open{background:rgba(227,179,65,.13);color:var(--warn);border-color:var(--warn)}
+.tag.idea{background:rgba(88,166,255,.13);color:var(--info);border-color:var(--info)}
+.tag.seed{background:rgba(86,211,100,.10);color:var(--p5);border-color:var(--p5)}
+.northcard{background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 18%,var(--s1)),color-mix(in srgb,var(--accent) 5%,var(--s1)));border:1px solid color-mix(in srgb,var(--accent) 35%,var(--border));border-left:5px solid var(--accent);border-radius:var(--r);padding:14px 18px;margin-top:14px;font-size:14.5px;color:var(--text);line-height:1.55}.northcard b{color:var(--accent)}.northcard .lbl{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:5px}
+.tension{background:var(--s1);border:1px solid var(--border);border-left:3px solid var(--cc,var(--p2));border-radius:var(--r);padding:13px 16px;margin-top:10px}
+.tension .tn{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px}.tension .tn .n{font-family:var(--mono);color:var(--p2);margin-right:8px}
+.tension .td{font-size:12.5px;color:var(--muted);line-height:1.58}.tension .td b{color:var(--text)}
 .note{font-size:12px;color:var(--muted);background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 14px;margin:14px 0;line-height:1.7}.note b{color:var(--text)}
+.legend{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:10px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .pagefoot{margin-top:30px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.4px;color:var(--muted)}
 .pagefoot .kmark{font-weight:800;letter-spacing:2px;color:var(--accent)}.pagefoot .upd{margin-left:auto;color:var(--dim)}
 @media(max-width:760px){.wrap{padding:0 13px}}
@@ -63,46 +78,92 @@ h1{font-size:25px;font-weight:700;letter-spacing:-.3px;margin-top:5px}
   <a class="crumb" href="入局-Corporate-Reality-Show-2026_Master.html"><span class="cr-ico">📋</span>Master</a>
   <span class="cr-sep">›</span>
   <span class="crumb current"><span class="cr-ico">🎬</span>Rae 的 Vision</span>
-</nav>
+<span class="cr-sep">›</span><a class="crumb" href="入局_Show_Proposal_Playbook.html"><span class="cr-ico">📑</span>Proposal Deck</a></nav>
 <div class="wrap">
   <div class="hero">
-    <div class="eyebrow">入局 · RAE'S VISION · 收集 COLLECTION</div>
+    <div class="eyebrow">入局 · RAE'S VISION · 个人视角 + 底层为什么</div>
     <h1>🎬 Rae 的 Vision</h1>
-    <div class="northstar">Rae（制作总监）想做的:把《入局》<b>拍出国际水准</b>,并让整个项目<b>跑在系统上</b>,不靠 Rae 的 gravity。</div>
-    <div class="purpose">这页 = <b>记录 Rae 对《入局》的 vision/想法</b>,会一直长。下面是<b>已经 on-record</b> 的(制作标准 / 视觉母题 / 系统);其余<b>留给 Rae 陆续 feed</b>。team-facing · 跟 <a href="Rae_Persona.html">Rae persona</a> 分开(persona = 是谁;本页 = 想法)。</div>
+    <div class="northstar">Rae（制作总监）这双眼睛<b>独有地</b>看见什么、带进什么、坚持什么 —— 以及<b>为什么</b>。聚焦个人 insight + 底层驱动,不是团队共识。</div>
+    <div class="purpose">这页 = <b>Rae 个人对《入局》的 vision</b>,status-graded(🔒 Locked / 🟡 Open / 💡 Idea / 🌱 Seed)。配套:<b>Jeff 的</b> = Jeff Vision · <b>两人结合</b> = Project Vision。team-facing · 跟 <a href="Rae_Persona.html">Rae persona</a> 分开(persona = 是谁;本页 = 想法)。</div>
     <div class="pills">
-      <span class="spill info">🟡 LIVING COLLECTION</span>
-      <span class="spill ok">🌱 SCAFFOLD · 待 Rae 续 feed</span>
+      <span class="spill info">🟡 LIVING · 活档</span>
+      <span class="spill ok">🔒 STATUS-GRADED</span>
+      <span class="spill acc">含底层驱动 + 内在张力</span>
     </div>
-    <div class="metastrip"><span>seeded from on-record</span><span class="sep">·</span><span>log → <a data-link-removed>入局_Rae_Vision_Log.md</a></span></div>
+    <div class="legend">
+      <span><span class="tag lock">🔒 LOCKED</span>已锁</span>
+      <span><span class="tag open">🟡 OPEN</span>在调</span>
+      <span><span class="tag idea">💡 IDEA</span>想法</span>
+      <span><span class="tag seed">🌱 SEED</span>萌芽</span>
+    </div>
   </div>
 
-  <!-- ① 制作标准 -->
-  <div class="seg-head" style="--sc:var(--key)"><span class="seg-icon">🎯</span><div class="seg-headtext"><div class="seg-name"><span class="secn">①</span>制作标准 — 国际水准</div><div class="seg-sub">Rae 的质量底线</div></div></div>
-  <div class="card" style="--cc:var(--key)"><div class="cd">《入局》要拍出<b>国际企业水准</b> —— 高大上灯光、专业剪辑、文案、后期 VFX。<b>质量优先</b>,对「高大上」和「感觉对不对」有要求;为企业节目立标杆。final 画面 / creative / 视觉方向由 Rae 收口把关。</div></div>
+  <!-- ◎ 底层驱动 -->
+  <div class="seg-head" style="--sc:var(--accent)"><span class="seg-icon">◎</span><div class="seg-headtext"><div class="seg-name">底层驱动</div><div class="seg-sub">读懂 Rae 的 vision 要先读这一层</div></div></div>
+  <div class="card"><div class="cd">Rae 看《入局》最深的那条,不在节目里——在他自己身上。他正处在一个 founder 的转身:从 <b>「守」</b>(公司不能塌、什么都过我)→ <b>「放」</b>(放下"一切要经过我"的执念)→ <b>「建立」</b>(一个活的、不靠意志力撑着的生态)。</div>
+    <div class="cd" style="margin-top:9px"><b>所以《入局》对他不是"一档节目",是一次「建立」的练习场</b> —— 验证一件事能不能跑得<b>不靠 Rae 的 gravity</b>。这解释了他几乎所有 vision 选择:他要系统、要纪律、要把角色拆干净、要 build AI workspace —— 不是为了控制,是为了<b>有一天能放手回到自己的创作</b>(他的内核是 Director / Photographer,那是他真正想守的"作品/legacy"层)。</div>
+    <div class="cd" style="margin-top:9px"><b>一个关键 framing 提醒</b>:Rae 的 motivator 不是钱(钱是下游结果)。他的 vision 要用 <b>影响力 / 创作成就 / 自主</b> 来对频,不要用财务回报来卖。谁用"这个能赚多少"跟他对 vision,会 under-resonate。</div>
+  </div>
+  <div class="northcard"><span class="lbl">真北一句</span>把《入局》建成一个<b>不靠我也能跑</b>的东西,好让我能回去做我自己的作品。</div>
 
-  <!-- ② 视觉母题 -->
-  <div class="seg-head" style="--sc:var(--accent)"><span class="seg-icon">🪑</span><div class="seg-headtext"><div class="seg-name"><span class="secn">②</span>视觉母题 — 已锁</div><div class="seg-sub">节目的视觉记忆点</div></div></div>
-  <div class="card"><div class="cd"><b>3 椅 + 咖啡桌 + 1 空座</b>(弃麻将桌)<b>+ LED「入局」backlight</b>。金色「成功入局」VFX。(锁于 Show Bible + P5 Design。)</div></div>
-
-  <!-- ③ 系统 / 架构 -->
-  <div class="seg-head" style="--sc:var(--pm)"><span class="seg-icon">🧱</span><div class="seg-headtext"><div class="seg-name"><span class="secn">③</span>系统 / 架构 — 让它跑在系统上</div><div class="seg-sub">不靠 Rae 的 gravity</div></div></div>
-  <div class="card" style="--cc:var(--pm)"><div class="cd">把项目拆成<b>清晰框架</b>,让团队能独立运转。</div>
-    <ul>
-      <li><b>5 大支柱并行</b>(Creative / Production / Brand&Marketing / Recruitment / Design),各设 owner + 独立页。</li>
-      <li><b>System Map + Master</b> 当前门,团队从一处入坛,不用每次靠 Rae 解释。</li>
-      <li><b>守 → 放 → 建立</b>:让《入局》是「跑得动的系统」,不是「靠 Rae 的 gravity」。</li>
-    </ul>
+  <!-- ① System over gravity -->
+  <div class="seg-head" style="--sc:var(--pm)"><span class="seg-icon">🧱</span><div class="seg-headtext"><div class="seg-name"><span class="secn">①</span>System over gravity</div><div class="seg-sub">他最深的那条 · = 建立</div></div></div>
+  <div class="card" style="--cc:var(--pm)">
+    <div class="why"><b>为什么这么执着结构</b>:因为"靠脑子/靠 gravity"的反面才是"靠系统",而只有靠系统,他才放得了手。结构对他不是洁癖,是<b>自由的前提</b>。</div>
+    <div class="item"><span class="ico"><span class="tag lock">🔒</span></span><div class="body"><b>结构先行</b> —— 没框架不往里填;先切板块、定单一负责人,再分头解决。混乱在他眼里 = 框架缺席,先补框架再谈别的。</div></div>
+    <div class="item"><span class="ico"><span class="tag lock">🔒</span></span><div class="body"><b>角色纯化 = reduce 对他头脑的依赖</b> —— producer = arrangement-only · creative = 概念(Rae) + build(咏辰)。他切角色不是管控,是让每个位子不必回头问他。</div></div>
+    <div class="item"><span class="ico"><span class="tag seed">🌱</span></span><div class="body"><b>共用 AI workspace + 每人 persona</b> —— 把"想东西"沉淀成可查资产,团队共喂共问。这是他 founder-dependency reduction 的最新武器,也是 vision 里最前瞻的一步。</div></div>
+    <div class="item"><span class="ico"><span class="tag lock">🔒</span></span><div class="body"><b>不 hire-first</b> —— 缺的不是人头是 ownership + 系统;加人之前先把系统/心态弄对,否则只是把洞糊住。</div></div>
   </div>
 
-  <!-- ④ 待 Rae 续 -->
-  <div class="seg-head" style="--sc:var(--p5)"><span class="seg-icon">➕</span><div class="seg-headtext"><div class="seg-name"><span class="secn">④</span>待 Rae 续 feed</div><div class="seg-sub">这页是 scaffold · Rae 想到什么就往这加</div></div></div>
-  <div class="note">🌱 <b>这一段留空给你。</b> Rae 之后对《入局》有任何新的 vision / 想法 / 方向(制作、节奏、画面、团队、商业…),讲一声就 lock 进 <a data-link-removed>Log</a>,team-safe 的整理上这页。和 Jeff Vision 一对,两边一起看。</div>
+  <!-- ② Craft / 气场 / 质感 -->
+  <div class="seg-head" style="--sc:var(--key)"><span class="seg-icon">🎨</span><div class="seg-headtext"><div class="seg-name"><span class="secn">②</span>Craft / 气场 / 质感</div><div class="seg-sub">他守的"作品"底线</div></div></div>
+  <div class="card" style="--cc:var(--key)">
+    <div class="why"><b>为什么质感对他是操作性标准</b>:他对"感觉对不对"的敏感不是装饰性的——"feel 不对"在他这里等于"不能出"。这是他 Photographer/Director 内核在 vision 上的投影。</div>
+    <div class="item"><span class="ico"><span class="tag lock">🔒</span></span><div class="body"><b>国际企业水准</b> —— 灯光 / 剪辑 / 文案 / VFX,为企业节目立标杆;这是他愿意把名字押上去的质量线。</div></div>
+    <div class="item"><span class="ico"><span class="tag open">🟡</span></span><div class="body"><b>气场 × 亲民 的双守</b>(vision 里一个真实张力)—— 老板要酷、要气场、不能太随便;但调性又要"弱一点、亲民、不要很官方"。他同时守这两端 = 要"贵但不装"。</div></div>
+    <div class="item"><span class="ico"><span class="tag idea">💡</span></span><div class="body"><b>视觉母题</b> —— 3 椅 + 咖啡桌 + 1 <b>空座</b> + LED「入局」backlight + 金色「成功入局」VFX。那个"空座"是他最 Rae 的一笔:把抽象的"入局"变成一个<b>画面仪式</b>(你被邀请坐进那个空位)。</div></div>
+  </div>
+
+  <!-- ③ Outcome-first 创作纪律 -->
+  <div class="seg-head" style="--sc:var(--p3)"><span class="seg-icon">✍️</span><div class="seg-headtext"><div class="seg-name"><span class="secn">③</span>Outcome-first 创作纪律</div><div class="seg-sub">他思考的操作系统</div></div></div>
+  <div class="card" style="--cc:var(--p3)">
+    <div class="why"><b>为什么先 deliverable 后内容</b>:因为没目的的产出在他眼里是浪费 + 失焦。他的创作纪律本质是<b>反 vanity、反过度生产</b>——每一件东西都要先回答"它为什么存在"。</div>
+    <div class="item"><span class="ico"><span class="tag lock">🔒</span></span><div class="body"><b>先定 deliverable 再倒推内容</b> —— 拒绝在没框定交付物时谈 idea。</div></div>
+    <div class="item"><span class="ico"><span class="tag lock">🔒</span></span><div class="body"><b>直接讲,不要解释</b> —— 作品要直接讲"要做什么",不是 narrate / justify 自己;每条先锁 objective。</div></div>
+    <div class="item"><span class="ico"><span class="tag lock">🔒</span></span><div class="body"><b>大框架带小框架 + 做减法</b> —— 把"很多交付物"收敛成"其实只拍三样",靠合并不靠堆量;复杂在他眼里多半是没想清楚。</div></div>
+    <div class="item"><span class="ico"><span class="tag lock">🔒</span></span><div class="body"><b>受众真相 lens</b> —— 反复把团队从"我们觉得帅"拉回"做生意的人 / 观众 get 到什么"。他审东西时会<b>把自己变成那个观众</b>走一遍。</div></div>
+  </div>
+
+  <!-- ④ Governance / 守边界 -->
+  <div class="seg-head" style="--sc:var(--p1)"><span class="seg-icon">🛡</span><div class="seg-headtext"><div class="seg-name"><span class="secn">④</span>Governance / 守边界</div><div class="seg-sub">他对协作这条线的清醒</div></div></div>
+  <div class="card" style="--cc:var(--p1)">
+    <div class="why"><b>为什么要分层守边界</b>:因为他看得很清楚——大愿景是燃料也是污染源,<b>近期要把它隔开</b>,远期才接得住。</div>
+    <div class="item"><span class="ico"><span class="tag lock">🔒</span></span><div class="body"><b>A / B 分层</b> —— A = S1 制作执行 · B = 远期愿景;别让 B 层大梦污染 A 层 S1 执行。</div></div>
+    <div class="item"><span class="ico"><span class="tag lock">🔒</span></span><div class="body"><b>idea escalation ladder</b> —— idea → 研读 → 拍板 → 归 pillar owner → 才进 live 文件。一条 idea 要走完梯子才算数。</div></div>
+    <div class="item"><span class="ico"><span class="tag lock">🔒</span></span><div class="body"><b>取差异不取替换</b> —— 冲突版本 merge deltas,不整套替换;尊重前人的东西,只补增量。</div></div>
+  </div>
+
+  <!-- ⑤ Team culture -->
+  <div class="seg-head" style="--sc:var(--p5)"><span class="seg-icon">👥</span><div class="seg-headtext"><div class="seg-name"><span class="secn">⑤</span>Team culture</div><div class="seg-sub">他要的不是听话,是主动</div></div></div>
+  <div class="card" style="--cc:var(--p5)">
+    <div class="why"><b>为什么这条最近浮上来</b>:因为他累了——一个人当 gravity 太久。他要的团队感本质是<b>把 gravity 分摊出去</b>,让"建立"成立。</div>
+    <div class="item"><span class="ico"><span class="tag seed">🌱</span></span><div class="body"><b>主动 / aggressive / 不被动</b> —— 互相提醒、自己约会议、随时拉任何同事帮想,不等老板问。</div></div>
+    <div class="item"><span class="ico"><span class="tag seed">🌱</span></span><div class="body"><b>voice out / 不消失</b> —— 有事就讲、随时 group update;沉默 = 丢问题。</div></div>
+    <div class="item"><span class="ico"><span class="tag open">🟡</span></span><div class="body"><b>同一条船 + 每人都重要</b> —— 要归属感强的团队,不是打工心态。</div></div>
+  </div>
+
+  <!-- ⚡ 三组内在张力 -->
+  <div class="seg-head" style="--sc:var(--p2)"><span class="seg-icon">⚡</span><div class="seg-headtext"><div class="seg-name">Rae vision 里的三组内在张力</div><div class="seg-sub">他自己在走钢丝的地方</div></div></div>
+  <div class="tension" style="--cc:var(--p2)"><div class="tn"><span class="n">1</span>高标准 × 亲民</div><div class="td">既要 impress 的质感,又要不端着的人味("贵但不装")。偏任一端都会失手。</div></div>
+  <div class="tension" style="--cc:var(--p2)"><div class="tn"><span class="n">2</span>放手 × 收口把关</div><div class="td">他要 reduce founder-dependency,但又是最后那个把质量关的人。"放"到哪、"守"到哪,是他持续在调的尺。</div></div>
+  <div class="tension" style="--cc:var(--p2)"><div class="tn"><span class="n">3</span>系统纪律 × 创意 allow-emerge</div><div class="td">治国那套 rigor 用在制作执行对;但纯创意 / 视觉那块需要留呼吸空间,不能全用框架压。</div></div>
+  <div class="note">这三组张力<b>不是 bug</b>——是他 vision 的张力来源。读他的判断时,多半能在这三条钢丝上找到位置。</div>
 
   <footer class="pagefoot">
     <span class="kmark">KALOZ</span>
-    <span>入局 · Rae's Vision · 常驻收集 · 待续 feed</span>
-    <span class="upd">Last updated 2026-06-20</span>
+    <span>入局 · Rae's Vision · 个人视角 · status-graded · 活档</span>
+    <span class="upd">Last updated 2026-06-29</span>
   </footer>
 </div>
 <script>
